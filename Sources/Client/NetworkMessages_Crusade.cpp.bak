@@ -113,7 +113,7 @@ namespace NetworkMessageHandlers {
 		int i;
 		pGame->SetTopMsg(pGame->m_pGameMsgList[17]->m_pMsg, 5);
 		for (i = 0; i < 36; i++)
-			pGame->m_pEffectManager->AddEffect(EffectType::METEOR_FLYING, pGame->m_sViewPointX + (rand() % LOGICAL_MAX_X), pGame->m_sViewPointY + (rand() % LOGICAL_MAX_Y), 0, 0, -(rand() % 80));
+			pGame->m_pEffectManager->AddEffect(60, pGame->m_sViewPointX + (rand() % LOGICAL_MAX_X), pGame->m_sViewPointY + (rand() % LOGICAL_MAX_Y), 0, 0, -(rand() % 80));
 	}
 
 	void HandleCannotConstruct(CGame* pGame, char* pData)

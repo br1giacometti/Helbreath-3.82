@@ -169,13 +169,14 @@ def convert_add_effect_calls(content: str) -> str:
     """Convert 'AddEffect(5,' and 'AddEffectImpl(5,' to use EffectType enum"""
     def replace_call(match):
         func_name = match.group(1)
-        num = int(match.group(2))
+        spaces = match.group(2)  # Capture any spaces
+        num = int(match.group(3))
         if num in EFFECT_TYPE_MAP:
-            return f"{func_name}(EffectType::{EFFECT_TYPE_MAP[num]},"
+            return f"{func_name}({spaces}EffectType::{EFFECT_TYPE_MAP[num]},"
         return match.group(0)
 
-    # Handle both AddEffect and AddEffectImpl
-    content = re.sub(r'\b(AddEffect(?:Impl)?)\((\d+),', replace_call, content)
+    # Handle both AddEffect and AddEffectImpl, with optional spaces after opening paren
+    content = re.sub(r'\b(AddEffect(?:Impl)?)\((\s*)(\d+),', replace_call, content)
     return content
 
 def main():

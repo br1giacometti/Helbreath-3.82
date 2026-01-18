@@ -4078,7 +4078,7 @@ void CGame::CommonEventHandler(char* pData)
 		if (!pkt) return;
 		sV4 = pkt->v4;
 	}
-	m_pEffectManager->AddEffect(sV3, sX, sY, sV1, sV2, 0, sV4);
+	m_pEffectManager->AddEffect(static_cast<EffectType>(sV3), sX, sY, sV1, sV2, 0, sV4);
 	break;
 
 	case DEF_COMMONTYPE_CLEARGUILDNAME:

@@ -764,14 +764,14 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 
 			case EffectType::PROTECT_FROM_NM: // Protect form N.M
 			case EffectType::PROTECT_FROM_MAGIC: // Protection from Magic
-				AddEffectImpl( EffectType::PROTECTION_RING, dX * 32, dY * 32, 0, 0, 0, 0);
+				AddEffectImpl( 52, dX * 32, dY * 32, 0, 0, 0, 0);
 				delete m_pEffectSpr[i];
 				m_pEffectSpr[i] = 0;
 				break;
 
 			case EffectType::HOLD_PERSON: // Hold Person
 			case EffectType::PARALYZE: // Paralyze
-				AddEffectImpl( EffectType::HOLD_TWIST, dX * 32, dY * 32, 0, 0, 0, 0);
+				AddEffectImpl( 53, dX * 32, dY * 32, 0, 0, 0, 0);
 				delete m_pEffectSpr[i];
 				m_pEffectSpr[i] = 0;
 				break;
@@ -792,21 +792,21 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 4, sDist, lPan);
 				m_pGame->SetCameraShakingEffect(sDist, 2);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
 
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
 				m_pEffectList[i]->m_cMaxFrame = 2;
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
@@ -892,21 +892,21 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 			case EffectType::WORM_BITE_MASS: // worm-bite
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 4, sDist, lPan);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
 
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
-				AddEffectImpl( EffectType::FOOTPRINT, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
+				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
 				m_pEffectList[i]->m_cMaxFrame = 1;
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;

@@ -1844,21 +1844,21 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 						}
 						if ((m_pData[dX][dY].m_cDynamicObjectFrame % 6) == 0)
 						{
-							m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + (rand() % 10 - 5) + 5, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
-							m_pGame->m_pEffectManager->AddEffect(EffectType::MS_FIRE_SMOKE, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+							m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + (rand() % 10 - 5) + 5, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+							m_pGame->m_pEffectManager->AddEffect(67, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
 						}
 						break;
 
 					case DEF_DYNAMICOBJECT_FISHOBJECT:
 						if ((rand() % 12) == 1)
-							m_pGame->m_pEffectManager->AddEffect(EffectType::BUBBLES_DRUNK, (m_sPivotX + dX) * 32 + m_pData[dX][dY].m_cDynamicObjectData1, (m_sPivotY + dY) * 32 + m_pData[dX][dY].m_cDynamicObjectData2, 0, 0, 0);
+							m_pGame->m_pEffectManager->AddEffect(13, (m_sPivotX + dX) * 32 + m_pData[dX][dY].m_cDynamicObjectData1, (m_sPivotY + dY) * 32 + m_pData[dX][dY].m_cDynamicObjectData2, 0, 0, 0);
 						break;
 
 					case DEF_DYNAMICOBJECT_FISH:
 						if ((dwTime - m_pData[dX][dY].m_dwDynamicObjectTime) < 100) break;
 						m_pData[dX][dY].m_dwDynamicObjectTime = dwTime;
 						if (m_pData[dX][dY].m_cDynamicObjectFrame >= 15) m_pData[dX][dY].m_cDynamicObjectFrame = 0;
-						if ((rand() % 15) == 1) m_pGame->m_pEffectManager->AddEffect(EffectType::BUBBLES_DRUNK, (m_sPivotX + dX) * 32 + m_pData[dX][dY].m_cDynamicObjectData1, (m_sPivotY + dY) * 32 + m_pData[dX][dY].m_cDynamicObjectData2, 0, 0, 0);
+						if ((rand() % 15) == 1) m_pGame->m_pEffectManager->AddEffect(13, (m_sPivotX + dX) * 32 + m_pData[dX][dY].m_cDynamicObjectData1, (m_sPivotY + dY) * 32 + m_pData[dX][dY].m_cDynamicObjectData2, 0, 0, 0);
 						cDir = CMisc::cGetNextMoveDir(m_pData[dX][dY].m_cDynamicObjectData1, m_pData[dX][dY].m_cDynamicObjectData2, 0, 0);
 						switch (cDir) {
 						case 1:
@@ -2071,14 +2071,14 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 							{
 								if (((m_pData[dX][dY].m_sAppr4 & 0x000F) != 0) && ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
 								}
 								// Snoopy: Angels
 								if ((((m_pData[dX][dY].m_iStatus & 0x00000F00) >> 8) > rand() % 6) // Angel stars
 									&& ((m_pData[dX][dY].m_iStatus & 0x0000F000) != 0)
 									&& ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
 								}
 							}
 							break;
@@ -2087,27 +2087,27 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 						case 42: // ManaStone
 							if ((rand() % 40) == 25)
 							{
-								m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 60 - 30), (m_sPivotY + dY) * 32 - (rand() % 100) - 5, 0, 0, -(rand() % 12), 0);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 60 - 30), (m_sPivotY + dY) * 32 - (rand() % 100) - 5, 0, 0, -(rand() % 12), 0);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 60 - 30), (m_sPivotY + dY) * 32 - (rand() % 100) - 5, 0, 0, -(rand() % 12), 0);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 60 - 30), (m_sPivotY + dY) * 32 - (rand() % 100) - 5, 0, 0, -(rand() % 12), 0);
+								m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 60 - 30), (m_sPivotY + dY) * 32 - (rand() % 100) - 5, 0, 0, -(rand() % 12), 0);
+								m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 60 - 30), (m_sPivotY + dY) * 32 - (rand() % 100) - 5, 0, 0, -(rand() % 12), 0);
+								m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 60 - 30), (m_sPivotY + dY) * 32 - (rand() % 100) - 5, 0, 0, -(rand() % 12), 0);
+								m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 60 - 30), (m_sPivotY + dY) * 32 - (rand() % 100) - 5, 0, 0, -(rand() % 12), 0);
 							}
 							break;
 						case 65: // IceGolem
 							if (m_pData[dX][dY].m_cOwnerFrame == 3)
 							{
-								m_pGame->m_pEffectManager->AddEffect(EffectType::ICE_GOLEM_EFFECT_1, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::ICE_GOLEM_EFFECT_1, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
+								m_pGame->m_pEffectManager->AddEffect(75, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
+								m_pGame->m_pEffectManager->AddEffect(75, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
 							}
 							if (m_pData[dX][dY].m_cOwnerFrame == 2)
 							{
-								m_pGame->m_pEffectManager->AddEffect(EffectType::ICE_GOLEM_EFFECT_2, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::ICE_GOLEM_EFFECT_2, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
+								m_pGame->m_pEffectManager->AddEffect(76, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
+								m_pGame->m_pEffectManager->AddEffect(76, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
 							}
 							if (m_pData[dX][dY].m_cOwnerFrame == 1)
 							{
-								m_pGame->m_pEffectManager->AddEffect(EffectType::ICE_GOLEM_EFFECT_3, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::ICE_GOLEM_EFFECT_3, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
+								m_pGame->m_pEffectManager->AddEffect(77, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
+								m_pGame->m_pEffectManager->AddEffect(77, (m_sPivotX + dX) * 32 + (rand() % 40 - 20), (m_sPivotY + dY) * 32 + (rand() % 40 - 20), 0, 0, 0);
 							}
 							break;
 						}
@@ -2142,15 +2142,15 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 									case 7: dx = cFrameMoveDots * (cTotalFrame - m_pData[dX][dY].m_cOwnerFrame); break;
 									case 8: dx = cFrameMoveDots * (cTotalFrame - m_pData[dX][dY].m_cOwnerFrame); dy = cFrameMoveDots * (cTotalFrame - m_pData[dX][dY].m_cOwnerFrame); break;
 									}
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
 								}
 								// Snoopy: Angels
 								if ((((m_pData[dX][dY].m_iStatus & 0x00000F00) >> 8) > rand() % 6) // Angel stars
 									&& ((m_pData[dX][dY].m_iStatus & 0x0000F000) != 0)
 									&& ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
 								}
 							}
 							break;
@@ -2415,19 +2415,19 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 								case 8: dx = cFrameMoveDots * (cTotalFrame - m_pData[dX][dY].m_cOwnerFrame); dy = cFrameMoveDots * (cTotalFrame - m_pData[dX][dY].m_cOwnerFrame); break;
 								}
 								if ((m_pGame->m_cWhetherEffectType >= 1) && (m_pGame->m_cWhetherEffectType <= 3))
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT_RAIN, (m_sPivotX + dX) * 32 + dx, (m_sPivotY + dY) * 32 + dy, 0, 0, 0, 0);
-								else m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32 + dx, (m_sPivotY + dY) * 32 + dy, 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(32, (m_sPivotX + dX) * 32 + dx, (m_sPivotY + dY) * 32 + dy, 0, 0, 0, 0);
+								else m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32 + dx, (m_sPivotY + dY) * 32 + dy, 0, 0, 0, 0);
 								if (((m_pData[dX][dY].m_sAppr4 & 0x000F) != 0) && ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
 								}
 								// Snoopy: Angels
 								if ((((m_pData[dX][dY].m_iStatus & 0x00000F00) >> 8) > rand() % 6) // Angel stars
 									&& ((m_pData[dX][dY].m_iStatus & 0x0000F000) != 0)
 									&& ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
 								}
 								m_pGame->PlaySound('C', 10, sDist, lPan);
 							}
@@ -2461,34 +2461,34 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 								}
 								if (((m_pData[dX][dY].m_sAppr4 & 0x000F) != 0) && ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + dx + (rand() % 20 - 10), (m_sPivotY + dY) * 32 + dy - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
 								}
 								//Snoopy: Angels						
 								if ((((m_pData[dX][dY].m_iStatus & 0x00000F00) >> 8) > rand() % 6) // Angel stars
 									&& ((m_pData[dX][dY].m_iStatus & 0x0000F000) != 0)
 									&& ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
 								}
 							}
 							else if (m_pData[dX][dY].m_cOwnerFrame == 4) // vu comme case 4
 							{
 								if ((m_pGame->m_cWhetherEffectType >= 1) && (m_pGame->m_cWhetherEffectType <= 3))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT_RAIN, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT_RAIN, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT_RAIN, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT_RAIN, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT_RAIN, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(32, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(32, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(32, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(32, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(32, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
 								}
 								else
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32 + ((rand() % 20) - 10), (m_sPivotY + dY) * 32 + ((rand() % 20) - 10), 0, 0, 0, 0);
 								}
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', 11, sDist, lPan);
 							}
@@ -2521,13 +2521,13 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 						case 65: // IceGolem
 							if (m_pData[dX][dY].m_cOwnerFrame == 2)
 							{
-								m_pGame->m_pEffectManager->AddEffect(EffectType::AURA_EFFECT_1, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+								m_pGame->m_pEffectManager->AddEffect(73, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
 							}
 							break;
 						case 87: // void CGame::DrawDruncncity();Crossbow Turret (Heldenian)
 							if (m_pData[dX][dY].m_cOwnerFrame == 2)
 							{
-								m_pGame->m_pEffectManager->AddEffect(EffectType::GATE_ROUND, m_sPivotX + m_pData[dX][dY].m_sV1, m_sPivotY + m_pData[dX][dY].m_sV2
+								m_pGame->m_pEffectManager->AddEffect(250, m_sPivotX + m_pData[dX][dY].m_sV1, m_sPivotY + m_pData[dX][dY].m_sV2
 									, m_sPivotX + m_pData[dX][dY].m_sV1 + dX, m_sPivotY + m_pData[dX][dY].m_sV2 + dY, 0, 87);
 								//m_pGame->PlaySound('E', 43, sDist, lPan); // Son "wouufffff"
 							}
@@ -2535,7 +2535,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 						case 89: // void CGame::DrawDruncncity();AGT (Heldenian)
 							if (m_pData[dX][dY].m_cOwnerFrame == 2)
 							{
-								m_pGame->m_pEffectManager->AddEffect(EffectType::ARROW_FLYING, m_sPivotX + m_pData[dX][dY].m_sV1, m_sPivotY + m_pData[dX][dY].m_sV2
+								m_pGame->m_pEffectManager->AddEffect(2, m_sPivotX + m_pData[dX][dY].m_sV1, m_sPivotY + m_pData[dX][dY].m_sV2
 									, m_sPivotX + m_pData[dX][dY].m_sV1 + dX, m_sPivotY + m_pData[dX][dY].m_sV2 + dY, 0, 89);
 								//m_pGame->PlaySound('E', 43, sDist, lPan); // Son "wouufffff"
 							}
@@ -2550,7 +2550,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 							{
 								if (m_pGame->bHasHeroSet(m_pData[dX][dY].m_sAppr3, m_pData[dX][dY].m_sAppr4, m_pData[dX][dY].m_sOwnerType) == 1) // Warr hero set
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::WAR_HERO_SET, m_sPivotX + dX, m_sPivotY + dY
+									m_pGame->m_pEffectManager->AddEffect(243, m_sPivotX + dX, m_sPivotY + dY
 										, m_sPivotX + dX, m_sPivotY + dY, 0, 1);
 								}
 								switch (m_pData[dX][dY].m_sOwnerType) {	// Son pour critiques
@@ -2572,20 +2572,20 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 								{
 									if (m_pData[dX][dY].m_sV3 != 1) // autre que corp � corp
 									{
-										m_pGame->m_pEffectManager->AddEffect(static_cast<EffectType>(m_pData[dX][dY].m_sV3), m_sPivotX + dX, m_sPivotY + dY
+										m_pGame->m_pEffectManager->AddEffect(m_pData[dX][dY].m_sV3, m_sPivotX + dX, m_sPivotY + dY
 											, m_sPivotX + dX + m_pData[dX][dY].m_sV1, m_sPivotY + dY + m_pData[dX][dY].m_sV2
 											, 0, m_pData[dX][dY].m_sOwnerType);
 										if (m_pData[dX][dY].m_sV3 >= 20) m_pGame->PlaySound('E', 43, sDist, lPan); // Son "loup�"
 									}
 									if (((m_pData[dX][dY].m_sAppr2 & 0x0FF0) >> 4) == 15) // StormBlade
 									{
-										m_pGame->m_pEffectManager->AddEffect(EffectType::STORM_BLADE, m_sPivotX + dX, m_sPivotY + dY
+										m_pGame->m_pEffectManager->AddEffect(81, m_sPivotX + dX, m_sPivotY + dY
 											, m_sPivotX + dX + m_pData[dX][dY].m_sV1, m_sPivotY + dY + m_pData[dX][dY].m_sV2
 											, 0, m_pData[dX][dY].m_sOwnerType);
 									}
 									else
 									{
-										m_pGame->m_pEffectManager->AddEffect(EffectType::GATE_ROUND, m_sPivotX + dX, m_sPivotY + dY
+										m_pGame->m_pEffectManager->AddEffect(250, m_sPivotX + dX, m_sPivotY + dY
 											, m_sPivotX + dX + m_pData[dX][dY].m_sV1, m_sPivotY + dY + m_pData[dX][dY].m_sV2
 											, 0, m_pData[dX][dY].m_sOwnerType);
 									}
@@ -2593,15 +2593,15 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 								// Weapon Glare = m_sAppr4 & 0x000F
 								if (((m_pData[dX][dY].m_sAppr4 & 0x000F) != 0) && ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
 								}
 								//Snoopy: Angels
 								if ((((m_pData[dX][dY].m_iStatus & 0x00000F00) >> 8) > rand() % 6) // Angel stars
 									&& ((m_pData[dX][dY].m_iStatus & 0x0000F000) != 0)
 									&& ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
 								}
 							}
 							break;
@@ -2611,7 +2611,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 							{
 								if (m_pData[dX][dY].m_sV3 == 2) // Arrow flying...
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::ARROW_FLYING, m_sPivotX + dX, m_sPivotY + dY
+									m_pGame->m_pEffectManager->AddEffect(2, m_sPivotX + dX, m_sPivotY + dY
 										, m_sPivotX + dX + m_pData[dX][dY].m_sV1
 										, m_sPivotY + dY + m_pData[dX][dY].m_sV2
 										, 0, m_pData[dX][dY].m_sOwnerType * 1000);
@@ -2952,7 +2952,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 									iSoundIndex = 7;
 								else iSoundIndex = 5;
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
+								m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
 							}
 							if (m_pData[dX][dY].m_cOwnerFrame == 5)
 							{
@@ -2976,7 +2976,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 									iSoundIndex = 7;
 								else iSoundIndex = 5;
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
+								m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
 							}
 							if (m_pData[dX][dY].m_cOwnerFrame == 5)
 							{
@@ -3002,11 +3002,11 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
 								if (iSoundIndex == 7) // Change the effect for Arrows hitting (no more at fixed heigh with arrow flying but on damage)
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, m_pData[dX][dY].m_sOwnerType);
+									m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, m_pData[dX][dY].m_sOwnerType);
 								}
 								else
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
+									m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
 								}
 							}
 
@@ -3208,7 +3208,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 								else iSoundIndex = 5;
 
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
+								m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
 							}
 							if (m_pData[dX][dY].m_cOwnerFrame == 2)
 							{
@@ -3233,7 +3233,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 									iSoundIndex = 7;
 								else iSoundIndex = 5;
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
+								m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
 							}
 							if (m_pData[dX][dY].m_cOwnerFrame == 2)
 							{
@@ -3256,7 +3256,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 									iSoundIndex = 7;
 								else iSoundIndex = 5;
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
+								m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 4);
 							}
 
 							switch (m_pData[dX][dY].m_sOwnerType) {
@@ -3476,26 +3476,26 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', 16, sDist, lPan);
 								if (((m_pData[dX][dY].m_sAppr4 & 0x000F) != 0) && ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 20 - 10), (m_sPivotY + dY) * 32 - (rand() % 50) - 5, 0, 0, -(rand() % 8), 0);
 								}
 								//Snoopy: Angels
 								if ((((m_pData[dX][dY].m_iStatus & 0x00000F00) >> 8) > rand() % 6) // Angel stars
 									&& ((m_pData[dX][dY].m_iStatus & 0x0000F000) != 0)
 									&& ((m_pData[dX][dY].m_iStatus & 0x10) == 0))
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::STAR_TWINKLE, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
+									m_pGame->m_pEffectManager->AddEffect(54, (m_sPivotX + dX) * 32 + (rand() % 15 + 10), (m_sPivotY + dY) * 32 - (rand() % 30) - 50, 0, 0, -(rand() % 8), 0);
 								}
 								if (m_pGame->bHasHeroSet(m_pData[dX][dY].m_sAppr3, m_pData[dX][dY].m_sAppr4, m_pData[dX][dY].m_sOwnerType) == 2) // Mage hero set
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MAGE_HERO_SET, m_sPivotX + dX, m_sPivotY + dY
+									m_pGame->m_pEffectManager->AddEffect(242, m_sPivotX + dX, m_sPivotY + dY
 										, m_sPivotX + dX, m_sPivotY + dY, 0, 1);
 								}
 								if (m_pData[dX][dY].m_sV1 >= 70) // effet gros sorts autour du caster
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BUFF_EFFECT_LIGHT, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(57, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
 								if (m_pData[dX][dY].m_sV1 == 82) // lumi�re si MassMagicMissile autour du caster
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MASS_MM_AURA_CASTER, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(244, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
 								}
 							}
 							break;
@@ -3525,7 +3525,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 									iSoundIndex = 7;
 								else iSoundIndex = 5;
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 12);
+								m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 12);
 							}
 							if (m_pData[dX][dY].m_cOwnerFrame == 7)
 							{
@@ -3551,7 +3551,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 									iSoundIndex = 7;
 								else iSoundIndex = 5;
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 12);
+								m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 12);
 							}
 							if (m_pData[dX][dY].m_cOwnerFrame == 7)
 							{
@@ -3574,7 +3574,7 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 									iSoundIndex = 7;
 								else iSoundIndex = 5;
 								if (m_pData[dX][dY].m_bSpriteOmit) m_pGame->PlaySound('C', iSoundIndex, sDist, lPan);
-								m_pGame->m_pEffectManager->AddEffect(EffectType::NORMAL_HIT, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 12);
+								m_pGame->m_pEffectManager->AddEffect(1, m_sPivotX + dX, m_sPivotY + dY, 0, 0, 0, 12);
 							}
 
 							switch (m_pData[dX][dY].m_sOwnerType) {
@@ -3603,9 +3603,9 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 
 							case 65: // IceGolem
 								//							if (m_pData[dX][dY].m_cOwnerFrame == 1)
-								//								m_pGame->m_pEffectManager->AddEffect(EffectType::AURA_EFFECT_2, (m_sPivotX+dX)*32, (m_sPivotY+dY)*32, 0, 0, 0 );
+								//								m_pGame->m_pEffectManager->AddEffect(74, (m_sPivotX+dX)*32, (m_sPivotY+dY)*32, 0, 0, 0 );
 								if (m_pData[dX][dY].m_cOwnerFrame == 5) {
-									m_pGame->m_pEffectManager->AddEffect(EffectType::AURA_EFFECT_2, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(74, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0);
 									m_pGame->PlaySound('M', 36, sDist, lPan);
 								}
 								break;
@@ -3693,30 +3693,30 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 							case 42: // ManaStone
 								if (m_pData[dX][dY].m_cOwnerFrame == 3)
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_EXPLOSION, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(66, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
 								}
 								break;
 
 							case 87: // Snoopy: CrossBowTurret
 								if (m_pData[dX][dY].m_cOwnerFrame == 3)
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_EXPLOSION, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(66, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
 								}
 								if (m_pData[dX][dY].m_cOwnerFrame == 1)
 									m_pGame->PlaySound('M', 154, sDist, lPan);
@@ -3725,15 +3725,15 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 							case 89: // Snoopy: CannonTurret
 								if (m_pData[dX][dY].m_cOwnerFrame == 3)
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_EXPLOSION, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(66, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60), 0, 0, -1 * (rand() % 2));
 								}
 								if (m_pData[dX][dY].m_cOwnerFrame == 1)
 									m_pGame->PlaySound('M', 156, sDist, lPan);
@@ -3742,15 +3742,15 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 							case 51: // CP
 								if (m_pData[dX][dY].m_cOwnerFrame == 1)
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_EXPLOSION, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32 - 30, 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(66, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32 - 30, 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
 								}
 								break;
 
@@ -3761,16 +3761,16 @@ int CMapData::iObjectFrameCounter(char* cPlayerName, short sViewPointX, short sV
 								}
 								if (m_pData[dX][dY].m_cOwnerFrame == 11)
 								{
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_EXPLOSION, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32 - 30, 0, 0, 0, 0);
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::BURST_LARGE, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(66, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32 - 30, 0, 0, 0, 0);
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(12, (m_sPivotX + dX) * 32 + 5 - (rand() % 10), (m_sPivotY + dY) * 32 + 5 - (rand() % 10) - 30, 0, 0, -1 * (rand() % 2));
 
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
-									m_pGame->m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
+									m_pGame->m_pEffectManager->AddEffect(65, (m_sPivotX + dX) * 32 + 30 - (rand() % 60), (m_sPivotY + dY) * 32 + 30 - (rand() % 60) - 30, 0, 0, -1 * (rand() % 2));
 								}
 								break;
 
@@ -3948,9 +3948,9 @@ bool CMapData::bSetItem(short sX, short sY, short sIDnum, char cItemColor, uint3
 		if (bDropEffect == true)
 		{
 			m_pGame->PlaySound('E', 11, sDist);
-			m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
-			m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (10 - (rand() % 20)), 0, 0, (rand() % 2), 0);
-			m_pGame->m_pEffectManager->AddEffect(EffectType::FOOTPRINT, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (10 - (rand() % 20)), 0, 0, (rand() % 2), 0);
+			m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+			m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (10 - (rand() % 20)), 0, 0, (rand() % 2), 0);
+			m_pGame->m_pEffectManager->AddEffect(14, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (10 - (rand() % 20)), 0, 0, (rand() % 2), 0);
 		}
 	}
 
@@ -4147,10 +4147,10 @@ bool CMapData::bSetDynamicObject(short sX, short sY, uint16_t wID, short sType, 
 	case 0:
 		if (sPrevType == DEF_DYNAMICOBJECT_FIRE)
 		{
-			m_pGame->m_pEffectManager->AddEffect(EffectType::RED_CLOUD_PARTICLES, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
-			m_pGame->m_pEffectManager->AddEffect(EffectType::RED_CLOUD_PARTICLES, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (20 - (rand() % 40)), 0, 0, 0, 0);
-			m_pGame->m_pEffectManager->AddEffect(EffectType::RED_CLOUD_PARTICLES, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (20 - (rand() % 40)), 0, 0, 0, 0);
-			m_pGame->m_pEffectManager->AddEffect(EffectType::RED_CLOUD_PARTICLES, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (20 - (rand() % 40)), 0, 0, 0, 0);
+			m_pGame->m_pEffectManager->AddEffect(15, (m_sPivotX + dX) * 32, (m_sPivotY + dY) * 32, 0, 0, 0, 0);
+			m_pGame->m_pEffectManager->AddEffect(15, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (20 - (rand() % 40)), 0, 0, 0, 0);
+			m_pGame->m_pEffectManager->AddEffect(15, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (20 - (rand() % 40)), 0, 0, 0, 0);
+			m_pGame->m_pEffectManager->AddEffect(15, (m_sPivotX + dX) * 32 + (10 - (rand() % 20)), (m_sPivotY + dY) * 32 + (20 - (rand() % 40)), 0, 0, 0, 0);
 		}
 		else if ((sPrevType == DEF_DYNAMICOBJECT_PCLOUD_BEGIN) || (sPrevType == DEF_DYNAMICOBJECT_PCLOUD_LOOP))
 		{
