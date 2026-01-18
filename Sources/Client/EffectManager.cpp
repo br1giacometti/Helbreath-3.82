@@ -53,7 +53,7 @@ void EffectManager::ClearAllEffects()
 //   - Effect_Draw.cpp
 //   - Effect_Lights.cpp
 
-void EffectManager::AddEffect(short sType, int sX, int sY, int dX, int dY, char cStartFrame, int iV1)
+void EffectManager::AddEffect(EffectType sType, int sX, int sY, int dX, int dY, char cStartFrame, int iV1)
 {
 	AddEffectImpl(sType, sX, sY, dX, dY, cStartFrame, iV1);
 }
