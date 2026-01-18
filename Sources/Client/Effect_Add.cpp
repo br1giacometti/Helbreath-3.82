@@ -12,7 +12,7 @@
 
 extern int _iAttackerHeight[];
 
-void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, char cStartFrame, int iV1)
+void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int dY, char cStartFrame, int iV1)
 {
 	int i;
 	short sAbsX, sAbsY, sDist;
@@ -21,12 +21,12 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 	if (ConfigManager::Get().GetDetailLevel() == 0) // Detail Level Low
 	{
 		switch (sType) {
-		case 8:
-		case 9:
-		case 11:
-		case 12:
-		case 14:
-		case 15:
+		case EffectType::BURST_SMALL:
+		case EffectType::BURST_MEDIUM:
+		case EffectType::BURST_SMALL_GRENADE:
+		case EffectType::BURST_LARGE:
+		case EffectType::FOOTPRINT:
+		case EffectType::RED_CLOUD_PARTICLES:
 			return;
 		}
 	}
@@ -55,7 +55,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 			m_pEffectList[i]->m_dwTime = m_pGame->m_dwCurTime;
 
 			switch (sType) {
-			case 1: // coup normal
+			case EffectType::NORMAL_HIT: // coup normal
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - _iAttackerHeight[iV1];
 				m_pEffectList[i]->m_iErr = 0;
@@ -63,7 +63,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 2:	// Fl�che qui vole
+			case EffectType::ARROW_FLYING:	// Fl�che qui vole
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - _iAttackerHeight[iV1];
 				m_pEffectList[i]->m_iErr = 0;
@@ -73,7 +73,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('C', 4, sDist);
 				break;
 
-			case 4: // Gold
+			case EffectType::GOLD_DROP: // Gold
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32;
 				m_pEffectList[i]->m_cMaxFrame = 12;
@@ -86,7 +86,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 12, sDist, lPan);
 				break;
 
-			case 5: // FireBall Fire Explosion
+			case EffectType::FIREBALL_EXPLOSION: // FireBall Fire Explosion
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 11;
@@ -101,8 +101,8 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case 6:	 // Energy Bolt
-			case 10: // Lightning Arrow
+			case EffectType::ENERGY_BOLT_EXPLOSION:	 // Energy Bolt
+			case EffectType::LIGHTNING_ARROW_EXPLOSION: // Lightning Arrow
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 14;
@@ -117,7 +117,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case 7: // Magic Missile Explosion
+			case EffectType::MAGIC_MISSILE_EXPLOSION: // Magic Missile Explosion
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 5;
@@ -131,14 +131,14 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 3, sDist, lPan);
 				break;
 
-			case 8: // Burst
+			case EffectType::BURST_SMALL: // Burst
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 4;
 				m_pEffectList[i]->m_dwFrameTime = 30;
 				break;
 
-			case 9: // Burst
+			case EffectType::BURST_MEDIUM: // Burst
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_rX = 6 - (rand() % 12);
@@ -147,7 +147,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 30;
 				break;
 
-			case 11:
+			case EffectType::BURST_SMALL_GRENADE:
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_rX = 6 - (rand() % 12);
@@ -158,7 +158,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 30;
 				break;
 
-			case 12: // Burst
+			case EffectType::BURST_LARGE: // Burst
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_rX = 8 - (rand() % 16);
@@ -167,14 +167,14 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 30;
 				break;
 
-			case 13: // Bulles druncncity
+			case EffectType::BUBBLES_DRUNK: // Bulles druncncity
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 18;
 				m_pEffectList[i]->m_dwFrameTime = 20;
 				break;
 
-			case 14: // Traces de pas ou Tremor (pas en low detail)
+			case EffectType::FOOTPRINT: // Traces de pas ou Tremor (pas en low detail)
 				m_pEffectList[i]->m_mX = sX;
 			if (m_pEffectList[i]->m_iV1 > 0) // Case if hit by an arrow
 			{
@@ -187,14 +187,14 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_iV1 = iV1;
 				break;
 
-			case 15: //
+			case EffectType::RED_CLOUD_PARTICLES: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 16;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				break;
 
-			case 16: //
+			case EffectType::PROJECTILE_GENERIC: //
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -202,7 +202,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 20;
 				break;
 
-			case 17:
+			case EffectType::ICE_STORM:
 				m_pEffectList[i]->m_mX = sX + (rand() % 20) - 40;
 				m_pEffectList[i]->m_mY = sY + (rand() % 20) - 40;
 				m_pEffectList[i]->m_rX = 8 - (rand() % 16);
@@ -213,7 +213,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 20;
 				break;
 
-			case 18:
+			case EffectType::IMPACT_BURST:
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 10;
@@ -226,14 +226,14 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case 20:
-			case 21:
-			case 22:
-			case 23:
-			case 24:
-			case 25:
-			case 26:
-			case 27: // Critical strike with a weapon
+			case EffectType::CRITICAL_STRIKE_1:
+			case EffectType::CRITICAL_STRIKE_2:
+			case EffectType::CRITICAL_STRIKE_3:
+			case EffectType::CRITICAL_STRIKE_4:
+			case EffectType::CRITICAL_STRIKE_5:
+			case EffectType::CRITICAL_STRIKE_6:
+			case EffectType::CRITICAL_STRIKE_7:
+			case EffectType::CRITICAL_STRIKE_8: // Critical strike with a weapon
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -242,7 +242,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_cDir = CMisc::cCalcDirection(sX, sY, dX, dY);
 				break;
 
-			case 30: // Mass-Fire-Strike (called 1 time)
+			case EffectType::MASS_FIRE_STRIKE_CALLER1: // Mass-Fire-Strike (called 1 time)
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 9;
@@ -257,8 +257,8 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist * 2);
 				break;
 
-			case 31: // Mass-Fire-Strike (called 3 times)
-			case 252: //
+			case EffectType::MASS_FIRE_STRIKE_CALLER3: // Mass-Fire-Strike (called 3 times)
+			case EffectType::SALMON_BURST_IMPACT: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 8;
@@ -273,7 +273,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case 32: //
+			case EffectType::FOOTPRINT_RAIN: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_iErr = 0;
@@ -281,7 +281,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 100;
 				break;
 
-			case 33: //
+			case EffectType::IMPACT_EFFECT: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 16;
@@ -302,7 +302,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case 35: // Snoopy: rajout (pour Mass Magic-Missile)
+			case EffectType::MASS_MAGIC_MISSILE_AURA1: // Snoopy: rajout (pour Mass Magic-Missile)
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 18;
@@ -317,7 +317,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist * 2);
 				break;
 
-			case 36: // Snoopy: Rajout (pour Mass Magic-Missile)
+			case EffectType::MASS_MAGIC_MISSILE_AURA2: // Snoopy: Rajout (pour Mass Magic-Missile)
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
@@ -332,7 +332,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case 40: //
+			case EffectType::CHILL_WIND_IMPACT: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
@@ -346,12 +346,12 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 45, sDist, lPan);
 				break;
 
-			case 41: // Large Type 1, 2, 3, 4
-			case 42:
-			case 43:
-			case 44:
-			case 45: // Small Type 1, 2
-			case 46:
+			case EffectType::ICE_STRIKE_VARIANT_1: // Large Type 1, 2, 3, 4
+			case EffectType::ICE_STRIKE_VARIANT_2:
+			case EffectType::ICE_STRIKE_VARIANT_3:
+			case EffectType::ICE_STRIKE_VARIANT_4:
+			case EffectType::ICE_STRIKE_VARIANT_5: // Small Type 1, 2
+			case EffectType::ICE_STRIKE_VARIANT_6:
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY - 220;
 				m_pEffectList[i]->m_cMaxFrame = 14;
@@ -366,9 +366,9 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 46, sDist, lPan);
 				break;
 
-			case 47: // Blizzard
-			case 48: // Blizzard
-			case 49: // Blizzard
+			case EffectType::BLIZZARD_VARIANT_1: // Blizzard
+			case EffectType::BLIZZARD_VARIANT_2: // Blizzard
+			case EffectType::BLIZZARD_VARIANT_3: // Blizzard
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY - 220;
 				m_pEffectList[i]->m_cMaxFrame = 12;
@@ -383,7 +383,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 46, sDist, lPan);
 				break;
 
-			case 50: //
+			case EffectType::SMOKE_DUST: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 12;
@@ -398,14 +398,14 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 47, sDist, lPan);
 				break;
 
-			case 51:
+			case EffectType::SPARKLE_SMALL:
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 9; //15;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				break;
 
-			case 52: // Protect ring
+			case EffectType::PROTECTION_RING: // Protect ring
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
@@ -419,7 +419,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 53: // Hold twist
+			case EffectType::HOLD_TWIST: // Hold twist
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
@@ -433,7 +433,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 54: // star twingkling (effect armes brillantes)
+			case EffectType::STAR_TWINKLE: // star twingkling (effect armes brillantes)
 			case 55: // Unused
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
@@ -441,7 +441,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 15;
 				break;
 
-			case 56: //  Mass-Chill-Wind
+			case EffectType::MASS_CHILL_WIND: //  Mass-Chill-Wind
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 14;
@@ -455,21 +455,21 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 45, sDist, lPan);
 				break;
 
-			case 57: //
+			case EffectType::BUFF_EFFECT_LIGHT: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 16;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				break;
 
-			case 60: //
+			case EffectType::METEOR_FLYING: //
 				m_pEffectList[i]->m_mX = sX + 300;
 				m_pEffectList[i]->m_mY = sY - 460;
 				m_pEffectList[i]->m_cMaxFrame = 10;
 				m_pEffectList[i]->m_dwFrameTime = 50;
 				break;
 
-			case 61: //
+			case EffectType::FIRE_AURA_GROUND: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 16;
@@ -484,35 +484,35 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist, 2);
 				break;
 
-			case 62: //
+			case EffectType::METEOR_IMPACT: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 6;
 				m_pEffectList[i]->m_dwFrameTime = 100;
 				break;
 
-			case 63: //
+			case EffectType::FIRE_EXPLOSION_CRUSADE: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 16;
 				m_pEffectList[i]->m_dwFrameTime = 20;
 				break;
 
-			case 64: //
+			case EffectType::WHITE_HALO: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
 				m_pEffectList[i]->m_dwFrameTime = 20;
 				break;
 
-			case 65: // Crusade's MS
+			case EffectType::MS_CRUSADE_CASTING: // Crusade's MS
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 30;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				break;
 
-			case 66: // Crusade MS explosion
+			case EffectType::MS_CRUSADE_EXPLOSION: // Crusade MS explosion
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 14;
@@ -527,14 +527,14 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist, 2);
 				break;
 
-			case 67: // Crusade's MS fire + smoke ?
+			case EffectType::MS_FIRE_SMOKE: // Crusade's MS fire + smoke ?
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 27;
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 68: // worm-bite
+			case EffectType::WORM_BITE: // worm-bite
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 17;
@@ -550,7 +550,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				//game->SetCameraShakingEffect(sDist, 2);
 				break;
 
-			case 69: // identique au cas 70
+			case EffectType::LIGHT_EFFECT_1: // identique au cas 70
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 11;
@@ -564,7 +564,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 42, sDist, lPan);
 				break;
 
-			case 70: // identtique au cas 69
+			case EffectType::LIGHT_EFFECT_2: // identtique au cas 69
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 11;
@@ -578,7 +578,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 42, sDist, lPan);
 				break;
 
-			case 71: //
+			case EffectType::BLIZZARD_PROJECTILE: //
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32;
 				m_pEffectList[i]->m_iErr = 0;
@@ -592,7 +592,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case 72: // Blizzard
+			case EffectType::BLIZZARD_IMPACT: // Blizzard
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
@@ -607,21 +607,21 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 47, sDist, lPan);
 				break;
 
-			case 73:
+			case EffectType::AURA_EFFECT_1:
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
 				m_pEffectList[i]->m_dwFrameTime = 60;
 				break;
 
-			case 74:
+			case EffectType::AURA_EFFECT_2:
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 19;
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case 75: //ice golem
+			case EffectType::ICE_GOLEM_EFFECT_1: //ice golem
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_dX = dX;
@@ -630,7 +630,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case 76: //ice golem
+			case EffectType::ICE_GOLEM_EFFECT_2: //ice golem
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_dX = dX;
@@ -639,7 +639,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case 77: //ice golem
+			case EffectType::ICE_GOLEM_EFFECT_3: //ice golem
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_dX = dX;
@@ -648,7 +648,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case 80: // Snoopy: rajou�, impl�ment� en dernier ds la v351
+			case EffectType::EARTH_SHOCK_WAVE_PARTICLE: // Snoopy: rajou�, impl�ment� en dernier ds la v351
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_iV1 = 20;
@@ -662,7 +662,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case 81: //  Snoopy: Rajout (StormBlade)
+			case EffectType::STORM_BLADE: //  Snoopy: Rajout (StormBlade)
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32;
 				m_pEffectList[i]->m_iErr = 0;
@@ -670,12 +670,12 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case 82: //  Snoopy: Rajout (Gate Apocalypse)
+			case EffectType::GATE_APOCALYPSE: //  Snoopy: Rajout (Gate Apocalypse)
 				m_pEffectList[i]->m_cMaxFrame = 30;
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case 100: // MagicMissile is Flying
+			case EffectType::MAGIC_MISSILE_FLYING: // MagicMissile is Flying
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -685,35 +685,35 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 1, sDist, lPan);
 				break;
 
-			case 101: // Heal
-			case 111: // Staminar-Drain
-			case 121: // Great Heal
-			case 123: // Staminar-Recovery
-			case 128: // Great-Staminar-Recovery
+			case EffectType::HEAL: // Heal
+			case EffectType::STAMINA_DRAIN: // Staminar-Drain
+			case EffectType::GREAT_HEAL: // Great Heal
+			case EffectType::STAMINA_RECOVERY: // Staminar-Recovery
+			case EffectType::GREAT_STAMINA_RECOVERY: // Great-Staminar-Recovery
 				m_pEffectList[i]->m_cMaxFrame = 14;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 102: // CreateFood
+			case EffectType::CREATE_FOOD: // CreateFood
 			case 122: // Recall
-			case 126: // Possession
-			case 127: // Poison
-			case 134: // DetectInvi
-			case 136: // Cure
-			case 142: // Confuse language
-			case 152: // Polymorph
-			case 153: // Mass-Poison
-			case 162: // Confusion
-			case 171: // Mass-Confusion
+			case EffectType::POSSESSION: // Possession
+			case EffectType::POISON: // Poison
+			case EffectType::DETECT_INVISIBILITY: // DetectInvi
+			case EffectType::CURE: // Cure
+			case EffectType::CONFUSE_LANGUAGE: // Confuse language
+			case EffectType::POLYMORPH: // Polymorph
+			case EffectType::MASS_POISON: // Mass-Poison
+			case EffectType::CONFUSION: // Confusion
+			case EffectType::MASS_CONFUSION: // Mass-Confusion
 				m_pEffectList[i]->m_cMaxFrame = 13;
 				m_pEffectList[i]->m_dwFrameTime = 120;
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 110: // Energy-Bolt
+			case EffectType::ENERGY_BOLT_FLYING: // Energy-Bolt
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -723,18 +723,18 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 1, sDist, lPan);
 				break;
 
-			case 112: // Recall
-			case 131: // Summon
-			case 132: // Invi
-			case 178: // Haste
+			case EffectType::RECALL: // Recall
+			case EffectType::SUMMON_CREATURE: // Summon
+			case EffectType::INVISIBILITY: // Invi
+			case EffectType::HASTE: // Haste
 				m_pEffectList[i]->m_cMaxFrame = 12;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 113: // Defense-Shield
-			case 144: // Great-Defense-Shield
+			case EffectType::DEFENSE_SHIELD: // Defense-Shield
+			case EffectType::GREAT_DEFENSE_SHIELD: // Great-Defense-Shield
 				m_pEffectList[i]->m_cMaxFrame = 12;
 				m_pEffectList[i]->m_dwFrameTime = 120;
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
@@ -751,7 +751,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectSpr[i] = 0;
 				break;
 
-			case 120: // Fire Ball
+			case EffectType::FIRE_BALL_FLYING: // Fire Ball
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -762,22 +762,22 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 1, sDist, lPan);
 				break;
 
-			case 124: // Protect form N.M
-			case 133: // Protection from Magic
+			case EffectType::PROTECT_FROM_NM: // Protect form N.M
+			case EffectType::PROTECT_FROM_MAGIC: // Protection from Magic
 				AddEffectImpl( 52, dX * 32, dY * 32, 0, 0, 0, 0);
 				delete m_pEffectSpr[i];
 				m_pEffectSpr[i] = 0;
 				break;
 
-			case 125: // Hold Person
-			case 135: // Paralyze
+			case EffectType::HOLD_PERSON: // Hold Person
+			case EffectType::PARALYZE: // Paralyze
 				AddEffectImpl( 53, dX * 32, dY * 32, 0, 0, 0, 0);
 				delete m_pEffectSpr[i];
 				m_pEffectSpr[i] = 0;
 				break;
 
-			case 130: // Fire Strike
-			case 137: // Lightning Arrow
+			case EffectType::FIRE_STRIKE_FLYING: // Fire Strike
+			case EffectType::LIGHTNING_ARROW_FLYING: // Lightning Arrow
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -788,7 +788,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 1, sDist, lPan);
 				break;
 
-			case 138: // Tremor.
+			case EffectType::TREMOR: // Tremor.
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 4, sDist, lPan);
 				m_pGame->SetCameraShakingEffect(sDist, 2);
@@ -811,7 +811,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 143: // Lightning
+			case EffectType::LIGHTNING: // Lightning
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 50;
 				m_pEffectList[i]->m_iErr = 0;
@@ -823,29 +823,29 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 40, sDist, lPan);
 				break;
 
-			case 145: // ChillWind
+			case EffectType::CHILL_WIND: // ChillWind
 				m_pEffectList[i]->m_cMaxFrame = 2;
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 147: // Triple-Energy-Bolt
+			case EffectType::TRIPLE_ENERGY_BOLT: // Triple-Energy-Bolt
 				m_pEffectList[i]->m_cMaxFrame = 0;
 				m_pEffectList[i]->m_dwFrameTime = 20;
 				break;
 
-			case 150: // Berserk : Cirlcle 6 magic
-			case 177: // Illusion-Movement
-			case 180: // Illusion
-			case 183: // Inhibition-Casting
-			case 190: // Mass-Illusion
-			case 195: // Mass-Illusion-Movement
+			case EffectType::BERSERK: // Berserk : Cirlcle 6 magic
+			case EffectType::ILLUSION_MOVEMENT: // Illusion-Movement
+			case EffectType::ILLUSION: // Illusion
+			case EffectType::INHIBITION_CASTING: // Inhibition-Casting
+			case EffectType::MASS_ILLUSION: // Mass-Illusion
+			case EffectType::MASS_ILLUSION_MOVEMENT: // Mass-Illusion-Movement
 				m_pEffectList[i]->m_cMaxFrame = 11;
 				m_pEffectList[i]->m_dwFrameTime = 100;
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 151: // LightningBolt
+			case EffectType::LIGHTNING_BOLT: // LightningBolt
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 50;
 				m_pEffectList[i]->m_iErr = 0;
@@ -857,23 +857,23 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 40, sDist, lPan);
 				break;
 
-			case 156: // Mass-Ligtning-Arrow
+			case EffectType::MASS_LIGHTNING_ARROW: // Mass-Ligtning-Arrow
 				m_pEffectList[i]->m_cMaxFrame = 3;
 				m_pEffectList[i]->m_dwFrameTime = 130;
 				break;
 
-			case 157: // Ice-Strike
+			case EffectType::ICE_STRIKE: // Ice-Strike
 				m_pEffectList[i]->m_cMaxFrame = 2;
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 160: // Energy-Strike
+			case EffectType::ENERGY_STRIKE: // Energy-Strike
 				m_pEffectList[i]->m_cMaxFrame = 7;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				break;
 
-			case 161: // Mass-Fire-Strike
-			case 251: //
+			case EffectType::MASS_FIRE_STRIKE_FLYING: // Mass-Fire-Strike
+			case EffectType::SALMON_BURST: //
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -884,12 +884,12 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 1, sDist, lPan);
 				break;
 
-			case 163: // Mass-Chill-Wind
+			case EffectType::MASS_CHILL_WIND_SPELL: // Mass-Chill-Wind
 				m_pEffectList[i]->m_cMaxFrame = 2;
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 164: // worm-bite
+			case EffectType::WORM_BITE_MASS: // worm-bite
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 4, sDist, lPan);
 				AddEffectImpl( 14, dX * 32 + (rand() % 120) - 60, dY * 32 + (rand() % 80) - 40, 0, 0, 0, 0);
@@ -911,36 +911,36 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 165: // Absolute-Magic-Protection
+			case EffectType::ABSOLUTE_MAGIC_PROTECTION: // Absolute-Magic-Protection
 				m_pEffectList[i]->m_cMaxFrame = 21;
 				m_pEffectList[i]->m_dwFrameTime = 70;
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 166: // Armor Break
+			case EffectType::ARMOR_BREAK: // Armor Break
 				m_pEffectList[i]->m_cMaxFrame = 13;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				lPan = -(((m_pGame->m_sViewPointX / 32) + fixx) - sX) * fixpan;
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 170: // Bloody-Shock-Wave
+			case EffectType::BLOODY_SHOCK_WAVE: // Bloody-Shock-Wave
 				m_pEffectList[i]->m_cMaxFrame = 7;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				break;
 
-			case 172: // Mass-Ice-Strike
+			case EffectType::MASS_ICE_STRIKE: // Mass-Ice-Strike
 				m_pEffectList[i]->m_cMaxFrame = 2;
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 174: // Lightning-Strike
+			case EffectType::LIGHTNING_STRIKE: // Lightning-Strike
 				m_pEffectList[i]->m_cMaxFrame = 5;
 				m_pEffectList[i]->m_dwFrameTime = 120;
 				break;
 
-			case 176: // Snoopy: Ajout Cancellation
+			case EffectType::CANCELLATION: // Snoopy: Ajout Cancellation
 				m_pEffectList[i]->m_cMaxFrame = 23;
 				m_pEffectList[i]->m_dwFrameTime = 60;
 				sDist = sDist / 32;
@@ -948,14 +948,14 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 181: // MS
+			case EffectType::METEOR_STRIKE_DESCENDING: // MS
 				m_pEffectList[i]->m_mX = dX * 32 + 300;
 				m_pEffectList[i]->m_mY = dY * 32 - 460;
 				m_pEffectList[i]->m_cMaxFrame = 10;
 				m_pEffectList[i]->m_dwFrameTime = 25;
 				break;
 
-			case 182: // Snoopy: Ajout Mass-Magic-Missile
+			case EffectType::MASS_MAGIC_MISSILE_FLYING: // Snoopy: Ajout Mass-Magic-Missile
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -965,7 +965,7 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pGame->PlaySound('E', 1, sDist, lPan);
 				break;
 
-			case 244: // Snoopy: d�plac� pour nvx sorts: Aura du casteur de Mass MagicMissile
+			case EffectType::MASS_MM_AURA_CASTER: // Snoopy: d�plac� pour nvx sorts: Aura du casteur de Mass MagicMissile
 				//case 184: // effet sur le caster pour MassMM
 				m_pEffectList[i]->m_cMaxFrame = 29;
 				m_pEffectList[i]->m_dwFrameTime = 80;
@@ -973,29 +973,29 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				m_pEffectList[i]->m_mY = sY;
 				break;
 
-			case 191: // Blizzard
+			case EffectType::BLIZZARD: // Blizzard
 				m_pEffectList[i]->m_cMaxFrame = 7;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				break;
 
 				//case 192: // Hero set Effect
-			case 242: // Hero set Effect
+			case EffectType::MAGE_HERO_SET: // Hero set Effect
 				m_pEffectList[i]->m_cMaxFrame = 30;
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
 				//case 193: // Hero set Effect
-			case 243: // Hero set Effect
+			case EffectType::WAR_HERO_SET: // Hero set Effect
 				m_pEffectList[i]->m_cMaxFrame = 19;
 				m_pEffectList[i]->m_dwFrameTime = 18;
 				break;
 
-			case 194: // Resurrection
+			case EffectType::RESURRECTION: // Resurrection
 				m_pEffectList[i]->m_cMaxFrame = 30;
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case 196: // Snoopy: Ajout de Earth-Shock-Wave
+			case EffectType::EARTH_SHOCK_WAVE: // Snoopy: Ajout de Earth-Shock-Wave
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32;
 				m_pEffectList[i]->m_iErr = 0;
@@ -1008,38 +1008,38 @@ void EffectManager::AddEffectImpl(short sType, int sX, int sY, int dX, int dY, c
 				sDist = sDist / 32;
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
-			case 200: //
-			case 201: //
-			case 202: //
+			case EffectType::SHOTSTAR_FALL_1: //
+			case EffectType::SHOTSTAR_FALL_2: //
+			case EffectType::SHOTSTAR_FALL_3: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
 				m_pEffectList[i]->m_dwFrameTime = 25;
 				break;
 
-			case 203: //
+			case EffectType::EXPLOSION_FIRE_APOCALYPSE: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 18;
 				m_pEffectList[i]->m_dwFrameTime = 70;
 				break;
 
-			case 204: //
-			case 205: //
+			case EffectType::CRACK_OBLIQUE: //
+			case EffectType::CRACK_HORIZONTAL: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 12;
 				m_pEffectList[i]->m_dwFrameTime = 70;
 				break;
 
-			case 206: //
+			case EffectType::STEAMS_SMOKE: //
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 3;
 				m_pEffectList[i]->m_dwFrameTime = 70;
 				break;
 
-			case 250: //
+			case EffectType::GATE_ROUND: //
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
