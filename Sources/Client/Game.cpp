@@ -2006,36 +2006,36 @@ void CGame::DrawObjects(short sPivotX, short sPivotY, short sDivX, short sDivY, 
 						break;
 
 					case 370: // nuit
-						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 9) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(65, m_sViewPointX + ix - 16 + 30, m_sViewPointY + iy - 16 - 334, 0, 0, 0, 0);
-						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 11) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(65, m_sViewPointX + ix - 16 + 17, m_sViewPointY + iy - 16 - 300, 0, 0, 0, 0);
+						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 9) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix - 16 + 30, m_sViewPointY + iy - 16 - 334, 0, 0, 0, 0);
+						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 11) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix - 16 + 17, m_sViewPointY + iy - 16 - 300, 0, 0, 0, 0);
 						break;
 
 					case 374: // nuit
-						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 2) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(65, m_sViewPointX + ix - 7, m_sViewPointY + iy - 122, 0, 0, 0, 0);
-						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 6) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(65, m_sViewPointX + ix - 14, m_sViewPointY + iy - 321, 0, 0, 0, 0);
-						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 7) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(65, m_sViewPointX + ix + 7, m_sViewPointY + iy - 356, 0, 0, 0, 0);
+						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 2) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix - 7, m_sViewPointY + iy - 122, 0, 0, 0, 0);
+						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 6) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix - 14, m_sViewPointY + iy - 321, 0, 0, 0, 0);
+						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 7) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix + 7, m_sViewPointY + iy - 356, 0, 0, 0, 0);
 						break;
 
 					case 376: // nuit
 						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 12) && (G_cSpriteAlphaDegree == 2)) {
-							m_pEffectManager->AddEffect(65, m_sViewPointX + ix - 16, m_sViewPointY + iy - 346, 0, 0, 0, 0);
-							m_pEffectManager->AddEffect(65, m_sViewPointX + ix + 11, m_sViewPointY + iy - 308, 0, 0, 0, 0);
+							m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix - 16, m_sViewPointY + iy - 346, 0, 0, 0, 0);
+							m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix + 11, m_sViewPointY + iy - 308, 0, 0, 0, 0);
 						}
 						break;
 
 					case 378: // nuit
-						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 11) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(65, m_sViewPointX + ix, m_sViewPointY + iy - 91, 0, 0, 0, 0);
+						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 11) && (G_cSpriteAlphaDegree == 2)) m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix, m_sViewPointY + iy - 91, 0, 0, 0, 0);
 						break;
 
 					case 382: // nuit
 						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 9) && (G_cSpriteAlphaDegree == 2)) {
-							m_pEffectManager->AddEffect(65, m_sViewPointX + ix + 73, m_sViewPointY + iy - 264, 0, 0, 0, 0);
-							m_pEffectManager->AddEffect(65, m_sViewPointX + ix + 23, m_sViewPointY + iy - 228, 0, 0, 0, 0);
+							m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix + 73, m_sViewPointY + iy - 264, 0, 0, 0, 0);
+							m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix + 23, m_sViewPointY + iy - 228, 0, 0, 0, 0);
 						}
 						break;
 
 					case 429:
-						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 2)) m_pEffectManager->AddEffect(65, m_sViewPointX + ix - 15, m_sViewPointY + iy - 224, 0, 0, 0, 0);
+						if (((dwTime - m_dwEnvEffectTime) > 400) && (sObjSprFrame == 2)) m_pEffectManager->AddEffect(EffectType::MS_CRUSADE_CASTING, m_sViewPointX + ix - 15, m_sViewPointY + iy - 224, 0, 0, 0, 0);
 						break;
 					}
 				}
@@ -4058,7 +4058,7 @@ void CGame::CommonEventHandler(char* pData)
 		dwV4 = pkt->v4;
 	}
 	if ((sV1 == 6) && (sV2 == 0)) {
-		m_pEffectManager->AddEffect(4, sX, sY, 0, 0, 0);
+		m_pEffectManager->AddEffect(EffectType::GOLD_DROP, sX, sY, 0, 0, 0);
 	}
 	m_pMapData->bSetItem(sX, sY, sV1, (char)sV3, dwV4);
 	break;
@@ -11216,7 +11216,7 @@ void CGame::LogEventHandler(char* pData)
 		case 45: // GHKABS
 		case 46: // TK
 		case 47: // BG
-			m_pEffectManager->AddEffect(64, (sX) * 32, (sY) * 32, 0, 0, 0);
+			m_pEffectManager->AddEffect(EffectType::WHITE_HALO, (sX) * 32, (sY) * 32, 0, 0, 0);
 			break;
 		}
 		break;
@@ -23218,7 +23218,7 @@ void CGame::DrawScreen_OnGame()
 
 	// Druncncity bubbles
 	if (m_cMapIndex == 25)
-		m_pEffectManager->AddEffect(13, m_sViewPointX + rand() % LOGICAL_MAX_X, m_sViewPointY + rand() % LOGICAL_MAX_Y, 0, 0, -1 * (rand() % 80), 1);
+		m_pEffectManager->AddEffect(EffectType::BUBBLES_DRUNK, m_sViewPointX + rand() % LOGICAL_MAX_X, m_sViewPointY + rand() % LOGICAL_MAX_Y, 0, 0, -1 * (rand() % 80), 1);
 
 	// Heldenian tower count
 	if ((m_iHeldenianAresdenLeftTower != -1) && (memcmp(m_cCurLocation, "BtField", 7) == 0)) {
