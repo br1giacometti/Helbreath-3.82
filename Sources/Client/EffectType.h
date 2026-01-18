@@ -49,6 +49,7 @@ enum class EffectType : short
 	MASS_FIRE_STRIKE_CALLER3 = 31, // Mass fire strike explosion (caller 3)
 	FOOTPRINT_RAIN = 32,            // Footprint variant for rain weather
 	IMPACT_EFFECT = 33,             // Generic impact visual
+	BLOODY_SHOCK_STRIKE = 34,       // Bloody shock wave strike (spawned by type 81)
 
 	// Mass Magic Missile (35-36)
 	MASS_MAGIC_MISSILE_AURA1 = 35, // Mass MM aura effect 1
@@ -72,6 +73,7 @@ enum class EffectType : short
 	PROTECTION_RING = 52,        // Protection/defense buff aura
 	HOLD_TWIST = 53,             // Hold/paralyze effect aura
 	STAR_TWINKLE = 54,           // Weapon shine/twinkle
+	UNUSED_55 = 55,              // [UNUSED] Falls through to STAR_TWINKLE behavior
 
 	// Mass Chill Wind (56-57)
 	MASS_CHILL_WIND = 56,        // Mass chill wind area effect
@@ -119,7 +121,7 @@ enum class EffectType : short
 
 	FIRE_BALL_FLYING = 120,         // Fire Ball (Circle 3)
 	GREAT_HEAL = 121,
-	// 122 = [ABSENT in v220/351]
+	UNUSED_122 = 122,               // [UNUSED - ABSENT in v220/351] Falls through to buff spell behavior
 	STAMINA_RECOVERY = 123,
 	PROTECT_FROM_NM = 124,
 	HOLD_PERSON = 125,
@@ -174,10 +176,12 @@ enum class EffectType : short
 	METEOR_STRIKE_DESCENDING = 181,
 	MASS_MAGIC_MISSILE_FLYING = 182,
 	INHIBITION_CASTING = 183,
+	MAGIC_DRAIN = 184,              // EP's Magic Drain effect
 
 	MASS_ILLUSION = 190,            // (Circle 10)
 	BLIZZARD = 191,
-
+	ICE_RAIN_VARIANT_1 = 192,       // Ice rain variant 1
+	ICE_RAIN_VARIANT_2 = 193,       // Ice rain variant 2
 	RESURRECTION = 194,
 	MASS_ILLUSION_MOVEMENT = 195,
 	EARTH_SHOCK_WAVE = 196,

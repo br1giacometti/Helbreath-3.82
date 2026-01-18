@@ -204,31 +204,31 @@ void EffectManager::UpdateEffectsImpl()
 				case EffectType::ICE_STORM: // Ice-Storm
 					cDir = CMisc::cGetNextMoveDir(m_pEffectList[i]->m_mX, m_pEffectList[i]->m_mY, m_pEffectList[i]->m_mX3, m_pEffectList[i]->m_mY3);
 					switch (cDir) {
-					case EffectType::NORMAL_HIT:
+					case 1: // North
 						m_pEffectList[i]->m_rY -= 2;
 						break;
-					case EffectType::ARROW_FLYING:
+					case 2: // NorthEast
 						m_pEffectList[i]->m_rY -= 2;
 						m_pEffectList[i]->m_rX += 2;
 						break;
-					case 3:
+					case 3: // East
 						m_pEffectList[i]->m_rX += 2;
 						break;
-					case EffectType::GOLD_DROP:
+					case 4: // SouthEast
 						m_pEffectList[i]->m_rX += 2;
 						m_pEffectList[i]->m_rY += 2;
 						break;
-					case EffectType::FIREBALL_EXPLOSION:
+					case 5: // South
 						m_pEffectList[i]->m_rY += 2;
 						break;
-					case EffectType::ENERGY_BOLT_EXPLOSION:
+					case 6: // SouthWest
 						m_pEffectList[i]->m_rX -= 2;
 						m_pEffectList[i]->m_rY += 2;
 						break;
-					case EffectType::MAGIC_MISSILE_EXPLOSION:
+					case 7: // West
 						m_pEffectList[i]->m_rX -= 2;
 						break;
-					case EffectType::BURST_SMALL:
+					case 8: // NorthWest
 						m_pEffectList[i]->m_rX -= 2;
 						m_pEffectList[i]->m_rY -= 2;
 						break;
@@ -276,7 +276,7 @@ void EffectManager::UpdateEffectsImpl()
 					}
 					break;
 
-				case 34: //
+				case EffectType::BLOODY_SHOCK_STRIKE: //
 					CMisc::GetPoint(m_pEffectList[i]->m_mX, m_pEffectList[i]->m_mY,
 						m_pEffectList[i]->m_dX, m_pEffectList[i]->m_dY,
 						&m_pEffectList[i]->m_mX, &m_pEffectList[i]->m_mY,
@@ -451,7 +451,7 @@ void EffectManager::UpdateEffectsImpl()
 					}
 					break;
 
-				case EffectType::STORM_BLADE: // Snoopy: Ajout StromBlade
+				case EffectType::STORM_BLADE: // Snoopy: Added StromBlade
 					CMisc::GetPoint(m_pEffectList[i]->m_mX
 						, m_pEffectList[i]->m_mY
 						, m_pEffectList[i]->m_dX * 32
@@ -685,7 +685,7 @@ void EffectManager::UpdateEffectsImpl()
 					}
 					else if ((m_pEffectList[i]->m_cFrame % 2) == 0)
 					{
-						AddEffectImpl(34, m_pEffectList[i]->m_sX, m_pEffectList[i]->m_sY,
+						AddEffectImpl(EffectType::BLOODY_SHOCK_STRIKE, m_pEffectList[i]->m_sX, m_pEffectList[i]->m_sY,
 							m_pEffectList[i]->m_dX * 32 + 30 - (rand() % 60), m_pEffectList[i]->m_dY * 32 + 30 - (rand() % 60), 0);
 						sAbsX = abs(((m_pGame->m_sViewPointX / 32) + VIEW_CENTER_TILE_X) - m_pEffectList[i]->m_dX);
 						sAbsY = abs(((m_pGame->m_sViewPointY / 32) + VIEW_CENTER_TILE_Y) - m_pEffectList[i]->m_dY);
@@ -916,7 +916,7 @@ void EffectManager::UpdateEffectsImpl()
 				case EffectType::PROTECTION_RING:
 				case EffectType::HOLD_TWIST:
 				case EffectType::STAR_TWINKLE:
-				case 55:
+				case EffectType::UNUSED_55:
 				case EffectType::BUFF_EFFECT_LIGHT:
 				case EffectType::FIRE_AURA_GROUND:
 				case EffectType::FIRE_EXPLOSION_CRUSADE:
@@ -937,7 +937,7 @@ void EffectManager::UpdateEffectsImpl()
 				case EffectType::RECALL:
 				case EffectType::DEFENSE_SHIELD:
 				case EffectType::GREAT_HEAL:
-				case 122:
+				case EffectType::UNUSED_122:
 				case EffectType::STAMINA_RECOVERY: // Stamina Rec
 				case EffectType::PROTECT_FROM_NM:
 				case EffectType::HOLD_PERSON:
@@ -964,15 +964,15 @@ void EffectManager::UpdateEffectsImpl()
 
 				case EffectType::ILLUSION:
 				case EffectType::INHIBITION_CASTING: //
-				case 184: // EP's Magic Drain
+				case EffectType::MAGIC_DRAIN: // EP's Magic Drain
 				case EffectType::MASS_ILLUSION:
-				case 192:
-				case 193:
+				case EffectType::ICE_RAIN_VARIANT_1:
+				case EffectType::ICE_RAIN_VARIANT_2:
 				case EffectType::RESURRECTION:
 				case EffectType::MASS_ILLUSION_MOVEMENT:
 				case EffectType::MAGE_HERO_SET: // Mage hero effect
 				case EffectType::WAR_HERO_SET: // War hero effect
-				case EffectType::MASS_MM_AURA_CASTER: // Snoopy: d�plac� pour nvx sorts: Aura du casteur de Mass MagicMissile
+				case EffectType::MASS_MM_AURA_CASTER: // Snoopy: Moved for new spells: Caster aura for Mass MagicMissile
 					if (m_pEffectList[i]->m_cFrame > m_pEffectList[i]->m_cMaxFrame)
 					{
 						delete m_pEffectList[i];

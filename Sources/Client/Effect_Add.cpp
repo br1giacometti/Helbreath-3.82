@@ -63,7 +63,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case EffectType::ARROW_FLYING:	// Fl�che qui vole
+			case EffectType::ARROW_FLYING:	// Arrow Flying
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - _iAttackerHeight[iV1];
 				m_pEffectList[i]->m_iErr = 0;
@@ -174,7 +174,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pEffectList[i]->m_dwFrameTime = 20;
 				break;
 
-			case EffectType::FOOTPRINT: // Traces de pas ou Tremor (pas en low detail)
+			case EffectType::FOOTPRINT: // Traces of pas ou Tremor (pas en low detail)
 				m_pEffectList[i]->m_mX = sX;
 			if (m_pEffectList[i]->m_iV1 > 0) // Case if hit by an arrow
 			{
@@ -288,7 +288,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pEffectList[i]->m_dwFrameTime = 10;
 				break;
 
-			case 34: //
+			case EffectType::BLOODY_SHOCK_STRIKE: //
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -302,7 +302,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case EffectType::MASS_MAGIC_MISSILE_AURA1: // Snoopy: rajout (pour Mass Magic-Missile)
+			case EffectType::MASS_MAGIC_MISSILE_AURA1: // Snoopy: Added for Mass Magic-Missile
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 18;
@@ -317,7 +317,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pGame->SetCameraShakingEffect(sDist * 2);
 				break;
 
-			case EffectType::MASS_MAGIC_MISSILE_AURA2: // Snoopy: Rajout (pour Mass Magic-Missile)
+			case EffectType::MASS_MAGIC_MISSILE_AURA2: // Snoopy: Added for Mass Magic-Missile
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 15;
@@ -434,7 +434,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				break;
 
 			case EffectType::STAR_TWINKLE: // star twingkling (effect armes brillantes)
-			case 55: // Unused
+			case EffectType::UNUSED_55: // Unused
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_cMaxFrame = 10;
@@ -648,7 +648,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case EffectType::EARTH_SHOCK_WAVE_PARTICLE: // Snoopy: rajou�, impl�ment� en dernier ds la v351
+			case EffectType::EARTH_SHOCK_WAVE_PARTICLE: // Snoopy: Added, implemented last in v351
 				m_pEffectList[i]->m_mX = sX;
 				m_pEffectList[i]->m_mY = sY;
 				m_pEffectList[i]->m_iV1 = 20;
@@ -662,7 +662,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pGame->SetCameraShakingEffect(sDist);
 				break;
 
-			case EffectType::STORM_BLADE: //  Snoopy: Rajout (StormBlade)
+			case EffectType::STORM_BLADE: //  Snoopy: Added (StormBlade)
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32;
 				m_pEffectList[i]->m_iErr = 0;
@@ -670,7 +670,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case EffectType::GATE_APOCALYPSE: //  Snoopy: Rajout (Gate Apocalypse)
+			case EffectType::GATE_APOCALYPSE: //  Snoopy: Added (Gate Apocalypse)
 				m_pEffectList[i]->m_cMaxFrame = 30;
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
@@ -697,7 +697,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				break;
 
 			case EffectType::CREATE_FOOD: // CreateFood
-			case 122: // Recall
+			case EffectType::UNUSED_122: // Recall
 			case EffectType::POSSESSION: // Possession
 			case EffectType::POISON: // Poison
 			case EffectType::DETECT_INVISIBILITY: // DetectInvi
@@ -940,7 +940,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pEffectList[i]->m_dwFrameTime = 120;
 				break;
 
-			case EffectType::CANCELLATION: // Snoopy: Ajout Cancellation
+			case EffectType::CANCELLATION: // Snoopy: Added Cancellation
 				m_pEffectList[i]->m_cMaxFrame = 23;
 				m_pEffectList[i]->m_dwFrameTime = 60;
 				sDist = sDist / 32;
@@ -955,7 +955,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pEffectList[i]->m_dwFrameTime = 25;
 				break;
 
-			case EffectType::MASS_MAGIC_MISSILE_FLYING: // Snoopy: Ajout Mass-Magic-Missile
+			case EffectType::MASS_MAGIC_MISSILE_FLYING: // Snoopy: Added Mass-Magic-Missile
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32 - 40;
 				m_pEffectList[i]->m_iErr = 0;
@@ -965,8 +965,8 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pGame->PlaySound('E', 1, sDist, lPan);
 				break;
 
-			case EffectType::MASS_MM_AURA_CASTER: // Snoopy: d�plac� pour nvx sorts: Aura du casteur de Mass MagicMissile
-				//case 184: // effet sur le caster pour MassMM
+			case EffectType::MASS_MM_AURA_CASTER: // Snoopy: Moved for new spells: Caster aura for Mass MagicMissile
+				//case 184: // Effect on caster for MassMM
 				m_pEffectList[i]->m_cMaxFrame = 29;
 				m_pEffectList[i]->m_dwFrameTime = 80;
 				m_pEffectList[i]->m_mX = sX;
@@ -995,7 +995,7 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pEffectList[i]->m_dwFrameTime = 40;
 				break;
 
-			case EffectType::EARTH_SHOCK_WAVE: // Snoopy: Ajout de Earth-Shock-Wave
+			case EffectType::EARTH_SHOCK_WAVE: // Snoopy: Added Earth-Shock-Wave
 				m_pEffectList[i]->m_mX = sX * 32;
 				m_pEffectList[i]->m_mY = sY * 32;
 				m_pEffectList[i]->m_iErr = 0;

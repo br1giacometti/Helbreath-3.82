@@ -368,4 +368,24 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # Claude AI - auto-generated files
-tmpclaude*cwd
+tmpclaude*
+settings.local.json
+.claude/settings.local.json
+
+# Backup files (git handles versioning)
+*.bak
+*.bak2
+*.bak3
+*.bak4
+*.backup
+
+# Binaries and compiled files
+Binaries/
+Debug/
+
+# Log files
+*.log
+
+# Compressed backups
+*.7z
+*.zip

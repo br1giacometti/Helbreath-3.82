@@ -22,14 +22,14 @@ void EffectManager::DrawEffectsImpl()
 		if ((m_pEffectList[i] != 0) && (m_pEffectList[i]->m_cFrame >= 0))
 		{
 			switch (m_pEffectList[i]->m_sType) {
-			case 1: // Normal hit
+			case EffectType::NORMAL_HIT: // Normal hit
 				if (m_pEffectList[i]->m_cFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[8]->PutTransSprite_NoColorKey(dX, dY, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
-			case 2: // Arrow flying
+			case EffectType::ARROW_FLYING: // Arrow flying
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = (m_pEffectList[i]->m_cDir - 1) * 2;
@@ -37,7 +37,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[7]->PutSpriteFast(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 4: // gold
+			case EffectType::GOLD_DROP: // gold
 				/// 1.5
 				if (m_pEffectList[i]->m_cFrame < 9) break;
 				cTempFrame = m_pEffectList[i]->m_cFrame - 9;
@@ -47,7 +47,7 @@ void EffectManager::DrawEffectsImpl()
 
 				break;
 
-			case 5: // FireBall Fire Explosion
+			case EffectType::FIREBALL_EXPLOSION: // FireBall Fire Explosion
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -58,8 +58,8 @@ void EffectManager::DrawEffectsImpl()
 				else m_pEffectSpr[3]->PutTransSpriteRGB(dX, dY, cTempFrame, iDvalue, iDvalue, iDvalue, dwTime);
 				break;
 
-			case 6:	 // Energy Bolt
-			case 10: // Lightning Arrow
+			case EffectType::ENERGY_BOLT_EXPLOSION:	 // Energy Bolt
+			case EffectType::LIGHTNING_ARROW_EXPLOSION: // Lightning Arrow
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -70,7 +70,7 @@ void EffectManager::DrawEffectsImpl()
 				else m_pEffectSpr[6]->PutTransSpriteRGB(dX, dY, cTempFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				break;
 
-			case 7: // Magic Missile Explosion
+			case EffectType::MAGIC_MISSILE_EXPLOSION: // Magic Missile Explosion
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
@@ -80,7 +80,7 @@ void EffectManager::DrawEffectsImpl()
 				else m_pEffectSpr[6]->PutTransSpriteRGB(dX, dY, cTempFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				break;
 
-			case 8: // Burst
+			case EffectType::BURST_SMALL: // Burst
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				cTempFrame = 4 - cTempFrame;
 				if (cTempFrame < 0) break;
@@ -89,7 +89,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[11]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 9: // Burst
+			case EffectType::BURST_MEDIUM: // Burst
 				cTempFrame = (rand() % 5);
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -97,7 +97,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[11]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 11: // pt grenat
+			case EffectType::BURST_SMALL_GRENADE: // pt grenat
 				cTempFrame = (rand() % 5) + 5;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -105,7 +105,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[11]->PutTransSprite2(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 12: // Burst
+			case EffectType::BURST_LARGE: // Burst
 				cTempFrame = (rand() % 6) + 10;
 				if (cTempFrame < 0) break;
 				iDvalue = (m_pEffectList[i]->m_cFrame - 4) * (-3);
@@ -118,7 +118,7 @@ void EffectManager::DrawEffectsImpl()
 					m_pEffectSpr[11]->PutTransSprite(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 13:
+			case EffectType::BUBBLES_DRUNK:
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -133,14 +133,14 @@ void EffectManager::DrawEffectsImpl()
 				}
 				break;
 
-			case 14: // Traces de pas (terrain sec)
+			case EffectType::FOOTPRINT: // Traces of pas (terrain sec)
 				if (m_pEffectList[i]->m_cFrame < 0) break;
 				dX = m_pEffectList[i]->m_mX - m_pGame->m_sViewPointX;
 				dY = m_pEffectList[i]->m_mY - m_pGame->m_sViewPointY;
 				m_pEffectSpr[11]->PutTransSprite50_NoColorKey(dX, dY, (28 + m_pEffectList[i]->m_cFrame), dwTime);
 				break;
 
-			case 15: // petits nuages rouges
+			case EffectType::RED_CLOUD_PARTICLES: // petits nuages rouges
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = m_pEffectList[i]->m_mX - m_pGame->m_sViewPointX;
@@ -148,13 +148,13 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[11]->PutTransSprite50_NoColorKey(dX, dY, (33 + cTempFrame), dwTime);
 				break;
 
-			case 16: //
+			case EffectType::PROJECTILE_GENERIC: //
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[0]->PutTransSprite_NoColorKey(dX, dY, 0, dwTime);
 				break;
 
-			case 17: //test
+			case EffectType::ICE_STORM: //test
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = 39 + (rand() % 3) * 3 + (rand() % 3);
@@ -165,7 +165,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[11]->PutTransSprite50_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 18: //
+			case EffectType::IMPACT_BURST: //
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = m_pEffectList[i]->m_cFrame;
@@ -173,20 +173,20 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[18]->PutTransSprite70_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 20: // critical hit
-			case 21:
-			case 22:
-			case 23:
-			case 24:
-			case 25:
-			case 26:
-			case 27: // Critical strike with a weapon
+			case EffectType::CRITICAL_STRIKE_1: // critical hit
+			case EffectType::CRITICAL_STRIKE_2:
+			case EffectType::CRITICAL_STRIKE_3:
+			case EffectType::CRITICAL_STRIKE_4:
+			case EffectType::CRITICAL_STRIKE_5:
+			case EffectType::CRITICAL_STRIKE_6:
+			case EffectType::CRITICAL_STRIKE_7:
+			case EffectType::CRITICAL_STRIKE_8: // Critical strike with a weapon
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[8]->PutTransSprite_NoColorKey(dX, dY, 1, dwTime);
 				break;
 
-			case 30: // Mass-Fire-Strike
+			case EffectType::MASS_FIRE_STRIKE_CALLER1: // Mass-Fire-Strike
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = m_pEffectList[i]->m_cFrame;
@@ -194,7 +194,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[14]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 31: // Mass-Fire-Strike
+			case EffectType::MASS_FIRE_STRIKE_CALLER3: // Mass-Fire-Strike
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = m_pEffectList[i]->m_cFrame;
@@ -202,7 +202,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[15]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 32: // Trace de pas  (raining weather)
+			case EffectType::FOOTPRINT_RAIN: // Trace of pas  (raining weather)
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = m_pEffectList[i]->m_cFrame + 20;
@@ -210,7 +210,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[11]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 33: //
+			case EffectType::IMPACT_EFFECT: //
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = m_pEffectList[i]->m_cFrame;
@@ -219,26 +219,24 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[19]->PutTransSpriteRGB(dX, dY, cTempFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				break;
 
-			case 34: // absent (220 et 351)
+			case EffectType::BLOODY_SHOCK_STRIKE: // absent (220 et 351)
 				break;
 
-			case 35: // Snoopy: Ajout
-				if (m_pEffectList[i]->m_cFrame < 0) break;
+			case EffectType::MASS_MAGIC_MISSILE_AURA1: // Snoopy: Added if (m_pEffectList[i]->m_cFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				m_pEffectSpr[6]->PutTransSprite_NoColorKey(dX - 30, dY - 18, cTempFrame, dwTime);
 				break;
 
-			case 36: // Snoopy: Ajout
-				if (m_pEffectList[i]->m_cFrame < 0) break;
+			case EffectType::MASS_MAGIC_MISSILE_AURA2: // Snoopy: Added if (m_pEffectList[i]->m_cFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				m_pEffectSpr[97]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 40:
+			case EffectType::CHILL_WIND_IMPACT:
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -246,12 +244,12 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[20]->PutTransSprite50_NoColorKey(dX, dY, cTempFrame, dwTime); // 20
 				break;
 
-			case 41: // Large Type 1, 2, 3, 4
-			case 42:
-			case 43:
-			case 44:
-			case 45: // Small Type 1, 2
-			case 46:
+			case EffectType::ICE_STRIKE_VARIANT_1: // Large Type 1, 2, 3, 4
+			case EffectType::ICE_STRIKE_VARIANT_2:
+			case EffectType::ICE_STRIKE_VARIANT_3:
+			case EffectType::ICE_STRIKE_VARIANT_4:
+			case EffectType::ICE_STRIKE_VARIANT_5: // Small Type 1, 2
+			case EffectType::ICE_STRIKE_VARIANT_6:
 				dX = (m_pEffectList[i]->m_sX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_sY) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[21]->PutFadeSprite(dX, dY, 48, dwTime);
@@ -259,24 +257,24 @@ void EffectManager::DrawEffectsImpl()
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
-				if ((8 * (m_pEffectList[i]->static_cast<int>(m_sType)- 41) + cTempFrame) < (8 * (m_pEffectList[i]->static_cast<int>(m_sType)- 41) + 7))
+				if ((8 * (static_cast<int>(m_pEffectList[i]->m_sType) - 41) + cTempFrame) < (8 * (static_cast<int>(m_pEffectList[i]->m_sType) - 41) + 7))
 				{
 					iDvalue = -8 * (6 - cTempFrame);
-					m_pEffectSpr[21]->PutTransSpriteRGB(dX, dY, 8 * (m_pEffectList[i]->static_cast<int>(m_sType)- 41) + cTempFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
+					m_pEffectSpr[21]->PutTransSpriteRGB(dX, dY, 8 * (static_cast<int>(m_pEffectList[i]->m_sType) - 41) + cTempFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				}
 				else
 				{
 					if ((cTempFrame - 5) >= 8) cTempFrame = ((cTempFrame - 5) - 8) + 5;
-					m_pEffectSpr[21]->PutSpriteFast(dX, dY, 8 * (m_pEffectList[i]->static_cast<int>(m_sType)- 41) + (cTempFrame - 5), dwTime);
+					m_pEffectSpr[21]->PutSpriteFast(dX, dY, 8 * (static_cast<int>(m_pEffectList[i]->m_sType) - 41) + (cTempFrame - 5), dwTime);
 				}
 				break;
 
-			case 47:
-			case 48:
-			case 49: // Blizzard
+			case EffectType::BLIZZARD_VARIANT_1:
+			case EffectType::BLIZZARD_VARIANT_2:
+			case EffectType::BLIZZARD_VARIANT_3: // Blizzard
 				dX = (m_pEffectList[i]->m_sX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_sY) - m_pGame->m_sViewPointY;
-				m_pEffectSpr[m_pEffectList[i]->static_cast<int>(m_sType)- 1]->PutRevTransSprite(dX, dY, 0, dwTime);
+				m_pEffectSpr[static_cast<int>(m_pEffectList[i]->m_sType) - 1]->PutRevTransSprite(dX, dY, 0, dwTime);
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -284,15 +282,15 @@ void EffectManager::DrawEffectsImpl()
 				//PutString(dX, dY, "*", RGB(255,255,255);
 				if (cTempFrame < 7) {
 					iDvalue = -8 * (6 - cTempFrame);
-					m_pEffectSpr[m_pEffectList[i]->static_cast<int>(m_sType)- 1]->PutTransSpriteRGB(dX, dY, cTempFrame + 1, iDvalue, iDvalue, iDvalue, dwTime);
+					m_pEffectSpr[static_cast<int>(m_pEffectList[i]->m_sType) - 1]->PutTransSpriteRGB(dX, dY, cTempFrame + 1, iDvalue, iDvalue, iDvalue, dwTime);
 				}
 				else {
 					if (cTempFrame >= 8) cTempFrame = cTempFrame % 8;
-					m_pEffectSpr[m_pEffectList[i]->static_cast<int>(m_sType)- 1]->PutSpriteFast(dX, dY, cTempFrame + 1, dwTime);
+					m_pEffectSpr[static_cast<int>(m_pEffectList[i]->m_sType) - 1]->PutSpriteFast(dX, dY, cTempFrame + 1, dwTime);
 				}
 				break;
 
-			case 50:
+			case EffectType::SMOKE_DUST:
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -308,7 +306,7 @@ void EffectManager::DrawEffectsImpl()
 				}
 				break;
 
-			case 51: //
+			case EffectType::SPARKLE_SMALL: //
 				cTempFrame = m_pEffectList[i]->m_cFrame + 11; //15
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -317,7 +315,7 @@ void EffectManager::DrawEffectsImpl()
 				break;
 
 
-			case 52: // Protection Ring commente par siementec, a voir
+			case EffectType::PROTECTION_RING: // Protection Ring commente par siementec, a voir
 				/*			cTempFrame = m_pEffectList[i]->m_cFrame;
 					dX  = (m_pEffectList[i]->m_mX)  - m_pGame->m_sViewPointX;
 					dY  = (m_pEffectList[i]->m_mY)  - m_pGame->m_sViewPointY;
@@ -326,7 +324,7 @@ void EffectManager::DrawEffectsImpl()
 				break;
 
 
-			case 53: // Hold Twist
+			case EffectType::HOLD_TWIST: // Hold Twist
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				if (cTempFrame < 0) cTempFrame = 0;
@@ -335,7 +333,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[25]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime); //25
 				break;
 
-			case 54: //  star twingkling (effect armes brillantes)
+			case EffectType::STAR_TWINKLE: //  star twingkling (effect armes brillantes)
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) cTempFrame = 0;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -343,7 +341,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[28]->PutTransSprite(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 55: //
+			case EffectType::UNUSED_55: //
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) cTempFrame = 0;
 				dX = (m_pEffectList[i]->m_mX);
@@ -351,7 +349,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[28]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 56: // Mass-Chill-Wind
+			case EffectType::MASS_CHILL_WIND: // Mass-Chill-Wind
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) cTempFrame = 0;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -359,11 +357,11 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[29]->PutTransSprite50_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 57:  // absent (220 et 351)
+			case EffectType::BUFF_EFFECT_LIGHT:  // absent (220 et 351)
 				break;
 
-			case 60:  //
-			case 181: // MS
+			case EffectType::METEOR_FLYING:  //
+			case EffectType::METEOR_STRIKE_DESCENDING: // MS
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				if (cTempFrame > 4)
@@ -379,7 +377,7 @@ void EffectManager::DrawEffectsImpl()
 				}
 				break;
 
-			case 61: // Fire aura on ground (crueffect1, 1)
+			case EffectType::FIRE_AURA_GROUND: // Fire aura on ground (crueffect1, 1)
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -387,7 +385,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[32]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 62: // MS strike
+			case EffectType::METEOR_IMPACT: // MS strike
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				if (cTempFrame > 0)
@@ -399,7 +397,7 @@ void EffectManager::DrawEffectsImpl()
 				}
 				break;
 
-			case 63: // Fire explosion (crueffect1, 2)
+			case EffectType::FIRE_EXPLOSION_CRUSADE: // Fire explosion (crueffect1, 2)
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -407,7 +405,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[33]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 64: // effet halo blancchatre
+			case EffectType::WHITE_HALO: // Whitish halo effect
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -415,7 +413,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[34]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 65: // MS from crusade striking
+			case EffectType::MS_CRUSADE_CASTING: // MS from crusade striking
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				cTempFrame = cTempFrame / 6;
@@ -424,7 +422,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[31]->PutRevTransSprite(dX, dY, 20 + cTempFrame, dwTime, cTempFrame >> 2);
 				break;
 
-			case 66: // MS explodes on the ground
+			case EffectType::MS_CRUSADE_EXPLOSION: // MS explodes on the ground
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -433,20 +431,20 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[39]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 67: // MS fire with smoke
+			case EffectType::MS_FIRE_SMOKE: // MS fire with smoke
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				switch (rand() % 3) {
-				case 0: m_pEffectSpr[0]->PutTransSprite25_NoColorKey(dX, dY + 20, 1, dwTime); break;
-				case 1: m_pEffectSpr[0]->PutTransSprite50_NoColorKey(dX, dY + 20, 1, dwTime); break;
-				case 2: m_pEffectSpr[0]->PutTransSprite70_NoColorKey(dX, dY + 20, 1, dwTime); break;
+				case EffectType::INVALID: m_pEffectSpr[0]->PutTransSprite25_NoColorKey(dX, dY + 20, 1, dwTime); break;
+				case EffectType::NORMAL_HIT: m_pEffectSpr[0]->PutTransSprite50_NoColorKey(dX, dY + 20, 1, dwTime); break;
+				case EffectType::ARROW_FLYING: m_pEffectSpr[0]->PutTransSprite70_NoColorKey(dX, dY + 20, 1, dwTime); break;
 				}
 				m_pEffectSpr[35]->PutTransSprite70_NoColorKey(dX, dY, cTempFrame / 3, dwTime);
 				break;
 
-			case 68: // worm-bite
+			case EffectType::WORM_BITE: // worm-bite
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -461,17 +459,17 @@ void EffectManager::DrawEffectsImpl()
 				else
 				{
 					switch (cTempFrame) {
-					case 12:
-					case 13:
-					case 14: m_pEffectSpr[40]->PutSpriteFast(dX, dY, 11, dwTime); break;
-					case 15: m_pEffectSpr[40]->PutTransSprite70_NoColorKey(dX, dY, 11, dwTime); break;
-					case 16: m_pEffectSpr[40]->PutTransSprite50_NoColorKey(dX, dY, 11, dwTime); break;
-					case 17: m_pEffectSpr[40]->PutTransSprite25_NoColorKey(dX, dY, 11, dwTime); break;
+					case EffectType::BURST_LARGE:
+					case EffectType::BUBBLES_DRUNK:
+					case EffectType::FOOTPRINT: m_pEffectSpr[40]->PutSpriteFast(dX, dY, 11, dwTime); break;
+					case EffectType::RED_CLOUD_PARTICLES: m_pEffectSpr[40]->PutTransSprite70_NoColorKey(dX, dY, 11, dwTime); break;
+					case EffectType::PROJECTILE_GENERIC: m_pEffectSpr[40]->PutTransSprite50_NoColorKey(dX, dY, 11, dwTime); break;
+					case EffectType::ICE_STORM: m_pEffectSpr[40]->PutTransSprite25_NoColorKey(dX, dY, 11, dwTime); break;
 					}
 				}
 				break;
 
-			case 69: // identique au cas 70
+			case EffectType::LIGHT_EFFECT_1: // identique au cas 70
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -479,7 +477,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[42]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 70: // identique au cas 69
+			case EffectType::LIGHT_EFFECT_2: // identique au cas 69
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -487,10 +485,10 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[43]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 71: // absent v220 et v351
+			case EffectType::BLIZZARD_PROJECTILE: // absent v220 et v351
 				break;
 
-			case 72: // Blizzard
+			case EffectType::BLIZZARD_IMPACT: // Blizzard
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -507,43 +505,43 @@ void EffectManager::DrawEffectsImpl()
 				}
 				break;
 
-			case 73: // absent v220 et v351
-			case 74: // absent v220 et v351
-			case 75: // absent v220 et v351
-			case 76: // absent v220 et v351
-			case 77: // absent v220 et v351
+			case EffectType::AURA_EFFECT_1: // absent v220 et v351
+			case EffectType::AURA_EFFECT_2: // absent v220 et v351
+			case EffectType::ICE_GOLEM_EFFECT_1: // absent v220 et v351
+			case EffectType::ICE_GOLEM_EFFECT_2: // absent v220 et v351
+			case EffectType::ICE_GOLEM_EFFECT_3: // absent v220 et v351
 				break;
 
-			case 80:
-			case 196: // Earth-Shock-Wave
+			case EffectType::EARTH_SHOCK_WAVE_PARTICLE:
+			case EffectType::EARTH_SHOCK_WAVE: // Earth-Shock-Wave
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
-				m_pEffectSpr[91]->PutSpriteFast(dX, dY, cTempFrame, dwTime); //Nbe d'arguments modifi�s ds la 351....
+				m_pEffectSpr[91]->PutSpriteFast(dX, dY, cTempFrame, dwTime); //Nbe d'arguments modifi�s ds the 351....
 				m_pEffectSpr[92]->PutTransSprite(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 81: // Snoopy: Ajout StormBlade
+			case EffectType::STORM_BLADE: // Snoopy: Added StormBlade
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				m_pEffectSpr[100]->PutTransSprite_NoColorKey(dX + 70, dY + 70, cTempFrame, dwTime);
 				break;
 
-			case 82: // Gate (apocalypse)
+			case EffectType::GATE_APOCALYPSE: // Gate (apocalypse)
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				m_pEffectSpr[101]->PutTransSprite_NoColorKey(320, 480, cTempFrame, dwTime);
 				break;
 
-			case 100: // Magic Missile
+			case EffectType::MAGIC_MISSILE_FLYING: // Magic Missile
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[0]->PutTransSprite_NoColorKey(dX, dY, 0, dwTime);
 				break;
 
-			case 101: // Heal
-			case 121: // Great-Heal
+			case EffectType::HEAL: // Heal
+			case EffectType::GREAT_HEAL: // Great-Heal
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -552,20 +550,20 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[50]->PutTransSprite_NoColorKey(dX, dY, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
-			case 102: // Create Food
-			case 124: // Protection from N.M
-			case 125: // Hold-Person
-			case 126: // Possession
-			case 127: // Poison
-			case 133: // Protect-From-Magic
-			case 134: // Detect-Invisibility
-			case 135: // Paralyze
-			case 136: // Cure
-			case 142: // Confuse Language
-			case 152: // Polymorph
-			case 153: // Mass-Poison
-			case 162: // Confusion
-			case 171: // Mass-Confusion
+			case EffectType::CREATE_FOOD: // Create Food
+			case EffectType::PROTECT_FROM_NM: // Protection from N.M
+			case EffectType::HOLD_PERSON: // Hold-Person
+			case EffectType::POSSESSION: // Possession
+			case EffectType::POISON: // Poison
+			case EffectType::PROTECT_FROM_MAGIC: // Protect-From-Magic
+			case EffectType::DETECT_INVISIBILITY: // Detect-Invisibility
+			case EffectType::PARALYZE: // Paralyze
+			case EffectType::CURE: // Cure
+			case EffectType::CONFUSE_LANGUAGE: // Confuse Language
+			case EffectType::POLYMORPH: // Polymorph
+			case EffectType::MASS_POISON: // Mass-Poison
+			case EffectType::CONFUSION: // Confusion
+			case EffectType::MASS_CONFUSION: // Mass-Confusion
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -576,13 +574,13 @@ void EffectManager::DrawEffectsImpl()
 				else m_pEffectSpr[4]->PutTransSpriteRGB(dX, dY, m_pEffectList[i]->m_cFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				break;
 
-			case 110: // Energy-Bolt
+			case EffectType::ENERGY_BOLT_FLYING: // Energy-Bolt
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[0]->PutTransSprite_NoColorKey(dX, dY, 2 + (rand() % 4), dwTime);
 				break;
 
-			case 111: // Staminar Drain
+			case EffectType::STAMINA_DRAIN: // Staminar Drain
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -591,10 +589,10 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[49]->PutTransSprite_NoColorKey(dX, dY, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
-			case 112: // Recall
-			case 131: // Summon-Creature
-			case 132: // Invisibility
-			case 178: // Haste
+			case EffectType::RECALL: // Recall
+			case EffectType::SUMMON_CREATURE: // Summon-Creature
+			case EffectType::INVISIBILITY: // Invisibility
+			case EffectType::HASTE: // Haste
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -603,7 +601,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[52]->PutTransSprite_NoColorKey(dX, dY, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
-			case 113: // Defense Shield
+			case EffectType::DEFENSE_SHIELD: // Defense Shield
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -614,10 +612,10 @@ void EffectManager::DrawEffectsImpl()
 				else m_pEffectSpr[62]->PutTransSpriteRGB(dX, dY, m_pEffectList[i]->m_cFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				break;
 
-			case 120: // Fire Ball
-			case 130: // Fire Strike
-			case 161: // Mass-Fire-Strike
-			case 251: //
+			case EffectType::FIRE_BALL_FLYING: // Fire Ball
+			case EffectType::FIRE_STRIKE_FLYING: // Fire Strike
+			case EffectType::MASS_FIRE_STRIKE_FLYING: // Mass-Fire-Strike
+			case EffectType::SALMON_BURST: //
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				cTempFrame = (m_pEffectList[i]->m_cDir - 1) * 4 + (rand() % 4);
@@ -625,11 +623,11 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[5]->PutTransSprite_NoColorKey(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 122: // Absent v220 et 351
+			case EffectType::UNUSED_122: // Absent v220 et 351
 				break;
 
-			case 123: // Staminar-Recovery
-			case 128: // Great-Staminar-Recovery
+			case EffectType::STAMINA_RECOVERY: // Staminar-Recovery
+			case EffectType::GREAT_STAMINA_RECOVERY: // Great-Staminar-Recovery
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -638,7 +636,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[56]->PutTransSprite_NoColorKey(dX, dY, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
-			case 137: // Lightning Arrow
+			case EffectType::LIGHTNING_ARROW_FLYING: // Lightning Arrow
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				tX = (m_pEffectList[i]->m_mX2) - m_pGame->m_sViewPointX;
@@ -669,7 +667,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[10]->PutTransSprite(dX, dY, cTempFrame, dwTime);
 				break;
 
-			case 143: // Lightning
+			case EffectType::LIGHTNING: // Lightning
 				m_pGame->_DrawThunderEffect(m_pEffectList[i]->m_dX * 32 - m_pGame->m_sViewPointX, m_pEffectList[i]->m_dY * 32 - m_pGame->m_sViewPointY - LOGICAL_WIDTH,
 					m_pEffectList[i]->m_dX * 32 - m_pGame->m_sViewPointX, m_pEffectList[i]->m_dY * 32 - m_pGame->m_sViewPointY,
 					m_pEffectList[i]->m_rX, m_pEffectList[i]->m_rY, 1);
@@ -681,7 +679,7 @@ void EffectManager::DrawEffectsImpl()
 					m_pEffectList[i]->m_rX - 2, m_pEffectList[i]->m_rY - 2, 2);
 				break;
 
-			case 144: // Great-Defense-Shield
+			case EffectType::GREAT_DEFENSE_SHIELD: // Great-Defense-Shield
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -692,7 +690,7 @@ void EffectManager::DrawEffectsImpl()
 				else m_pEffectSpr[63]->PutTransSpriteRGB(dX, dY, m_pEffectList[i]->m_cFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				break;
 
-			case 151: // Lightning Bolt
+			case EffectType::LIGHTNING_BOLT: // Lightning Bolt
 				m_pGame->_DrawThunderEffect(m_pEffectList[i]->m_mX - m_pGame->m_sViewPointX, m_pEffectList[i]->m_mY - m_pGame->m_sViewPointY,
 					m_pEffectList[i]->m_dX * 32 - m_pGame->m_sViewPointX, m_pEffectList[i]->m_dY * 32 - m_pGame->m_sViewPointY,
 					m_pEffectList[i]->m_rX, m_pEffectList[i]->m_rY, 1);
@@ -706,7 +704,7 @@ void EffectManager::DrawEffectsImpl()
 					m_pEffectList[i]->m_rX - 2, m_pEffectList[i]->m_rY - 2, 2);
 				break;
 
-			case 165: // Absolute-Magic-Protect
+			case EffectType::ABSOLUTE_MAGIC_PROTECTION: // Absolute-Magic-Protect
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -714,7 +712,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[53]->PutTransSprite_NoColorKey(dX, dY, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
-			case 166: // Armor-Break
+			case EffectType::ARMOR_BREAK: // Armor-Break
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -723,7 +721,7 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[54]->PutTransSprite50(dX, dY, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
-			case 176: // Cancellation
+			case EffectType::CANCELLATION: // Cancellation
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -731,8 +729,8 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[90]->PutTransSprite_NoColorKey(dX + 50, dY + 85, cTempFrame, dwTime);
 				break;
 
-			case 177: // Illusion-Movement
-			case 180: // Illusion
+			case EffectType::ILLUSION_MOVEMENT: // Illusion-Movement
+			case EffectType::ILLUSION: // Illusion
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -742,14 +740,14 @@ void EffectManager::DrawEffectsImpl()
 				else m_pEffectSpr[60]->PutTransSpriteRGB(dX, dY, m_pEffectList[i]->m_cFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				break;
 
-			case 182: //Mass-Magic-Missile
+			case EffectType::MASS_MAGIC_MISSILE_FLYING: //Mass-Magic-Missile
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[98]->PutTransSprite(dX, dY, cTempFrame, dwTime, 0);
 				break;
 
-			case 183: // Inhibition-Casting
+			case EffectType::INHIBITION_CASTING: // Inhibition-Casting
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -759,8 +757,8 @@ void EffectManager::DrawEffectsImpl()
 				else m_pEffectSpr[94]->PutTransSpriteRGB(dX, dY + 40, m_pEffectList[i]->m_cFrame, iDvalue, iDvalue, iDvalue, dwTime);
 				break;
 
-			case 244: // Snoopy: d�plac� pour nvx sorts: Aura du casteur de Mass MagicMissile
-				//case 184: // Aura du casteur de Mass MagicMissile
+			case EffectType::MASS_MM_AURA_CASTER: // Snoopy: Moved for new spells: Caster aura for Mass MagicMissile
+				//case 184: // Caster aura for Mass MagicMissile
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = m_pEffectList[i]->m_mX - m_pGame->m_sViewPointX;
@@ -768,8 +766,8 @@ void EffectManager::DrawEffectsImpl()
 				m_pEffectSpr[96]->PutTransSprite(dX, dY, m_pEffectList[i]->m_cFrame, dwTime, 0);
 				break;
 
-			case 190: // Mass-Illusion
-			case 195: // Mass-Illusion-Movement
+			case EffectType::MASS_ILLUSION: // Mass-Illusion
+			case EffectType::MASS_ILLUSION_MOVEMENT: // Mass-Illusion-Movement
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
@@ -780,74 +778,74 @@ void EffectManager::DrawEffectsImpl()
 				break;
 
 				//case 192: // Mage Hero set effect
-			case 242:
+			case EffectType::MAGE_HERO_SET:
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_dY * 32) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[87]->PutTransSprite_NoColorKey(dX + 50, dY + 57, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
 				//case 193: // War Hero set effect
-			case 243:
+			case EffectType::WAR_HERO_SET:
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_dY * 32) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[88]->PutTransSprite_NoColorKey(dX + 65, dY + 80, m_pEffectList[i]->m_cFrame, dwTime);
 				break;
 
-			case 194: // Resurrection
+			case EffectType::RESURRECTION: // Resurrection
 				dX = (m_pEffectList[i]->m_dX * 32) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_dY * 32) - m_pGame->m_sViewPointY;
 				m_pEffectSpr[99]->PutTransSprite(dX, dY, m_pEffectList[i]->m_cFrame, dwTime, 0);
 				break;
 
-			case 200: // shotstar fall on ground
+			case EffectType::SHOTSTAR_FALL_1: // shotstar fall on ground
 				dX = m_pEffectList[i]->m_mX;
 				dY = m_pEffectList[i]->m_mY;
 				m_pEffectSpr[133]->PutTransSprite_NoColorKey(dX, dY, (rand() % 15), dwTime);
 				break;
 
-			case 201: // shotstar fall on ground
+			case EffectType::SHOTSTAR_FALL_2: // shotstar fall on ground
 				dX = m_pEffectList[i]->m_mX;
 				dY = m_pEffectList[i]->m_mY;
 				m_pEffectSpr[134]->PutTransSprite_NoColorKey(dX, dY, (rand() % 15), dwTime);
 				break;
 
-			case 202: // shotstar fall on ground
+			case EffectType::SHOTSTAR_FALL_3: // shotstar fall on ground
 				dX = m_pEffectList[i]->m_mX;
 				dY = m_pEffectList[i]->m_mY;
 				m_pEffectSpr[135]->PutTransSprite_NoColorKey(dX, dY, (rand() % 15), dwTime);
 				break;
 
-			case 203: // explosion feu apoc
+			case EffectType::EXPLOSION_FIRE_APOCALYPSE: // explosion feu apoc
 				dX = m_pEffectList[i]->m_mX;
 				dY = m_pEffectList[i]->m_mY;
 				m_pEffectSpr[136]->PutTransSprite_NoColorKey(dX, dY, (rand() % 18), dwTime);
 				break;
 
-			case 204: // Faille oblique
+			case EffectType::CRACK_OBLIQUE: // Faille oblique
 				dX = m_pEffectList[i]->m_mX;
 				dY = m_pEffectList[i]->m_mY;
 				m_pEffectSpr[137]->PutTransSprite_NoColorKey(dX, dY, (rand() % 12), dwTime);
 				break;
 
-			case 205: // Faille horizontale
+			case EffectType::CRACK_HORIZONTAL: // Faille horizontale
 				dX = m_pEffectList[i]->m_mX;
 				dY = m_pEffectList[i]->m_mY;
 				m_pEffectSpr[138]->PutTransSprite_NoColorKey(dX, dY, (rand() % 12), dwTime);
 				break;
 
-			case 206: // steams
+			case EffectType::STEAMS_SMOKE: // steams
 				dX = m_pEffectList[i]->m_mX;
 				dY = m_pEffectList[i]->m_mY;
 				m_pEffectSpr[139]->PutTransSprite_NoColorKey(dX, dY, (rand() % 20), dwTime);
 				break;
 
-			case 250: // Gate (round one)
+			case EffectType::GATE_ROUND: // Gate (round one)
 				dX = m_pEffectList[i]->m_mX - m_pGame->m_sViewPointX;
 				dY = m_pEffectList[i]->m_mY - m_pGame->m_sViewPointY;
 				m_pEffectSpr[103]->PutTransSprite_NoColorKey(dX, dY, (rand() % 3), dwTime);
 				break;
 
-			case 252: // burst (lisgt salmon color)
+			case EffectType::SALMON_BURST_IMPACT: // burst (lisgt salmon color)
 				dX = m_pEffectList[i]->m_mX - m_pGame->m_sViewPointX;
 				dY = m_pEffectList[i]->m_mY - m_pGame->m_sViewPointY;
 				m_pEffectSpr[104]->PutTransSprite_NoColorKey(dX, dY, (rand() % 3), dwTime);
