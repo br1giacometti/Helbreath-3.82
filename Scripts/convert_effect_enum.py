@@ -166,14 +166,17 @@ def convert_switch_cases(content: str) -> str:
     return re.sub(r'\bcase\s+(\d+):', replace_case, content)
 
 def convert_add_effect_calls(content: str) -> str:
-    """Convert 'AddEffect(5,' to 'AddEffect(EffectType::FIREBALL_EXPLOSION,'"""
+    """Convert 'AddEffect(5,' and 'AddEffectImpl(5,' to use EffectType enum"""
     def replace_call(match):
-        num = int(match.group(1))
+        func_name = match.group(1)
+        num = int(match.group(2))
         if num in EFFECT_TYPE_MAP:
-            return f"AddEffect(EffectType::{EFFECT_TYPE_MAP[num]},"
+            return f"{func_name}(EffectType::{EFFECT_TYPE_MAP[num]},"
         return match.group(0)
 
-    return re.sub(r'\bAddEffect\((\d+),', replace_call, content)
+    # Handle both AddEffect and AddEffectImpl
+    content = re.sub(r'\b(AddEffect(?:Impl)?)\((\d+),', replace_call, content)
+    return content
 
 def main():
     if len(sys.argv) < 2:
@@ -227,9 +230,9 @@ def main():
 
             # Write converted content
             file_path.write_text(converted, encoding='utf-8')
-            print(f"✓ Converted: {file_path}")
+            print(f"[OK] Converted: {file_path}")
         else:
-            print(f"⊘ No changes: {file_path}")
+            print(f"[SKIP] No changes: {file_path}")
 
 if __name__ == "__main__":
     main()
