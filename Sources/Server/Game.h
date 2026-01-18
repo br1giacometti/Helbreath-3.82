@@ -47,6 +47,7 @@
 #include "GlobalDef.h"
 #include "TempNpcItem.h"
 #include "PartyManager.h"
+#include "MagicManager.h"
 
 #define DEF_MAXADMINS				50
 #define DEF_MAXMAPS					100
@@ -822,6 +823,7 @@ public:
 	class XSocket* _lsock;
 
 	class PartyManager* m_pPartyManager;
+	class MagicManager* m_pMagicManager;
 
 	void OnClientLoginRead(int h);
 	void OnLoginClientSocketEvent(int iLoginClientH);  // MODERNIZED: Polls login client socket instead of handling window messages

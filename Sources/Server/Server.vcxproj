@@ -167,6 +167,7 @@
     <ClInclude Include="Npc.h" />
     <ClInclude Include="OccupyFlag.h" />
     <ClInclude Include="PartyManager.h" />
+    <ClInclude Include="MagicManager.h" />
     <ClInclude Include="Portion.h" />
     <ClInclude Include="Quest.h" />
     <ClInclude Include="ServerMessages.h" />
@@ -192,6 +193,9 @@
     <ClCompile Include="NetworkMsg.cpp" />
     <ClCompile Include="Npc.cpp" />
     <ClCompile Include="PartyManager.cpp" />
+    <ClCompile Include="MagicManager.cpp" />
+    <ClCompile Include="Magic_Npc.cpp" />
+    <ClCompile Include="Magic_Player.cpp" />
     <ClCompile Include="Quest.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="wmain.cpp" />

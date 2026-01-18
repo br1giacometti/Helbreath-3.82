@@ -127,7 +127,7 @@ public:
     void NpcBehavior_Stop(int iNpcH);
     void NpcBehavior_Dead(int iNpcH);
     void CalcNextWayPointDestination(int iNpcH);
-    void NpcMagicHandler(int iNpcH, short dX, short dY, short sType);
+    // NpcMagicHandler moved to MagicManager::HandleNpcMagic
     int iGetNpcRelationship(int iWhatH, int iRecvH);
     int iGetNpcRelationship_SendEvent(int iNpcH, int iOpponentH);
     void NpcRequestAssistance(int iNpcH);

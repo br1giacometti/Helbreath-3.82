@@ -87,6 +87,7 @@
     <ClInclude Include="GlobalDef.h" />
     <ClInclude Include="LoginServer.h" />
     <ClInclude Include="PartyManager.h" />
+    <ClInclude Include="MagicManager.h" />
     <ClInclude Include="ActionID_Server.h" />
     <ClInclude Include="CommonTypes.h" />
     <ClInclude Include="EntityManager.h" />
@@ -124,6 +125,9 @@
     </ClCompile>
     <ClCompile Include="LoginServer.cpp" />
     <ClCompile Include="PartyManager.cpp" />
+    <ClCompile Include="MagicManager.cpp" />
+    <ClCompile Include="Magic_Npc.cpp" />
+    <ClCompile Include="Magic_Player.cpp" />
     <ClCompile Include="CommonTypes.cpp" />
     <ClCompile Include="EntityManager.cpp" />
     <ClCompile Include="NetworkMsg.cpp" />
