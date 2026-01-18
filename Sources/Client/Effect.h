@@ -6,13 +6,14 @@
 
 #include <windows.h>
 #include "CommonTypes.h"
+#include "EffectType.h"
 
 class CEffect
 {
 public:
 	inline CEffect()
 	{
-		m_sType       = 0;
+		m_sType       = EffectType::INVALID;
 		m_cFrame      = -1;
 		m_cMaxFrame   = 0;
 		m_dwTime      = 0;
@@ -24,7 +25,7 @@ public:
 
 	}
 
-	short m_sType;
+	EffectType m_sType;
 	char  m_cFrame, m_cMaxFrame;
 	char  m_cDir;
 	uint32_t m_dwTime, m_dwFrameTime;
