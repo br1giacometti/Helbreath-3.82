@@ -23,10 +23,27 @@ def fix_effect_draw(file_path: Path):
     """Fix Effect_Draw.cpp: arithmetic on m_sType"""
     content = file_path.read_text(encoding='utf-8')
 
-    # Fix: m_sType - 41 and similar patterns
+    # Fix: m_pEffectList[i]->m_sType - 41 and similar patterns
     # Need to cast m_sType to int for arithmetic
-    content = re.sub(r'\bm_sType\s*-\s*(\d+)',
-                    r'(static_cast<int>(m_sType) - \1)',
+    # Only match when followed by arithmetic operator
+    content = re.sub(r'->m_sType\s*(-\s*\d+)',
+                    r'->static_cast<int>(m_sType)\1',
+                    content)
+
+    return content
+
+def fix_effect_update(file_path: Path):
+    """Fix Effect_Update.cpp: comparisons and arithmetic on m_sType"""
+    content = file_path.read_text(encoding='utf-8')
+
+    # Fix comparisons: m_sType == 41, m_sType != 42, etc.
+    content = re.sub(r'->m_sType\s*(==|!=)\s*(\d+)',
+                    r'->m_sType \1 EffectType::\2',
+                    content)
+
+    # Fix AddEffectImpl with variable: AddEffectImpl( 41 + x
+    content = re.sub(r'AddEffectImpl\(\s*(\d+)\s*\+',
+                    r'AddEffectImpl(static_cast<EffectType>(\1 +',
                     content)
 
     return content
@@ -52,6 +69,8 @@ def main():
         converted = fix_effect_add(file_path)
     elif "Effect_Draw.cpp" in file_path.name:
         converted = fix_effect_draw(file_path)
+    elif "Effect_Update.cpp" in file_path.name:
+        converted = fix_effect_update(file_path)
     else:
         print(f"Unknown file: {file_path.name}")
         sys.exit(1)

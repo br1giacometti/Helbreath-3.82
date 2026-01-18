@@ -324,7 +324,7 @@ void EffectManager::UpdateEffectsImpl()
 
 					if (m_pEffectList[i]->m_cFrame > m_pEffectList[i]->m_cMaxFrame)
 					{
-						if ((m_pEffectList[i]->m_sType != 45) && (m_pEffectList[i]->m_sType != 46))
+						if ((m_pEffectList[i]->m_sType != EffectType::ICE_STRIKE_VARIANT_5) && (m_pEffectList[i]->m_sType != EffectType::ICE_STRIKE_VARIANT_6))
 						{
 							AddEffectImpl(EffectType::SMOKE_DUST, m_pEffectList[i]->m_mX, m_pEffectList[i]->m_mY, 0, 0, 0, 0);
 							AddEffectImpl(EffectType::FOOTPRINT, m_pEffectList[i]->m_mX + ((rand() % 20) - 10), m_pEffectList[i]->m_mY + ((rand() % 20) - 10), 0, 0, 0, 0);
@@ -349,7 +349,7 @@ void EffectManager::UpdateEffectsImpl()
 					}
 					if (m_pEffectList[i]->m_cFrame > m_pEffectList[i]->m_cMaxFrame)
 					{
-						if (m_pEffectList[i]->m_sType == 49)
+						if (m_pEffectList[i]->m_sType == EffectType::BLIZZARD_VARIANT_3)
 							AddEffectImpl(EffectType::BLIZZARD_IMPACT, m_pEffectList[i]->m_mX, m_pEffectList[i]->m_mY, 0, 0, 0, 0);
 						else AddEffectImpl(EffectType::SMOKE_DUST, m_pEffectList[i]->m_mX, m_pEffectList[i]->m_mY, 0, 0, 0, 0);
 						AddEffectImpl(EffectType::FOOTPRINT, m_pEffectList[i]->m_mX + ((rand() % 20) - 10), m_pEffectList[i]->m_mY + ((rand() % 20) - 10), 0, 0, 0, 0);
@@ -609,11 +609,11 @@ void EffectManager::UpdateEffectsImpl()
 					AddEffectImpl(EffectType::ICE_STRIKE_VARIANT_1, m_pEffectList[i]->m_dX * 32, m_pEffectList[i]->m_dY * 32, 0, 0, 0, 0);
 					for (x = 0; x < 14; x++)
 					{
-						AddEffectImpl(41 + (rand() % 3), m_pEffectList[i]->m_dX * 32 + (rand() % 100) - 50 + 10, m_pEffectList[i]->m_dY * 32 + (rand() % 90) - 45, 0, 0, -1 * x - 1);
+						AddEffectImpl(static_cast<EffectType>(41 + (rand() % 3)), m_pEffectList[i]->m_dX * 32 + (rand() % 100) - 50 + 10, m_pEffectList[i]->m_dY * 32 + (rand() % 90) - 45, 0, 0, -1 * x - 1);
 					}
 					for (x = 0; x < 6; x++)
 					{
-						AddEffectImpl(45 + (rand() % 2), m_pEffectList[i]->m_dX * 32 + (rand() % 100) - 50 + 10, m_pEffectList[i]->m_dY * 32 + (rand() % 90) - 45, 0, 0, -1 * x - 1 - 10);
+						AddEffectImpl(static_cast<EffectType>(45 + (rand() % 2)), m_pEffectList[i]->m_dX * 32 + (rand() % 100) - 50 + 10, m_pEffectList[i]->m_dY * 32 + (rand() % 90) - 45, 0, 0, -1 * x - 1 - 10);
 					}
 					delete m_pEffectList[i];
 					m_pEffectList[i] = 0;
@@ -712,7 +712,7 @@ void EffectManager::UpdateEffectsImpl()
 					}
 					for (x = 0; x < 8; x++)
 					{
-						AddEffectImpl(45 + (rand() % 2), m_pEffectList[i]->m_dX * 32 + (rand() % 100) - 50 + 10, m_pEffectList[i]->m_dY * 32 + (rand() % 90) - 45, 0, 0, -1 * x - 1 - 10);
+						AddEffectImpl(static_cast<EffectType>(45 + (rand() % 2)), m_pEffectList[i]->m_dX * 32 + (rand() % 100) - 50 + 10, m_pEffectList[i]->m_dY * 32 + (rand() % 90) - 45, 0, 0, -1 * x - 1 - 10);
 					}
 					delete m_pEffectList[i];
 					m_pEffectList[i] = 0;
