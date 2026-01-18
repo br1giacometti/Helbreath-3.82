@@ -259,15 +259,15 @@ void EffectManager::DrawEffectsImpl()
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_mY) - m_pGame->m_sViewPointY;
-				if ((8 * (m_pEffectList[i]->m_sType - 41) + cTempFrame) < (8 * (m_pEffectList[i]->m_sType - 41) + 7))
+				if ((8 * (m_pEffectList[i]->(static_cast<int>(m_sType) - 41)) + cTempFrame) < (8 * (m_pEffectList[i]->(static_cast<int>(m_sType) - 41)) + 7))
 				{
 					iDvalue = -8 * (6 - cTempFrame);
-					m_pEffectSpr[21]->PutTransSpriteRGB(dX, dY, 8 * (m_pEffectList[i]->m_sType - 41) + cTempFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
+					m_pEffectSpr[21]->PutTransSpriteRGB(dX, dY, 8 * (m_pEffectList[i]->(static_cast<int>(m_sType) - 41)) + cTempFrame, iDvalue, iDvalue, iDvalue, dwTime); // RGB2
 				}
 				else
 				{
 					if ((cTempFrame - 5) >= 8) cTempFrame = ((cTempFrame - 5) - 8) + 5;
-					m_pEffectSpr[21]->PutSpriteFast(dX, dY, 8 * (m_pEffectList[i]->m_sType - 41) + (cTempFrame - 5), dwTime);
+					m_pEffectSpr[21]->PutSpriteFast(dX, dY, 8 * (m_pEffectList[i]->(static_cast<int>(m_sType) - 41)) + (cTempFrame - 5), dwTime);
 				}
 				break;
 
@@ -276,7 +276,7 @@ void EffectManager::DrawEffectsImpl()
 			case EffectType::BLIZZARD_VARIANT_3: // Blizzard
 				dX = (m_pEffectList[i]->m_sX) - m_pGame->m_sViewPointX;
 				dY = (m_pEffectList[i]->m_sY) - m_pGame->m_sViewPointY;
-				m_pEffectSpr[m_pEffectList[i]->m_sType - 1]->PutRevTransSprite(dX, dY, 0, dwTime);
+				m_pEffectSpr[m_pEffectList[i]->(static_cast<int>(m_sType) - 1)]->PutRevTransSprite(dX, dY, 0, dwTime);
 				cTempFrame = m_pEffectList[i]->m_cFrame;
 				if (cTempFrame < 0) break;
 				dX = (m_pEffectList[i]->m_mX) - m_pGame->m_sViewPointX;
@@ -284,11 +284,11 @@ void EffectManager::DrawEffectsImpl()
 				//PutString(dX, dY, "*", RGB(255,255,255);
 				if (cTempFrame < 7) {
 					iDvalue = -8 * (6 - cTempFrame);
-					m_pEffectSpr[m_pEffectList[i]->m_sType - 1]->PutTransSpriteRGB(dX, dY, cTempFrame + 1, iDvalue, iDvalue, iDvalue, dwTime);
+					m_pEffectSpr[m_pEffectList[i]->(static_cast<int>(m_sType) - 1)]->PutTransSpriteRGB(dX, dY, cTempFrame + 1, iDvalue, iDvalue, iDvalue, dwTime);
 				}
 				else {
 					if (cTempFrame >= 8) cTempFrame = cTempFrame % 8;
-					m_pEffectSpr[m_pEffectList[i]->m_sType - 1]->PutSpriteFast(dX, dY, cTempFrame + 1, dwTime);
+					m_pEffectSpr[m_pEffectList[i]->(static_cast<int>(m_sType) - 1)]->PutSpriteFast(dX, dY, cTempFrame + 1, dwTime);
 				}
 				break;
 

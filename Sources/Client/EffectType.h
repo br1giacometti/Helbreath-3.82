@@ -115,6 +115,7 @@ enum class EffectType : short
 	STAMINA_DRAIN = 111,
 	RECALL = 112,
 	DEFENSE_SHIELD = 113,
+	CELEBRATING_LIGHT = 114,        // Celebrating light effect
 
 	FIRE_BALL_FLYING = 120,         // Fire Ball (Circle 3)
 	GREAT_HEAL = 121,

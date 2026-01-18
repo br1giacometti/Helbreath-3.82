@@ -741,12 +741,12 @@ void EffectManager::AddEffectImpl(EffectType sType, int sX, int sY, int dX, int 
 				m_pGame->PlaySound('E', 5, sDist, lPan);
 				break;
 
-			case 114: // Celebrating Light
-				AddEffectImpl( 69 + (rand() % 2), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, -12, 0);
-				AddEffectImpl( 69 + (rand() % 2), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, -9, 0);
-				AddEffectImpl( 69 + (rand() % 2), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, -6, 0);
-				AddEffectImpl( 69 + (rand() % 2), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, -3, 0);
-				AddEffectImpl( 69 + (rand() % 2), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, 0, 0);
+			case EffectType::CELEBRATING_LIGHT: // Celebrating Light
+				AddEffectImpl(static_cast<EffectType>(69 + (rand() % 2)), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, -12, 0);
+				AddEffectImpl(static_cast<EffectType>(69 + (rand() % 2)), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, -9, 0);
+				AddEffectImpl(static_cast<EffectType>(69 + (rand() % 2)), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, -6, 0);
+				AddEffectImpl(static_cast<EffectType>(69 + (rand() % 2)), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, -3, 0);
+				AddEffectImpl(static_cast<EffectType>(69 + (rand() % 2)), dX * 32 + 20 - (rand() % 40), dY * 32 + 20 - (rand() % 40), 0, 0, 0, 0);
 				delete m_pEffectSpr[i];
 				m_pEffectSpr[i] = 0;
 				break;
