@@ -196,7 +196,8 @@ def main():
     if "Effect_" in file_path.name:
         converted = convert_switch_cases(content)
         converted = convert_add_effect_calls(converted)  # Also convert internal AddEffect calls
-    elif file_path.name == "Game.cpp":
+    elif file_path.suffix == ".cpp" or file_path.suffix == ".h":
+        # For any other C++ file, just convert AddEffect calls
         converted = convert_add_effect_calls(content)
     else:
         print(f"Warning: Unknown file type: {file_path.name}")
