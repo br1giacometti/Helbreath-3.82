@@ -1,0 +1,56 @@
+#pragma once
+
+#include "PacketCommon.h"
+
+#include <cstdint>
+
+namespace hb {
+namespace net {
+	HB_PACK_BEGIN
+	struct HB_PACKED PacketMapDataHeader {
+		std::int16_t total;
+	};
+
+	struct HB_PACKED PacketMapDataEntryHeader {
+		std::int16_t x;
+		std::int16_t y;
+		std::uint8_t flags;
+	};
+
+	struct HB_PACKED PacketMapDataObjectBase {
+		std::uint16_t object_id;
+		std::int16_t type;
+		std::uint8_t dir;
+	};
+
+	struct HB_PACKED PacketMapDataObjectPlayer {
+		PacketMapDataObjectBase base;
+		std::int16_t appr1;
+		std::int16_t appr2;
+		std::int16_t appr3;
+		std::int16_t appr4;
+		std::int32_t appr_color;
+		std::int32_t status;
+		char name[10];
+	};
+
+	struct HB_PACKED PacketMapDataObjectNpc {
+		PacketMapDataObjectBase base;
+		std::int16_t appr2;
+		std::int32_t status;
+		char name[5];
+	};
+
+	struct HB_PACKED PacketMapDataItem {
+		std::int16_t item_id;
+		std::uint8_t color;
+		std::uint32_t attribute;
+	};
+
+	struct HB_PACKED PacketMapDataDynamicObject {
+		std::uint16_t object_id;
+		std::int16_t type;
+	};
+	HB_PACK_END
+}
+}

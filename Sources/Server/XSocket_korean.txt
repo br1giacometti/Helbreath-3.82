@@ -1,0 +1,18 @@
+Line 5: // 占쏙옙占쏙옙占� 확占쏙옙占쌘듸옙占� 1占쏙옙占쏙옙트, 크占쏙옙占� WORD占쏙옙 占쏙옙占쏙옙퓸占쏙옙占�. 占쏙옙 占쏙옙占쏙옙占� 占쏙옙 3占쏙옙占쏙옙트
+Line 32: #define DEF_XSOCKEVENT_SOCKETMISMATCH			-121	// 占쏙옙占쏙옙 占싱븝옙트占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쌕몌옙占쏙옙. (占싱뤄옙 占쏙옙李�?)
+Line 33: #define DEF_XSOCKEVENT_CONNECTIONESTABLISH		-122	// 占쏙옙占쏙옙占쏙옙 占싱뤄옙占� 占쏙옙占쏙옙.
+Line 34: #define DEF_XSOCKEVENT_RETRYINGCONNECTION		-123	// 占쏙옙占쏙옙占쏙옙 占쌕쏙옙 占시듸옙占싹댐옙 占쏙옙占싱댐옙.
+Line 35: #define DEF_XSOCKEVENT_ONREAD					-124	// 占쌨쏙옙占쏙옙占쏙옙 占싻댐옙 占쏙옙占싱댐옙.
+Line 36: #define DEF_XSOCKEVENT_READCOMPLETE				-125	// 占싹놂옙占쏙옙 占쌨쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쌩댐옙.
+Line 37: #define DEF_XSOCKEVENT_UNKNOWN					-126	// 占싯쇽옙占쏙옙占쏙옙 占싱븝옙트占싱댐옙.
+Line 38: #define DEF_XSOCKEVENT_SOCKETCLOSED				-127	// 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙.
+Line 39: #define DEF_XSOCKEVENT_BLOCK					-128	// 占쌨쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쌕곤옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싱댐옙.
+Line 40: #define DEF_XSOCKEVENT_SOCKETERROR				-129	// 占쏙옙占싹울옙 占쏙옙占쏙옙占쏙옙 占쌩삼옙占쌩댐옙. 占싱곤옙占� 클占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹울옙占쏙옙 占싼댐옙.
+Line 41: #define DEF_XSOCKEVENT_CRITICALERROR			-130    // 치占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占싸그뤄옙 占쏙옙체占쏙옙 占쏙옙占쏙옙占� 占싼댐옙.
+Line 42: #define DEF_XSOCKEVENT_NOTINITIALIZED			-131	// 클占쏙옙占쏙옙占쏙옙 占십깍옙화 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占승뤄옙 占쏙옙占싣댐옙.
+Line 43: #define DEF_XSOCKEVENT_MSGSIZETOOLARGE			-132	// 占쏙옙占쏙옙占쏙옙占쏙옙 占싹댐옙 占쌨쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏘가 占십뱄옙 크占쏙옙.
+Line 44: #define DEF_XSOCKEVENT_CONFIRMCODENOTMATCH		-133	// 확占쏙옙占쌘드가 占쏙옙치占쏙옙占쏙옙 占십는댐옙. 占쏙옙占쏙옙占실억옙占� 占싼댐옙.
+Line 45: #define DEF_XSOCKEVENT_QUENEFULL                -134    // 占쏙옙占쏙옙 큐占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙.
+Line 46: #define DEF_XSOCKEVENT_UNSENTDATASENDBLOCK		-135    // 큐占쏙옙 占쌍댐옙 占쏙옙占쏙옙占싶몌옙 占쏙옙占쏙옙占쌕곤옙 占쏙옙 占쏙옙占쏙옙占쏙옙 占심렸댐옙.
+Line 47: #define DEF_XSOCKEVENT_UNSENTDATASENDCOMPLETE	-136	// 큐占쏙옙 占쌍댐옙 占쏙옙占� 占쏙옙占쏙옙占싶몌옙 占쏙옙占승댐옙.
+Line 49: #define DEF_XSOCKBLOCKLIMIT						300		// 占쏙옙 클占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 ?占쏙옙占싱삼옙 占쏙옙占싹되몌옙 占쏙옙占싱삼옙 占쏙옙占쏙옙占싶몌옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙.

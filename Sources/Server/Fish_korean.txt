@@ -1,0 +1,5 @@
+Line 34: short m_sX, m_sY;			// 占십삼옙占쏙옙 占쏙옙치
+Line 36: short m_sType;				// 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 37: class CItem * m_pItem;		// 占쏙옙占쏙옙占쏙옙占쏙옙 占쌀댐옙풔占� 占쏙옙占쏙옙占쏙옙(占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙)
+Line 41: short m_sEngagingCount;		// 占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙占썩를 占쎈리占쏙옙 占쌍댐옙 占시뤄옙占싱억옙 占쏙옙
+Line 42: int   m_iDifficulty;		// 占쏙옙占싱듸옙. 占쌍쇽옙 1占쏙옙 占실억옙占� 占싼댐옙.

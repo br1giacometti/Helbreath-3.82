@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="source">
+      <UniqueIdentifier>{c7ae280e-8533-4af2-bbc7-d6330c3e897a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AccountSqliteStore.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildItem.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="DelayEvent.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="DynamicObject.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Fish.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="GuildsMan.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Item.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Magic.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageIndex.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Mineral.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Misc.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Npc.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="OccupyFlag.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Portion.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Quest.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Skill.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="StrategicPoint.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="TeleportLoc.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="Tile.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="UserMessages.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="XSocket.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="version.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="winmain.h">
+      <Filter>source</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalDef.h" />
+    <ClInclude Include="LoginServer.h" />
+    <ClInclude Include="PartyManager.h" />
+    <ClInclude Include="ActionID_Server.h" />
+    <ClInclude Include="CommonTypes.h" />
+    <ClInclude Include="EntityManager.h" />
+    <ClInclude Include="NetworkMsg.h" />
+    <ClInclude Include="ServerMessages.h" />
+    <ClInclude Include="GameConfigSqliteStore.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AccountSqliteStore.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Client.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Npc.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Quest.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="Tile.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="XSocket.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="wmain.cpp">
+      <Filter>source</Filter>
+    </ClCompile>
+    <ClCompile Include="LoginServer.cpp" />
+    <ClCompile Include="PartyManager.cpp" />
+    <ClCompile Include="CommonTypes.cpp" />
+    <ClCompile Include="EntityManager.cpp" />
+    <ClCompile Include="NetworkMsg.cpp" />
+    <ClCompile Include="GameConfigSqliteStore.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="logo.bmp" />
+  </ItemGroup>
+</Project>

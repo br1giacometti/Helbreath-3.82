@@ -1,0 +1,288 @@
+Table,Column/Setting,Sample Value,Loaded,Used,Usage Count,Primary File(s),Key Line Numbers,Status,Notes/Recommendation
+settings,primary-drop-rate,1,Yes,Yes,1,Game.cpp,EntityManager.cpp,ACTIVE,Controls primary item drop multiplier
+settings,secondary-drop-rate,1,Yes,Yes,2,Game.cpp,EntityManager.cpp,ACTIVE,Controls secondary item drop multiplier
+settings,enemy-kill-mode,deathmatch,Yes,Yes,8,Game.cpp,Various combat functions,ACTIVE,"deathmatch=true, classic=false; affects PvP rules"
+settings,enemy-kill-adjust,1,Yes,Yes,10,Game.cpp,Combat calculations,ACTIVE,Adjusts enemy kill rewards/penalties
+settings,admin-security,off,Yes,Yes,12,Game.cpp,Admin command handlers,ACTIVE,Enables/disables admin security checks
+settings,monday-raid-time,3,Yes,Yes,4,Game.cpp,Raid scheduling,ACTIVE,Minutes of raid time on Monday
+settings,tuesday-raid-time,3,Yes,Yes,4,Game.cpp,Raid scheduling,ACTIVE,Minutes of raid time on Tuesday
+settings,wednesday-raid-time,3,Yes,Yes,4,Game.cpp,Raid scheduling,ACTIVE,Minutes of raid time on Wednesday
+settings,thursday-raid-time,3,Yes,Yes,4,Game.cpp,Raid scheduling,ACTIVE,Minutes of raid time on Thursday
+settings,friday-raid-time,30,Yes,Yes,4,Game.cpp,Raid scheduling,ACTIVE,Minutes of raid time on Friday
+settings,saturday-raid-time,45,Yes,Yes,4,Game.cpp,Raid scheduling,ACTIVE,Minutes of raid time on Saturday
+settings,sunday-raid-time,60,Yes,Yes,4,Game.cpp,Raid scheduling,ACTIVE,Minutes of raid time on Sunday
+settings,log-chat-settings,all,Yes,Yes,2,Game.cpp,Chat logging,ACTIVE,player/gm/all/none - controls chat logging
+settings,summonguild-cost,0,Yes,Yes,2,Game.cpp,Guild summon handler,ACTIVE,Gold cost to summon guild members
+settings,slate-success-rate,25,Yes,Yes,1,Game.cpp,Item crafting,ACTIVE,Success rate for slate items (%)
+settings,character-stat-limit,200,Yes,Yes,4,Game.cpp,Character stat validation,ACTIVE,Maximum stat points per attribute
+settings,character-skill-limit,2500,Yes,Yes,1,Game.cpp,Skill validation,ACTIVE,Maximum total skill points
+settings,rep-drop-modifier,5,Yes,Yes,1,Game.cpp,Reputation system,ACTIVE,Modifier for reputation loss on death
+settings,admin-security-code,1234393,Yes,Yes,1,Game.cpp,Admin authentication,ACTIVE,Security code for admin commands
+settings,max-player-level,376,Yes,Yes,8,Game.cpp,Level cap checks,ACTIVE,Maximum achievable player level
+program_config,game-server-name,Apocalypse,Yes,Yes,4,Game.cpp,26118 (MessageBox),ACTIVE,Server name displayed in UI
+program_config,game-server-port,9907,Yes,Yes,1,wmain.cpp,646 (bListen),ACTIVE,Port server listens on
+program_config,log-server-address,127.0.0.1,Yes,Yes,6,Game.cpp,"10113, 29340, 35536",ACTIVE,Log server IP address
+program_config,internal-log-server-port,2500,Yes,No,0,N/A,N/A,UNUSED,Member not defined in Game.h - CAN REMOVE
+program_config,gate-server-address,127.0.0.1,Yes,No,0,Game.cpp,All refs commented out,UNUSED,Gate server disabled - CAN REMOVE
+program_config,gate-server-port,6502,Yes,No,0,Game.cpp,All refs commented out,UNUSED,Gate server disabled - CAN REMOVE
+program_config,game-server-internal-address,127.0.0.1,Yes,No,0,Game.cpp,11773 (commented),UNUSED,Only commented reference - CAN REMOVE
+program_config,game-server-external-address,199.187.160.239,Yes,Yes,5,"wmain.cpp, LoginServer.cpp, Game.cpp","646, 725, 904",ACTIVE,External IP sent to clients
+program_config,game-server-address,0.0.0.0,Yes,No,0,N/A,N/A,UNUSED,Binding address not implemented - CAN REMOVE
+program_config,game-server-mode,INTERNET,Yes,No,0,N/A,N/A,UNUSED,Mode not checked anywhere - CAN REMOVE
+admin_settings,Admin-Level-/kill,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /kill command
+admin_settings,Admin-Level-/revive,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /revive command
+admin_settings,Admin-Level-/closecon,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /closecon command
+admin_settings,Admin-Level-/checkrep,1,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /checkrep command
+admin_settings,Admin-Level-/who,0,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /who command
+admin_settings,Admin-Level-/energysphere,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /energysphere command
+admin_settings,Admin-Level-/shutdownthisserverrightnow,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for shutdown command
+admin_settings,Admin-Level-/setobservermode,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for observer mode
+admin_settings,Admin-Level-/shutup,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /shutup (mute)
+admin_settings,Admin-Level-/attack,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /attack (call guard)
+admin_settings,Admin-Level-/summondemon,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /summondemon
+admin_settings,Admin-Level-/summondeath,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /summondeath
+admin_settings,Admin-Level-/reservefightzone,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for arena reservation
+admin_settings,Admin-Level-/createfish,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /createfish
+admin_settings,Admin-Level-/teleport,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /teleport
+admin_settings,Admin-Level-/checkip,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /checkip
+admin_settings,Admin-Level-/polymorph,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /polymorph
+admin_settings,Admin-Level-/setinvi,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for invisibility
+admin_settings,Admin-Level-/setzerk,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for berserk mode
+admin_settings,Admin-Level-/setfreeze,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for freeze
+admin_settings,Admin-Level-/gns,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for NPC status
+admin_settings,Admin-Level-/setattackmode,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for attack mode
+admin_settings,Admin-Level-/unsummonall,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /unsummonall
+admin_settings,Admin-Level-/unsummondemon,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /unsummondemon
+admin_settings,Admin-Level-/summonnpc,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /summonnpc
+admin_settings,Admin-Level-/summonall,4,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /summonall
+admin_settings,Admin-Level-/summonplayer,1,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /summonplayer
+admin_settings,Admin-Level-/disconnectall,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /disconnectall
+admin_settings,Admin-Level-/enableadmincreateitem,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level to enable item creation
+admin_settings,Admin-Level-/createitem,4,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /createitem
+admin_settings,Admin-Level-/storm,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /storm
+admin_settings,Admin-Level-/weather,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /weather
+admin_settings,Admin-Level-/setstatus,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /setstatus
+admin_settings,Admin-Level-/goto,1,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /goto
+admin_settings,Admin-Level-/monstercount,1,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /monstercount
+admin_settings,Admin-Level-/setforcerecalltime,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for recall time
+admin_settings,Admin-Level-/unsummonboss,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /unsummonboss
+admin_settings,Admin-Level-/clearnpc,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /clearnpc
+admin_settings,Admin-Level-/time,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /time
+admin_settings,Admin-Level-/send,2,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /send (push player)
+admin_settings,Admin-Level-/summonguild,3,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /summonguild
+admin_settings,Admin-Level-/checkstatus,0,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /checkstatus
+admin_settings,Admin-Level-/clearmap,0,Yes,Yes,1+,Game.cpp,Admin command handler,ACTIVE,Min admin level for /clearmap
+items,item_id,1-568,Yes,Yes,Many,"Game.cpp, GameConfigSqliteStore.cpp",Array index,ACTIVE,Primary key for item lookup
+items,name,e.g. 'Dagger',Yes,Yes,Many,Game.cpp,Item display/creation,ACTIVE,Item name shown in game
+items,item_type,1-50,Yes,Yes,Many,Game.cpp,Item usage logic,ACTIVE,Determines item behavior (weapon/armor/consumable)
+items,equip_pos,0-15,Yes,Yes,Many,Game.cpp,Equipment system,ACTIVE,Body slot for equipment
+items,item_effect_type,Various,Yes,Yes,Many,Game.cpp,Effect calculations,ACTIVE,Type of effect item provides
+items,item_effect_value1,Various,Yes,Yes,Many,Game.cpp,Effect calculations,ACTIVE,Effect parameter 1
+items,item_effect_value2,Various,Yes,Yes,Many,Game.cpp,Effect calculations,ACTIVE,Effect parameter 2
+items,item_effect_value3,Various,Yes,Yes,Many,Game.cpp,Effect calculations,ACTIVE,Effect parameter 3
+items,item_effect_value4,Various,Yes,Yes,Many,Game.cpp,Effect calculations,ACTIVE,Effect parameter 4 (Str/Dex mods)
+items,item_effect_value5,Various,Yes,Yes,Many,Game.cpp,Effect calculations,ACTIVE,Effect parameter 5
+items,item_effect_value6,Various,Yes,Yes,Many,Game.cpp,Effect calculations,ACTIVE,Effect parameter 6
+items,max_lifespan,0-9999,Yes,Yes,Many,Game.cpp,Durability system,ACTIVE,Maximum durability
+items,special_effect,Various,Yes,Yes,Many,Game.cpp,Special mechanics,ACTIVE,Unique item behaviors
+items,sprite,0-999,Yes,Yes,Many,Game.cpp,Rendering,ACTIVE,Visual sprite ID
+items,sprite_frame,0-99,Yes,Yes,Many,Game.cpp,Rendering,ACTIVE,Sprite animation frame
+items,price,0-999999,Yes,Yes,Many,Game.cpp,Trading system,ACTIVE,NPC buy/sell price
+items,is_for_sale,0/1,Yes,Yes,Many,Game.cpp,Trading system,ACTIVE,Can be sold to NPCs
+items,weight,0-9999,Yes,Yes,Many,Game.cpp,Inventory weight,ACTIVE,Item weight for encumbrance
+items,appr_value,Various,Yes,Yes,Many,Game.cpp,Equipment packets,ACTIVE,Appearance encoding value
+items,speed,0-100,Yes,Yes,Many,Game.cpp,Combat speed,ACTIVE,Attack speed modifier
+items,level_limit,0-999,Yes,Yes,Many,Game.cpp,Equip validation,ACTIVE,Minimum level to equip
+items,gender_limit,0/1/2,Yes,Yes,Many,Game.cpp,Equip validation,ACTIVE,"0=any, 1=male, 2=female"
+items,special_effect_value1,Various,Yes,Yes,Many,Game.cpp,Crafting/effects,ACTIVE,Special effect parameter 1
+items,special_effect_value2,Various,Yes,Yes,Many,Game.cpp,Crafting/effects,ACTIVE,Special effect parameter 2
+items,related_skill,0-24,Yes,Yes,Many,Game.cpp,Skill items,ACTIVE,Associated skill ID
+items,category,0-50,Yes,Yes,Many,Game.cpp,Inventory sorting,ACTIVE,Item category
+items,item_color,0-15,Yes,Yes,Many,Game.cpp,Dye system,ACTIVE,Item color/dye value
+npc_configs,npc_id,1-115,Yes,Yes,Many,"Game.cpp, EntityManager.cpp",Array index,ACTIVE,NPC type identifier
+npc_configs,name,e.g. 'Slime',Yes,Yes,Many,Game.cpp,"11261, 11264",ACTIVE,NPC name for logs/display
+npc_configs,npc_type,1-100,Yes,Yes,Many,Game.cpp,401,ACTIVE,NPC classification
+npc_configs,hit_dice,1-100,Yes,Yes,Many,"Game.cpp, EntityManager.cpp","11269-11271, 789, 792",ACTIVE,HP calculation dice
+npc_configs,defense_ratio,0-100,Yes,Yes,Many,Game.cpp,1648,ACTIVE,Defense rating
+npc_configs,hit_ratio,0-100,Yes,Yes,Many,Game.cpp,1649,ACTIVE,Attack accuracy
+npc_configs,min_bravery,0-100,Yes,Yes,Many,Game.cpp,"11288, 11323",ACTIVE,Flee threshold
+npc_configs,exp_min,0-99999,Yes,Yes,Many,"Game.cpp, EntityManager.cpp","11283, 2588",ACTIVE,Minimum experience reward
+npc_configs,exp_max,0-99999,Yes,Yes,Many,Game.cpp,11283,ACTIVE,Maximum experience reward
+npc_configs,gold_min,0-99999,Yes,Yes,Many,EntityManager.cpp,"2588, 2616, 2641",ACTIVE,Minimum gold drop
+npc_configs,gold_max,0-99999,Yes,Yes,Many,EntityManager.cpp,"2589, 2617, 2642",ACTIVE,Maximum gold drop
+npc_configs,attack_dice_throw,1-20,Yes,Yes,Many,Game.cpp,11289,ACTIVE,Attack damage dice throws
+npc_configs,attack_dice_range,1-20,Yes,Yes,Many,Game.cpp,11290,ACTIVE,Attack damage dice range
+npc_configs,npc_size,1-5,Yes,Likely,Minimal,Game.cpp,11291,LOW USAGE,Collision/rendering size
+npc_configs,side,0-2,Yes,Yes,Many,EntityManager.cpp,"378, 401, 628, 661, 708",ACTIVE,"Faction (0=neutral, 1=Aresden, 2=Elvine)"
+npc_configs,action_limit,0-5,Yes,Yes,Many,EntityManager.cpp,"300, 877, 1112, 1171",ACTIVE,"Behavior type (0=normal, 3=dummy)"
+npc_configs,action_time,100-5000,Yes,Yes,Many,EntityManager.cpp,"364, 756-762, 911",ACTIVE,Action delay in ms
+npc_configs,resist_magic,0-100,Yes,Yes,Many,Game.cpp,"20631, 20684",ACTIVE,Magic resistance %
+npc_configs,magic_level,-10 to 10,Yes,Yes,Many,EntityManager.cpp,"776, 1245, 1396",ACTIVE,Spell casting ability
+npc_configs,day_of_week_limit,0-127,Yes,Yes,Many,EntityManager.cpp,154-155,ACTIVE,Spawn day bitmask
+npc_configs,chat_msg_presence,0/1,Yes,Minimal,1,Game.cpp,11300,LOW USAGE,NPC chat messages - rarely used
+npc_configs,target_search_range,1-20,Yes,Yes,Many,EntityManager.cpp,1018-1022,ACTIVE,Aggro detection radius
+npc_configs,regen_time,1000-300000,Yes,Yes,Many,EntityManager.cpp,1724,ACTIVE,Respawn time in ms
+npc_configs,attribute,0-4,Yes,Minimal,1,Npc.cpp,Constructor,LOW USAGE,Element type - basic init only
+npc_configs,abs_damage,0-100,Yes,Yes,Many,Game.cpp,1022-1031,ACTIVE,Absolute damage value
+npc_configs,max_mana,0-9999,Yes,Yes,Many,EntityManager.cpp,"779, 782, 2321, 2327",ACTIVE,Spell casting pool
+npc_configs,magic_hit_ratio,0-100,Yes,Yes,Many,EntityManager.cpp,"690, 696, 1197, 1213",ACTIVE,Spell accuracy
+npc_configs,attack_range,1-10,Yes,Yes,Many,EntityManager.cpp,"1365, 1377, 1415-1416",ACTIVE,Melee attack distance
+npc_configs,drop_table_id,0-17,Yes,Yes,Many,EntityManager.cpp,"2581, 2588",ACTIVE,Loot table reference
+magic_configs,magic_id,0-64,Yes,Yes,Many,Game.cpp,Array index,ACTIVE,Magic spell identifier
+magic_configs,name,e.g. 'Energy Bolt',Yes,Yes,Many,Game.cpp,Spell lookup,ACTIVE,Spell name
+magic_configs,magic_type,1-45,Yes,Yes,Many,Game.cpp,Switch statements,ACTIVE,Determines spell behavior
+magic_configs,delay_time,0-10000,Yes,Yes,Many,Game.cpp,Casting delay,ACTIVE,Cooldown in ms
+magic_configs,last_time,0-60000,Yes,Yes,22+,Game.cpp,Effect duration,ACTIVE,Buff/effect duration
+magic_configs,value1,0-500,Yes,Yes,3+,Game.cpp,GetMagicEffect,ACTIVE,Mana cost
+magic_configs,value2,Various,Yes,Yes,32,Game.cpp,AoE calculations,ACTIVE,AoE range parameter 1
+magic_configs,value3,Various,Yes,Yes,33,Game.cpp,AoE calculations,ACTIVE,AoE range parameter 2
+magic_configs,value4,Various,Yes,Yes,108,Game.cpp,Damage/effect,ACTIVE,Primary damage parameter
+magic_configs,value5,Various,Yes,Yes,58,Game.cpp,Damage/effect,ACTIVE,Secondary damage
+magic_configs,value6,Various,Yes,Yes,55,Game.cpp,Damage bonus,ACTIVE,Final damage with weather
+magic_configs,value7,Various,Yes,Yes,90,Game.cpp,AoE damage,ACTIVE,AoE damage range x
+magic_configs,value8,Various,Yes,Yes,90,Game.cpp,AoE damage,ACTIVE,AoE damage range y
+magic_configs,value9,Various,Yes,Yes,90,Game.cpp,AoE damage,ACTIVE,AoE damage with weather
+magic_configs,value10,Various,Yes,Yes,67,Game.cpp,Damage calc,ACTIVE,Damage calculation
+magic_configs,value11,Various,Yes,Yes,1,Game.cpp,Special effects,LOW USAGE,Advanced effects - sparse
+magic_configs,value12,Various,Yes,Yes,5,Game.cpp,Special effects,LOW USAGE,Advanced effects - sparse
+magic_configs,int_limit,0-200,Yes,Yes,2,Game.cpp,Requirements,ACTIVE,Min INT to cast
+magic_configs,gold_cost,0-10000,Yes,Yes,2,Game.cpp,Cost check,ACTIVE,Gold cost to cast
+magic_configs,category,0-10,Yes,Yes,1,Game.cpp,Conditional,ACTIVE,Magic category
+magic_configs,attribute,1-4,Yes,Yes,2,Game.cpp,Element check,ACTIVE,"1=Fire, 2=Lightning, 3=Ice, 4=Water"
+skill_configs,skill_id,0-23,Yes,Yes,Many,Game.cpp,Array index,ACTIVE,Skill identifier
+skill_configs,name,e.g. 'Mining',Yes,Yes,Many,Game.cpp,Skill lookup,ACTIVE,Skill name
+skill_configs,skill_type,0-2,Yes,Yes,Many,Game.cpp,Switch statements,ACTIVE,"0=combat, 1=gathering, 2=special"
+skill_configs,value1,Various,Yes,Yes,Many,Game.cpp,Effect logic,ACTIVE,Primary skill parameter
+skill_configs,value2,Various,Yes,Yes,Many,Game.cpp,Timing/duration,ACTIVE,Secondary parameter
+skill_configs,value3,Various,Yes,No,0,N/A,N/A,UNUSED,Reserved - CAN REMOVE or repurpose
+skill_configs,value4,Various,Yes,No,0,N/A,N/A,UNUSED,Reserved - CAN REMOVE or repurpose
+skill_configs,value5,Various,Yes,No,0,N/A,N/A,UNUSED,Reserved - CAN REMOVE or repurpose
+skill_configs,value6,Various,Yes,No,0,N/A,N/A,UNUSED,Reserved - CAN REMOVE or repurpose
+quest_configs,quest_index,0-83,Yes,Yes,Many,"Game.cpp, Quest.cpp",Array index,ACTIVE,Quest array index
+quest_configs,side,1-2,Yes,Yes,Many,Game.cpp,Quest validation,ACTIVE,"1=Aresden, 2=Elvine"
+quest_configs,quest_type,Various,Yes,Yes,Many,Game.cpp,Quest mechanics,ACTIVE,Quest behavior type
+quest_configs,target_type,NPC/item ID,Yes,Yes,Many,Game.cpp,Quest target,ACTIVE,What player must interact with
+quest_configs,max_count,1-100,Yes,Yes,Many,Game.cpp,Progress tracking,ACTIVE,Kill/collect target count
+quest_configs,quest_from,NPC ID,Yes,Yes,Many,Game.cpp,Quest giver,ACTIVE,NPC that offers quest
+quest_configs,min_level,1-999,Yes,Yes,Many,Game.cpp,Level validation,ACTIVE,Minimum level requirement
+quest_configs,max_level,1-999,Yes,Yes,Many,Game.cpp,Level validation,ACTIVE,Maximum level requirement
+quest_configs,required_skill_num,0-24,Yes,Yes,Many,Game.cpp,Skill requirements,ACTIVE,Required skill ID (-1 = none)
+quest_configs,required_skill_level,0-200,Yes,Yes,Many,Game.cpp,Skill requirements,ACTIVE,Required skill level
+quest_configs,time_limit,-1 or seconds,Yes,No,0,N/A,N/A,UNUSED,Loaded but NOT ENFORCED - incomplete feature
+quest_configs,assign_type,1/-1,Yes,Yes,Many,Game.cpp,Quest filtering,ACTIVE,"1=Crusade, -1=Regular"
+quest_configs,reward_type1,Various,Yes,Yes,Many,Game.cpp,Reward system,ACTIVE,Reward category 1
+quest_configs,reward_amount1,0-99999,Yes,Yes,Many,Game.cpp,Reward system,ACTIVE,Reward quantity 1
+quest_configs,reward_type2,Various,Yes,Yes,Many,Game.cpp,Reward system,ACTIVE,Reward category 2
+quest_configs,reward_amount2,0-99999,Yes,Yes,Many,Game.cpp,Reward system,ACTIVE,Reward quantity 2
+quest_configs,reward_type3,Various,Yes,Yes,Many,Game.cpp,Reward system,ACTIVE,Reward category 3
+quest_configs,reward_amount3,0-99999,Yes,Yes,Many,Game.cpp,Reward system,ACTIVE,Reward quantity 3
+quest_configs,contribution,0-1000,Yes,Yes,Many,Game.cpp,Contribution system,ACTIVE,Points awarded
+quest_configs,contribution_limit,0-9999,Yes,Yes,Many,Game.cpp,Contribution check,ACTIVE,Max contribution requirement
+quest_configs,response_mode,0-2,Yes,Yes,Many,Game.cpp,Dialog system,ACTIVE,Dialog response type
+quest_configs,target_name,Location name,Yes,Yes,Many,Game.cpp,Quest location,ACTIVE,Target location name
+quest_configs,target_x,0-700,Yes,Yes,Many,Game.cpp,Quest location,ACTIVE,Target X coordinate
+quest_configs,target_y,0-700,Yes,Yes,Many,Game.cpp,Quest location,ACTIVE,Target Y coordinate
+quest_configs,target_range,1-50,Yes,Yes,Many,Game.cpp,Quest location,ACTIVE,Completion radius
+quest_configs,quest_id,Unique ID,Yes,Yes,Many,Game.cpp,Quest tracking,ACTIVE,Stored in player data
+quest_configs,req_contribution,0-9999,Yes,Yes,Many,Game.cpp,Quest validation,ACTIVE,Required contribution to accept
+builditem_configs,build_id,0-96,Yes,Yes,Many,Game.cpp,Array index,ACTIVE,Build recipe identifier
+builditem_configs,name,Item name,Yes,Yes,Many,Game.cpp,_bInitItemAttr,ACTIVE,Crafted item name
+builditem_configs,skill_limit,0-100,Yes,Yes,Many,Game.cpp,Skill check,ACTIVE,Min crafting skill required
+builditem_configs,material_id1,Item ID,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required material 1
+builditem_configs,material_count1,1-99,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required count 1
+builditem_configs,material_value1,0-100,Yes,Yes,Many,Game.cpp,Success calc,ACTIVE,Material quality 1
+builditem_configs,material_id2,Item ID,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required material 2
+builditem_configs,material_count2,1-99,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required count 2
+builditem_configs,material_value2,0-100,Yes,Yes,Many,Game.cpp,Success calc,ACTIVE,Material quality 2
+builditem_configs,material_id3,Item ID,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required material 3
+builditem_configs,material_count3,1-99,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required count 3
+builditem_configs,material_value3,0-100,Yes,Yes,Many,Game.cpp,Success calc,ACTIVE,Material quality 3
+builditem_configs,material_id4,Item ID,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required material 4
+builditem_configs,material_count4,1-99,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required count 4
+builditem_configs,material_value4,0-100,Yes,Yes,Many,Game.cpp,Success calc,ACTIVE,Material quality 4
+builditem_configs,material_id5,Item ID,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required material 5
+builditem_configs,material_count5,1-99,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required count 5
+builditem_configs,material_value5,0-100,Yes,Yes,Many,Game.cpp,Success calc,ACTIVE,Material quality 5
+builditem_configs,material_id6,Item ID,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required material 6
+builditem_configs,material_count6,1-99,Yes,Yes,Many,Game.cpp,Inventory check,ACTIVE,Required count 6
+builditem_configs,material_value6,0-100,Yes,Yes,Many,Game.cpp,Success calc,ACTIVE,Material quality 6
+builditem_configs,average_value,0-100,Yes,Yes,Many,Game.cpp,Quality calc,ACTIVE,Base quality divisor
+builditem_configs,max_skill,0-200,Yes,Yes,Many,Game.cpp,Exp calculation,ACTIVE,Max skill for exp bonus
+builditem_configs,attribute,0-100,Yes,Yes,Many,Game.cpp,Item creation,ACTIVE,Crafted item attribute
+builditem_configs,item_id,Item ID,Yes,No,0,N/A,N/A,UNUSED,Recalculated from name - redundant
+crafting_configs,crafting_id,0-24,Yes,Yes,Many,Game.cpp,Array index,ACTIVE,Crafting recipe identifier
+crafting_configs,name,Item name,Yes,Yes,Many,Game.cpp,Item creation,ACTIVE,Crafted item name
+crafting_configs,array0,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 1 item
+crafting_configs,array1,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 1 count
+crafting_configs,array2,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 2 item
+crafting_configs,array3,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 2 count
+crafting_configs,array4,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 3 item
+crafting_configs,array5,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 3 count
+crafting_configs,array6,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 4 item
+crafting_configs,array7,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 4 count
+crafting_configs,array8,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 5 item
+crafting_configs,array9,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 5 count
+crafting_configs,array10,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 6 item
+crafting_configs,array11,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 6 count
+crafting_configs,skill_limit,0-100,Yes,Yes,Many,Game.cpp,Risk level,ACTIVE,Failure item loss %
+crafting_configs,difficulty,0-100,Yes,Yes,Many,Game.cpp,Success check,ACTIVE,Success percentage
+potion_configs,potion_id,0-18,Yes,Yes,Many,Game.cpp,Array index,ACTIVE,Potion recipe identifier
+potion_configs,name,Item name,Yes,Yes,Many,Game.cpp,Item creation,ACTIVE,Created potion name
+potion_configs,array0,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 1 item
+potion_configs,array1,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 1 count
+potion_configs,array2,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 2 item
+potion_configs,array3,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 2 count
+potion_configs,array4,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 3 item
+potion_configs,array5,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 3 count
+potion_configs,array6,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 4 item
+potion_configs,array7,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 4 count
+potion_configs,array8,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 5 item
+potion_configs,array9,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 5 count
+potion_configs,array10,Item ID,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 6 item
+potion_configs,array11,Count,Yes,Yes,Many,Game.cpp,Recipe matching,ACTIVE,Ingredient 6 count
+potion_configs,skill_limit,0-100,Yes,Yes,Many,Game.cpp,Skill check,ACTIVE,Min alchemy skill
+potion_configs,difficulty,0-100,Yes,Yes,Many,Game.cpp,Success/exp calc,ACTIVE,Affects success and exp
+drop_tables,drop_table_id,1-17,Yes,Yes,Many,EntityManager.cpp,GetDropTable,ACTIVE,Drop table identifier
+drop_tables,name,e.g. 'body_Slime',Yes,No,0,N/A,N/A,METADATA,Descriptive name - not used in logic
+drop_tables,description,Human readable,Yes,No,0,N/A,N/A,METADATA,Description - not used in logic
+drop_entries,drop_table_id,FK to drop_tables,Yes,Yes,Many,EntityManager.cpp,LoadDropTables,ACTIVE,Links to parent table
+drop_entries,tier,1-2,Yes,Yes,Many,EntityManager.cpp,Tier selection,ACTIVE,Drop tier level
+drop_entries,item_id,Item ID,Yes,Yes,Many,EntityManager.cpp,Item spawn,ACTIVE,Item to drop
+drop_entries,weight,1-1000,Yes,Yes,Many,EntityManager.cpp,Random selection,ACTIVE,Probability weight
+drop_entries,min_count,1-99,Yes,Yes,Many,EntityManager.cpp,Item creation,ACTIVE,Minimum drop quantity
+drop_entries,max_count,1-99,Yes,Yes,Many,EntityManager.cpp,Item creation,ACTIVE,Maximum drop quantity
+schedule_crusade,schedule_id,Index,Yes,Yes,Many,Game.cpp,35453,ACTIVE,Schedule array index
+schedule_crusade,day,0-6,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Day of week
+schedule_crusade,hour,0-23,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Hour
+schedule_crusade,minute,0-59,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Minute
+schedule_apocalypse_start,schedule_id,Index,Yes,Yes,Many,Game.cpp,37650,ACTIVE,Schedule array index
+schedule_apocalypse_start,day,0-6,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Day of week
+schedule_apocalypse_start,hour,0-23,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Hour
+schedule_apocalypse_start,minute,0-59,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Minute
+schedule_apocalypse_end,schedule_id,Index,Yes,Yes,Many,Game.cpp,37670,ACTIVE,Schedule array index
+schedule_apocalypse_end,day,0-6,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Day of week
+schedule_apocalypse_end,hour,0-23,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Hour
+schedule_apocalypse_end,minute,0-59,Yes,Yes,Many,Game.cpp,Time check,ACTIVE,Minute
+schedule_heldenian,schedule_id,Index,Yes,No,0,N/A,N/A,UNUSED,ENTIRE TABLE UNUSED - dead feature
+schedule_heldenian,day,0-6,Yes,No,0,N/A,N/A,UNUSED,Loaded but never checked
+schedule_heldenian,start_hour,0-23,Yes,No,0,N/A,N/A,UNUSED,Loaded but never checked
+schedule_heldenian,start_minute,0-59,Yes,No,0,N/A,N/A,UNUSED,Loaded but never checked
+schedule_heldenian,end_hour,0-23,Yes,No,0,N/A,N/A,UNUSED,Loaded but never checked
+schedule_heldenian,end_minute,0-59,Yes,No,0,N/A,N/A,UNUSED,Loaded but never checked
+crusade_structures,structure_id,0-20,Yes,Yes,Many,Game.cpp,31514,ACTIVE,Structure array index
+crusade_structures,map_name,Map name,Yes,Yes,Many,Game.cpp,Map lookup,ACTIVE,Map where structure spawns
+crusade_structures,structure_type,NPC type,Yes,Yes,Many,Game.cpp,NPC spawn,ACTIVE,Structure NPC type (40-42)
+crusade_structures,pos_x,0-700,Yes,Yes,Many,Game.cpp,Placement,ACTIVE,Structure X position
+crusade_structures,pos_y,0-700,Yes,Yes,Many,Game.cpp,Placement,ACTIVE,Structure Y position
+admin_list,gm_name,e.g. 'CrazyAdmin',Yes,Yes,Many,Game.cpp,"866, admin checks",ACTIVE,Admin account names
+banned_list,ip_address,e.g. '192.118.1.1',Yes,Yes,Many,Game.cpp,"390, 41478-41480",ACTIVE,Banned IP addresses
+dup_item_ids,dup_id,Item ID,Yes,Yes,Many,Game.cpp,1089,ACTIVE,Special/unique item IDs
+dup_item_ids,touch_effect_type,Effect type,Yes,Yes,Many,Game.cpp,Item effects,ACTIVE,Touch effect type
+dup_item_ids,touch_effect_value1,Effect value,Yes,Yes,Many,Game.cpp,Item effects,ACTIVE,Touch effect parameter 1
+dup_item_ids,touch_effect_value2,Effect value,Yes,Yes,Many,Game.cpp,Item effects,ACTIVE,Touch effect parameter 2
+dup_item_ids,touch_effect_value3,Effect value,Yes,Yes,Many,Game.cpp,Item effects,ACTIVE,Touch effect parameter 3
+dup_item_ids,price,Gold value,Yes,Yes,Many,Game.cpp,Trading,ACTIVE,Special item price
+maps,map_index,0-77,Yes,Yes,Many,Game.cpp,"852, _bRegisterMap",ACTIVE,Map array index
+maps,map_name,e.g. 'aresden',Yes,Yes,Many,Game.cpp,Map initialization,ACTIVE,Map identifier name
+meta,key,'schema_version',Yes,No,0,N/A,175 (creation only),METADATA,Schema tracking only
+meta,value,'3',Yes,No,0,N/A,N/A,METADATA,Not read at runtime

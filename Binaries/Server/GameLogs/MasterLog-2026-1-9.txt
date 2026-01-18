@@ -1,0 +1,1 @@
+Loc(gshop_2) IP(127.0.0.1) PC(ShadowEvil):"/"Loc(gshop_2) IP(127.0.0.1) PC(ShadowEvil):"/"Loc(elvine) IP(127.0.0.1) PC(ShadowEvil):"/showframes"Loc(elvine) IP(127.0.0.1) PC(ShadowEvil):"wefwefewf"Loc(elvine) IP(127.0.0.1) PC(ShadowEvil):"/"Loc(elvine) IP(127.0.0.1) PC(ShadowEvil):"/"

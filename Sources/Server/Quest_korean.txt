@@ -1,0 +1,31 @@
+Line 14: #define DEF_QUESTTYPE_MONSTERHUNT				1		// 占싹뱄옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 15: #define DEF_QUESTTYPE_MONSTERHUNT_TIMELIMIT		2		// 占시곤옙 占쏙옙占쏙옙占쏙옙 占심뤄옙占쌍댐옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 16: #define DEF_QUESTTYPE_ASSASSINATION 			3		// 占싹삼옙
+Line 17: #define DEF_QUESTTYPE_DELIVERY					4		// 占쏙옙占�: 특占쏙옙 占쏙옙念占� 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙磯占�.
+Line 18: #define DEF_QUESTTYPE_ESCORT					5		// 占쏙옙호: 특占쏙옙 캐占쏙옙占싶몌옙 占쏙옙호占싼댐옙.
+Line 19: #define DEF_QUESTTYPE_GUARD						6		// 특占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占싸븝옙占쏙옙 占쏙옙占쏙옙磯占�.
+Line 20: #define DEF_QUESTTYPE_GOPLACE					7		// 특占쏙옙 占쏙옙念占� 占쏙옙占쏙옙. 占쏙옙占쏙옙 침占쏙옙
+Line 21: #define DEF_QUESTTYPE_BUILDSTRUCTURE			8		// 占쏙옙占쏙옙占쏙옙 占쏙옙치 占쌈뱄옙
+Line 22: #define DEF_QUESTTYPE_SUPPLYBUILDSTRUCTURE		9		// 占쏙옙占쏙옙占쏙옙 占쏙옙치 占쏙옙占쏙옙 占쌈뱄옙
+Line 23: #define DEF_QUESTTYPE_STRATEGICSTRIKE			10		// 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쌈뱄옙
+Line 24: #define DEF_QUESTTYPE_SENDTOBATTLE				11		// 占쏙옙慕占� 占쏙옙占쏙옙占쏙옙占� 占쏙옙占쏙옙占싹댐옙 占쌈뱄옙
+Line 25: #define DEF_QUESTTYPE_SETOCCUPYFLAG				12		// 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占� 占쏙옙치占싹댐옙 占쌈뱄옙
+Line 31: char m_cSide;				// 占쏙옙占� 占쏙옙占쏙옙 占쏙옙占싹댐옙 占쌈뱄옙占싸곤옙?
+Line 33: int m_iType;				// Quest 占쏙옙占쏙옙
+Line 34: int m_iTargetType;			// Quest占쏙옙 占쏙옙표 占쏙옙占쏙옙. 占쏙옙 Type占쏙옙 占쏙옙占쏙옙 占쌕몌옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙.
+Line 35: int m_iMaxCount;			// 占쌍댐옙 占쏙옙占쏙옙 횟占쏙옙
+Line 37: int m_iFrom;				// Quest占쏙옙 占쏙옙占쏙옙占쌍댐옙 NPC 占쏙옙占쏙옙
+Line 39: int m_iMinLevel;			// Quest占쏙옙 占쌨깍옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙.
+Line 40: int m_iMaxLevel;			// Quest占쏙옙 占쌨깍옙 占쏙옙占쏙옙 占쌍댐옙 占쏙옙占쏙옙
+Line 42: int m_iRequiredSkillNum;	// 占쏙옙占쏙옙 占실단울옙 占십울옙占쏙옙 占쏙옙킬 占쏙옙호
+Line 43: int m_iRequiredSkillLevel;	// 占쏙옙占쏙옙 占실단울옙 占십울옙占쏙옙 占쏙옙킬 占쏙옙占쏙옙
+Line 45: int m_iTimeLimit; 			// 占시곤옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+Line 46: int m_iAssignType;			// 占쏙옙占쏙옙트 占쌀댐옙 타占쏙옙. -1占싱몌옙 占싣뱄옙占쏙옙占쏙옙. 1占싱몌옙 Crusade 占쏙옙占쏙옙占쏙옙占싹띰옙占쏙옙.
+Line 48: // 占쏙옙품 占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙. 3占쏙옙 占쏙옙 1占쏙옙占쏙옙 占쏙옙占쏙옙占싹곤옙 占쏙옙占쏙옙占쏙옙. 0占쏙옙 占싸듸옙占쏙옙占쏙옙 占쏙옙占� 占쏙옙占쏙옙.
+Line 52: int m_iContribution;		// 占쏙옙占썲도
+Line 53: int m_iContributionLimit;	// 占쌍댐옙 占쏙옙占썲도 占쏙옙占쏙옙
+Line 55: int m_iResponseMode;		// 占쏙옙占쏙옙 占쏙옙占�: 0(ok) 1(Accept/Decline) 2(Next)
+Line 57: char m_cTargetName[21];		// 占쏙옙占쏙옙트占쏙옙 占쏙옙占쏙옙占쏙옙 占싱몌옙. 占쏙옙 혹占쏙옙 캐占쏙옙占쏙옙 占싱몌옙
+Line 58: int  m_sX, m_sY, m_iRange;	// 占쏙옙占쏙옙트占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쏙옙占�
+Line 60: int  m_iQuestID;			// 占쏙옙占쏙옙트 ID. 占쏙옙占쏙옙 占쏙옙占쏙옙트占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙퓸占쏙옙占� 占쏙옙痢� 占쏙옙占쏙옙占� 占쏙옙占쏙옙.
+Line 62: int  m_iReqContribution;	// 占쏙옙占쏙옙트占쏙옙 占시깍옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占썲도 占쏙옙占쏙옙.

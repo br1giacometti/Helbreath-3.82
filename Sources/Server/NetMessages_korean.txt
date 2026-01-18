@@ -1,0 +1,12 @@
+Line 88: // v1.4311-3 占쌩곤옙 占쌨쇽옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占� 占쌨깍옙占쏙옙占쏙옙 占쌨쇽옙占쏙옙  占쏙옙恙∽옙占� 占쏙옙占쏙옙占�  DEF_COMMONTYPE_REQ_GETOCCUPYFIGHTZONETICKET DEF_COMMONTYPE_BANGUILD
+Line 222: // v1.4311-3 占쌨쇽옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占� 占쏙옙 占쏙옙占� 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占싯몌옙
+Line 253: #define DEF_NOTIFY_NOMOREAGRICULTURE				0x0BB0  //? 占쏙옙占쌜뱄옙 占쏙옙占쏙옙
+Line 254: #define DEF_NOTIFY_AGRICULTURESKILLLIMIT			0x0BB1  //? 占쏙옙킬 占쏙옙占쏙옙
+Line 255: #define DEF_NOTIFY_AGRICULTURENOAREA				0x0BB2  //? 占쏙옙占쌜뱄옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쌍댐옙 占쏙옙占쏙옙占쏙옙 占싣니댐옙.
+Line 309: #define MSGID_RESPONSE_LOG					0x0FC94203	// Login, createnewaccount, createnewcharacter, deletecharacter 占쏙옙楮� 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 345: // 占쏙옙占쏙옙 占쏙옙占쌕쏙옙 占심쇽옙
+Line 350: // 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占�
+Line 370: // 占싸그쇽옙占쏙옙占쏙옙占쏙옙 占쏙옙占쌈쇽옙占쏙옙占쏙옙 占쎈보占싹댐옙 占쌨쏙옙占쏙옙
+Line 374: // 占쌘뤄옙占쏙옙트
+Line 390: // v1.4311-3 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쌨쇽옙占쏙옙
+Line 472: // Gate-Server占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙

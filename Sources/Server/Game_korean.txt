@@ -1,0 +1,30 @@
+Line 70: #define DEF_EXPSTOCKTIME		1000*10		// ExpStock占쏙옙 占쏙옙占쏙옙求占? 占시곤옙 占쏙옙占쏙옙
+Line 71: #define DEF_MSGQUENESIZE		100000		// 占쌨쏙옙占쏙옙 큐 占쏙옙占쏙옙占쏙옙 10占쏙옙占쏙옙
+Line 72: #define DEF_AUTOEXPTIME			1000*60*6	// 占쌘듸옙占쏙옙占쏙옙 占쏙옙占쏙옙치占쏙옙 占시라가댐옙 占시곤옙占쏙옙占쏙옙
+Line 73: #define DEF_TOTALLEVELUPPOINT	3			// 占쏙옙占쏙옙占쏙옙占쏙옙 占쌀댐옙占싹댐옙 占쏙옙 占쏙옙占쏙옙트 占쏙옙
+Line 80: #define DEF_SSN_LIMIT_MULTIPLY_VALUE	2	// SSN-limit 占쏙옙占싹댐옙 占쏙옙
+Line 82: #define DEF_MAXNOTIFYMSGS		300			// 占쌍댐옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쌨쏙옙占쏙옙
+Line 83: #define DEF_MAXSKILLPOINTS		700			// 占쏙옙킬 占쏙옙占쏙옙트占쏙옙 占쏙옙占쏙옙
+Line 86: #define DEF_CHARPOINTLIMIT		1000		// 占쏙옙占쏙옙占쏙옙 특占쏙옙치占쏙옙 占쌍대값
+Line 87: #define DEF_RAGPROTECTIONTIME	7000		// 占쏙옙 占쏙옙 占싱삼옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙호占쏙옙 占쌨댐옙占쏙옙
+Line 88: #define DEF_MAXREWARDGOLD		99999999	// 占쏙옙占쏙옙占? 占쌍댐옙치
+Line 90: #define DEF_ATTACKAI_NORMAL				1	// 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 91: #define DEF_ATTACKAI_EXCHANGEATTACK		2	// 占쏙옙환 占쏙옙占쏙옙 - 占쏙옙占쏙옙
+Line 92: #define DEF_ATTACKAI_TWOBYONEATTACK		3	// 2-1 占쏙옙占쏙옙, 占쏙옙占쏙옙
+Line 97: #define DEF_MAXENGAGINGFISH				30  // 占쏙옙 占쏙옙占쏙옙占썩에 占쏙옙占시몌옙 占시듸옙占쏙옙 占쏙옙 占쌍댐옙 占쌍댐옙 占싸울옙
+Line 98: #define DEF_MAXPORTIONTYPES				500 // 占쌍댐옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 100: #define DEF_SPECIALEVENTTIME			300000 //600000 // 10占쏙옙
+Line 129: #define DEF_MAXGUILDS					1000 // 占쏙옙占시울옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쌍댐옙 占쏙옙占쏙옙
+Line 130: #define DEF_MAXONESERVERUSERS			800	// 800 // 占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙 占쌍댐옙 占쌍댐옙 占쏙옙占쏙옙靡占?. 占십곤옙占쏙옙 占쏙옙占? 占쏙옙활占쏙옙 혹占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙, 占쏙옙占쏙옙占쏙옙占? 占쏙옙占쏙옙占쏙옙占쏙옙.
+Line 139: //v1.4311-3  占쏙옙占쏙옙占쏙옙占쏙옙 占쌍댐옙 占쏙옙占쏙옙
+Line 143: #define DEF_LEVELLIMIT		20				// 체占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙치!!!
+Line 147: #define DEF_MINIMUMHITRATIO 15				// 占쏙옙占쏙옙 占쏙옙占쏙옙 확占쏙옙
+Line 151: #define DEF_MAXIMUMHITRATIO	99				// 占쌍댐옙 占쏙옙占쏙옙 확占쏙옙
+Line 155: #define DEF_PLAYERMAXLEVEL	180				// 占쌍댐옙 占쏙옙占쏙옙: Npc.cfg 占쏙옙占싹울옙 占쏙옙占쏙옙占실억옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占? m_iPlayerMaxLevel占쏙옙 占쌉력된댐옙.
+Line 160: #define DEF_GMGMANACONSUMEUNIT	15			// Grand Magic Generator 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙.
+Line 163: #define DEF_MAXCONSTRUCTIONPOINT 30000		// 占쌍댐옙 占쏙옙환 占쏙옙占쏙옙트
+Line 171: // 2003-04-14 占쏙옙占쏙옙 占쏙옙占쏙옙트占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쌍댐옙...
+Line 676: // v1.4311-3 占쏙옙占쏙옙 占쌉쇽옙  占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쌉쇽옙 占쏙옙占쏙옙 FightzoneReserveHandler
+Line 932: int   m_iAresdenMapIndex;		// 占싣뤄옙占쏙옙占쏙옙 占쏙옙 占싸듸옙占쏙옙
+Line 933: int	  m_iElvineMapIndex;		// 占쏙옙占쏙옙占쏙옙 占쏙옙 占싸듸옙占쏙옙
+Line 971: // Crusade 처占쏙옙占쏙옙

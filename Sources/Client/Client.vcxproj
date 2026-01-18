@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Game</ProjectName>
+    <SccProjectName />
+    <SccLocalPath />
+    <ProjectGuid>{F5807AE3-600C-4037-970B-CD2474F5CF9A}</ProjectGuid>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v143</PlatformToolset>
+    <UseOfMfc>false</UseOfMfc>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.Cpp.UpgradeFromVC60.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(SolutionDir)Dependencies\Shared;$(SolutionDir)Dependencies\Client\Includes;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\Client\Libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(SolutionDir)Dependencies\Shared;$(SolutionDir)Dependencies\Client\Includes;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <LibraryPath>$(SolutionDir)Dependencies\Client\Libs;$(VC_LibraryPath_x86);$(WindowsSDK_LibraryPath_x86)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\Client.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0809</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>.\Release\Client.bsc</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <SetChecksum>true</SetChecksum>
+      <AdditionalDependencies>Ws2_32.lib;DINPUT.LIB;DSOUND.LIB;DXGUID.LIB;ddraw.lib;winmm.lib;Cint.lib;gdi32.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <GenerateMapFile>false</GenerateMapFile>
+      <AdditionalOptions> /FORCE:UNRESOLVED</AdditionalOptions>
+      <LinkTimeCodeGeneration>UseLinkTimeCodeGeneration</LinkTimeCodeGeneration>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <StringPooling>true</StringPooling>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <Optimization>Disabled</Optimization>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <PrecompiledHeaderOutputFile>
+      </PrecompiledHeaderOutputFile>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Midl>
+      <TypeLibraryName>.\Release\Client.tlb</TypeLibraryName>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+    <Bscmake>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <OutputFile>$(IntDir)</OutputFile>
+    </Bscmake>
+    <Link>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <SetChecksum>false</SetChecksum>
+      <AdditionalDependencies>Ws2_32.lib;DINPUT.LIB;DSOUND.LIB;DXGUID.LIB;ddraw.lib;winmm.lib;Cint.lib;gdi32.lib;imm32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+      <GenerateDebugInformation>DebugFull</GenerateDebugInformation>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <GenerateMapFile>false</GenerateMapFile>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <LinkStatus>
+      </LinkStatus>
+      <LinkTimeCodeGeneration>Default</LinkTimeCodeGeneration>
+      <EnableCOMDATFolding>false</EnableCOMDATFolding>
+      <OptimizeReferences>false</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ActionID_Client.h" />
+    <ClInclude Include="Benchmark.h" />
+    <ClInclude Include="FrameTiming.h" />
+    <ClInclude Include="InputManager.h" />
+    <ClInclude Include="Version.h" />
+    <ClInclude Include="BuildItem.h" />
+    <ClInclude Include="CharInfo.h" />
+    <ClInclude Include="CommonTypes.h" />
+    <ClInclude Include="Curse.h" />
+    <ClInclude Include="DXC_ddraw.h" />
+    <ClInclude Include="Effect.h" />
+    <ClInclude Include="DialogBoxIDs.h" />
+    <ClInclude Include="DialogBoxInfo.h" />
+    <ClInclude Include="DialogBoxManager.h" />
+    <ClInclude Include="IDialogBox.h" />
+    <ClInclude Include="DialogBox_WarningMsg.h" />
+    <ClInclude Include="DialogBox_Resurrect.h" />
+    <ClInclude Include="DialogBox_Noticement.h" />
+    <ClInclude Include="DialogBox_RepairAll.h" />
+    <ClInclude Include="DialogBox_ConfirmExchange.h" />
+    <ClInclude Include="DialogBox_Help.h" />
+    <ClInclude Include="DialogBox_ItemDrop.h" />
+    <ClInclude Include="DialogBox_LevelUpSetting.h" />
+    <ClInclude Include="DialogBox_Character.h" />
+    <ClInclude Include="DialogBox_Inventory.h" />
+    <ClInclude Include="DialogBox_Skill.h" />
+    <ClInclude Include="DialogBox_Magic.h" />
+    <ClInclude Include="DialogBox_HudPanel.h" />
+    <ClInclude Include="DialogBox_GuideMap.h" />
+    <ClInclude Include="DialogBox_Fishing.h" />
+    <ClInclude Include="DialogBox_CrusadeJob.h" />
+    <ClInclude Include="DialogBox_ItemDropAmount.h" />
+    <ClInclude Include="DialogBox_Map.h" />
+    <ClInclude Include="DialogBox_NpcActionQuery.h" />
+    <ClInclude Include="DialogBox_SysMenu.h" />
+    <ClInclude Include="DialogBox_Text.h" />
+    <ClInclude Include="DialogBox_MagicShop.h" />
+    <ClInclude Include="DialogBox_NpcTalk.h" />
+    <ClInclude Include="DialogBox_ChatHistory.h" />
+    <ClInclude Include="DialogBox_CityHallMenu.h" />
+    <ClInclude Include="DialogBox_Shop.h" />
+    <ClInclude Include="DialogBox_ItemUpgrade.h" />
+    <ClInclude Include="DialogBox_SellList.h" />
+    <ClInclude Include="DialogBox_GuildMenu.h" />
+    <ClInclude Include="DialogBox_GuildOperation.h" />
+    <ClInclude Include="DialogBox_Bank.h" />
+    <ClInclude Include="DialogBox_Exchange.h" />
+    <ClInclude Include="DialogBox_Party.h" />
+    <ClInclude Include="DialogBox_Quest.h" />
+    <ClInclude Include="DialogBox_Commander.h" />
+    <ClInclude Include="DialogBox_Constructor.h" />
+    <ClInclude Include="DialogBox_Soldier.h" />
+    <ClInclude Include="DialogBox_Slates.h" />
+    <ClInclude Include="DialogBox_ChangeStatsMajestic.h" />
+    <ClInclude Include="DialogBox_GuildHallMenu.h" />
+    <ClInclude Include="DialogBox_SellOrRepair.h" />
+    <ClInclude Include="DialogBox_Manufacture.h" />
+    <ClInclude Include="EffectManager.h" />
+    <ClInclude Include="NetworkMessageManager.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="GameMonitor.h" />
+    <ClInclude Include="GlobalDef.h" />
+    <ClInclude Include="lan_eng.h" />
+    <ClInclude Include="Magic.h" />
+    <ClInclude Include="MapData.h" />
+    <ClInclude Include="Misc.h" />
+    <ClInclude Include="MouseInterface.h" />
+    <ClInclude Include="ChatMsg.h" />
+    <ClInclude Include="ClientMessages.h" />
+    <ClInclude Include="Mydib.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="Skill.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteID.h" />
+    <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileSpr.h" />
+    <ClInclude Include="XSocket.h" />
+    <ClInclude Include="ConfigManager.h" />
+    <ClInclude Include="Camera.h" />
+    <ClInclude Include="AudioManager.h" />
+    <ClInclude Include="ChatCommandManager.h" />
+    <ClInclude Include="CmdShowFrame.h" />
+    <ClInclude Include="CmdShowPing.h" />
+    <ClInclude Include="CmdWhisper.h" />
+    <ClInclude Include="CmdShout.h" />
+    <ClInclude Include="CmdIgnore.h" />
+    <ClInclude Include="CmdWeather.h" />
+    <ClInclude Include="CmdProfile.h" />
+    <ClInclude Include="WeatherManager.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CommonTypes.cpp" />
+    <ClCompile Include="ConfigManager.cpp" />
+    <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="Curse.cpp" />
+    <ClCompile Include="DialogBoxManager.cpp" />
+    <ClCompile Include="IDialogBox.cpp" />
+    <ClCompile Include="DialogBox_WarningMsg.cpp" />
+    <ClCompile Include="DialogBox_Resurrect.cpp" />
+    <ClCompile Include="DialogBox_Noticement.cpp" />
+    <ClCompile Include="DialogBox_RepairAll.cpp" />
+    <ClCompile Include="DialogBox_ConfirmExchange.cpp" />
+    <ClCompile Include="DialogBox_Help.cpp" />
+    <ClCompile Include="DialogBox_ItemDrop.cpp" />
+    <ClCompile Include="DialogBox_LevelUpSetting.cpp" />
+    <ClCompile Include="DialogBox_Character.cpp" />
+    <ClCompile Include="DialogBox_Inventory.cpp" />
+    <ClCompile Include="DialogBox_Skill.cpp" />
+    <ClCompile Include="DialogBox_Magic.cpp" />
+    <ClCompile Include="DialogBox_HudPanel.cpp" />
+    <ClCompile Include="DialogBox_GuideMap.cpp" />
+    <ClCompile Include="DialogBox_Fishing.cpp" />
+    <ClCompile Include="DialogBox_CrusadeJob.cpp" />
+    <ClCompile Include="DialogBox_ItemDropAmount.cpp" />
+    <ClCompile Include="DialogBox_Map.cpp" />
+    <ClCompile Include="DialogBox_NpcActionQuery.cpp" />
+    <ClCompile Include="DialogBox_SysMenu.cpp" />
+    <ClCompile Include="DialogBox_Text.cpp" />
+    <ClCompile Include="DialogBox_MagicShop.cpp" />
+    <ClCompile Include="DialogBox_NpcTalk.cpp" />
+    <ClCompile Include="DialogBox_ChatHistory.cpp" />
+    <ClCompile Include="DialogBox_CityHallMenu.cpp" />
+    <ClCompile Include="DialogBox_Shop.cpp" />
+    <ClCompile Include="DialogBox_ItemUpgrade.cpp" />
+    <ClCompile Include="DialogBox_SellList.cpp" />
+    <ClCompile Include="DialogBox_GuildMenu.cpp" />
+    <ClCompile Include="DialogBox_GuildOperation.cpp" />
+    <ClCompile Include="DialogBox_Bank.cpp" />
+    <ClCompile Include="DialogBox_Exchange.cpp" />
+    <ClCompile Include="DialogBox_Party.cpp" />
+    <ClCompile Include="DialogBox_Quest.cpp" />
+    <ClCompile Include="DialogBox_Commander.cpp" />
+    <ClCompile Include="DialogBox_Constructor.cpp" />
+    <ClCompile Include="DialogBox_Soldier.cpp" />
+    <ClCompile Include="DialogBox_Slates.cpp" />
+    <ClCompile Include="DialogBox_ChangeStatsMajestic.cpp" />
+    <ClCompile Include="DialogBox_GuildHallMenu.cpp" />
+    <ClCompile Include="DialogBox_SellOrRepair.cpp" />
+    <ClCompile Include="DialogBox_Manufacture.cpp" />
+    <ClCompile Include="FrameTiming.cpp" />
+    <ClCompile Include="HotkeyManager.cpp" />
+    <ClCompile Include="InputManager.cpp" />
+    <ClCompile Include="Version.cpp" />
+    <ClCompile Include="DXC_ddraw.cpp" />
+    <ClCompile Include="Game.Hotkeys.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="EffectManager.cpp" />
+    <ClCompile Include="Effect_Add.cpp" />
+    <ClCompile Include="Effect_Update.cpp" />
+    <ClCompile Include="Effect_Draw.cpp" />
+    <ClCompile Include="Effect_Lights.cpp" />
+    <ClCompile Include="NetworkMessageManager.cpp" />
+    <ClCompile Include="NetworkMessages_Admin.cpp" />
+    <ClCompile Include="NetworkMessages_Agriculture.cpp" />
+    <ClCompile Include="NetworkMessages_Angels.cpp" />
+    <ClCompile Include="NetworkMessages_Apocalypse.cpp" />
+    <ClCompile Include="NetworkMessages_Bank.cpp" />
+    <ClCompile Include="NetworkMessages_Combat.cpp" />
+    <ClCompile Include="NetworkMessages_Crafting.cpp" />
+    <ClCompile Include="NetworkMessages_Crusade.cpp" />
+    <ClCompile Include="NetworkMessages_Events.cpp" />
+    <ClCompile Include="NetworkMessages_Exchange.cpp" />
+    <ClCompile Include="NetworkMessages_Fish.cpp" />
+    <ClCompile Include="NetworkMessages_Guild.cpp" />
+    <ClCompile Include="NetworkMessages_Heldenian.cpp" />
+    <ClCompile Include="NetworkMessages_Items.cpp" />
+    <ClCompile Include="NetworkMessages_Map.cpp" />
+    <ClCompile Include="NetworkMessages_Party.cpp" />
+    <ClCompile Include="NetworkMessages_Player.cpp" />
+    <ClCompile Include="NetworkMessages_Quest.cpp" />
+    <ClCompile Include="NetworkMessages_Skills.cpp" />
+    <ClCompile Include="NetworkMessages_Slates.cpp" />
+    <ClCompile Include="NetworkMessages_Stats.cpp" />
+    <ClCompile Include="NetworkMessages_System.cpp" />
+    <ClCompile Include="GameMonitor.cpp" />
+    <ClCompile Include="MapData.cpp" />
+    <ClCompile Include="MouseInterface.cpp" />
+    <ClCompile Include="Mydib.cpp" />
+    <ClCompile Include="Sprite.cpp" />
+    <ClCompile Include="Wmain.cpp" />
+    <ClCompile Include="XSocket.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
+    <ClCompile Include="ChatCommandManager.cpp" />
+    <ClCompile Include="CmdShowFrame.cpp" />
+    <ClCompile Include="CmdShowPing.cpp" />
+    <ClCompile Include="CmdWhisper.cpp" />
+    <ClCompile Include="CmdShout.cpp" />
+    <ClCompile Include="CmdIgnore.cpp" />
+    <ClCompile Include="CmdWeather.cpp" />
+    <ClCompile Include="CmdProfile.cpp" />
+    <ClCompile Include="miniaudio_impl.cpp" />
+    <ClCompile Include="WeatherManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Game.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

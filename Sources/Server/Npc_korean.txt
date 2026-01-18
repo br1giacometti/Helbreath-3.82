@@ -1,0 +1,62 @@
+Line 12: #define DEF_MOVETYPE_STOP			0		// 占쏙옙占쏙옙占쏙옙 占쌍는댐옙. 占십깍옙화占쏙옙 NPC占쏙옙 占썩본 占썅동.
+Line 13: #define DEF_MOVETYPE_SEQWAYPOINT	1		// 占싱듸옙占쏙옙罐占? 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占싱듸옙. 占쏙옙 占쏙옙占쏙옙占쏙옙 占싱듸옙占쏙옙恝占쏙옙占? 占쌔댐옙 占썅동占쏙옙 占쏙옙占쏙옙磯占?.
+Line 14: #define DEF_MOVETYPE_RANDOMWAYPOINT	2		// 占싱듸옙占쏙옙罐占? 占쏙옙占쏙옙占싹곤옙 占쏙옙占쏙옙占싹울옙 占쏙옙占쏙옙占싸댐옙.
+Line 15: #define DEF_MOVETYPE_FOLLOW			3		// 특占쏙옙 占쏙옙占쏙옙占? 占쏙옙占쏙옙 占쏙옙占쏙옙占싸댐옙.
+Line 16: #define DEF_MOVETYPE_RANDOMAREA		4		// 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占싫울옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싸댐옙.
+Line 17: #define DEF_MOVETYPE_RANDOM			5		// 占쏙옙 占쏙옙占쏙옙 占싣뱄옙占쏙옙占쏙옙占쏙옙占싸놂옙 占쏙옙占쏙옙占싸댐옙.
+Line 18: #define DEF_MOVETYPE_GUARD			6		// 처占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙치占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙표占쏙옙 占쌩견시댐옙 占쌩곤옙占싼댐옙.
+Line 35: char  m_cNpcName[21]; // NPC占쏙옙 占싱몌옙. 占쏙옙占? 占싱몌옙占쏙옙占쏙옙 占쏙옙
+Line 37: char  m_cName[6];	// 占쏙옙 占싱몌옙占쏙옙 占쏙옙占싸그뤄옙占쏙옙 占쏙옙占쏙옙 占식븝옙占쏙옙占쏙옙
+Line 43: RECT  m_rcRandomArea;	// MOVETYPE_RANDOMAREA占싹띰옙 占쏙옙占쏙옙占쏙옙표
+Line 60: DWORD  m_iExp;                    // 占쌓울옙占쏙옙 占쏙옙占? 占쏙옙占? 占쏙옙占쏙옙치. ExpDice占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占싫댐옙.
+Line 62: int  m_iHitDice;				// 占쏙옙占쏙옙占쏙옙 Hit Dice. 占싱것울옙 占쏙옙占쏙옙 HP占쏙옙 占쏙옙占쏙옙占싫댐옙.
+Line 65: int  m_iMagicHitRatio;			// v1.4 占쏙옙占쏙옙 占쏙옙占쏙옙 Ratio
+Line 66: int  m_iMinBravery;			    // 占쌍쇽옙 占쎈감치
+Line 72: char m_cSide;					// NPC占쏙옙 占쏙옙占쏙옙 占쏙옙
+Line 73: char m_cActionLimit;            // 占쏙옙 占쏙옙占쏙옙 1占싱몌옙 Move占쏙옙 占쏙옙占쏙옙占싹몌옙 占쏙옙占쏙옙占쏙옙 占십는댐옙.  占쏙옙 占쏙옙占쏙옙 2占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占십는댐옙. 3占싱몌옙 Dummy占쏙옙. 占승댐옙 占쏙옙占쏙옙,
+Line 74: // 4占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占실억옙, 5占쏙옙 占쏙옙占썅물
+Line 77: char m_cAttackDiceThrow;		// 占쏙옙占쏙옙치 占쌍삼옙占쏙옙 占쏙옙占쏙옙占쏙옙 회占쏙옙
+Line 78: char m_cAttackDiceRange;		// 占쏙옙占쏙옙치 占쌍삼옙占쏙옙 占쏙옙占쏙옙
+Line 79: char m_cAttackBonus;			// 占쏙옙占쏙옙 占쏙옙占십쏙옙
+Line 80: char m_cBravery;				// NPC占쏙옙 占쎈감占쏙옙
+Line 81: char m_cResistMagic;			// 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 82: char m_cMagicLevel;				// 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 83: char m_cDayOfWeekLimit;		    // 占쏙옙占쏙옙占쏙옙 占쏙옙짜 占쏙옙占쏙옙
+Line 84: char m_cChatMsgPresence;		// 占쏙옙占쏙옙占? Chat Msg 占쏙옙占쏙옙占쏙옙占쏙옙
+Line 85: int  m_iMana;                   // 占쌍대값占쏙옙 MagicLevel*30
+Line 86: int  m_iMaxMana;				// v1.4 占쏙옙占쏙옙 占쌩곤옙占쏙옙 占싶듸옙.
+Line 88: char  m_cMoveType;				// NPC占쏙옙 占싱듸옙占쏙옙占? 占쏙옙占?
+Line 89: char  m_cBehavior;				// NPC占쏙옙 占썅동
+Line 90: short m_sBehaviorTurnCount;		// 占썅동 카占쏙옙트
+Line 91: char  m_cTargetSearchRange;		// NPC占쏙옙占쌥몌옙표 占싯삼옙 占쏙옙占쏙옙
+Line 93: int   m_iFollowOwnerIndex;		// NPC占쏙옙 占쏙옙占쏢가곤옙 占쌍댐옙 占쏙옙체 占싸듸옙占쏙옙
+Line 94: char  m_cFollowOwnerType;		// 占쏙옙占쏢가댐옙 占쏙옙체占쏙옙 占쏙옙占쏙옙 (NPC or Player)
+Line 95: bool  m_bIsSummoned;            // 占쏙옙환占쏙옙 NPC占쏙옙占? HP占쏙옙 占쏙옙占쏙옙占쏙옙 占십는댐옙.
+Line 96: DWORD m_dwSummonedTime;			// 占쏙옙환占쏙옙占쏙옙 占쏙옙占쏙옙占시곤옙
+Line 98: int   m_iTargetIndex;			// NPC占쏙옙 占쏙옙占쌥몌옙표 占싸듸옙占쏙옙
+Line 99: char  m_cTargetType;			// 占쏙옙占쌥몌옙표占쏙옙 占쏙옙占쏙옙 (NPC or Player)
+Line 100: char  m_cCurWaypoint;			// 占쏙옙占쏙옙 占싱듸옙占쏙옙치
+Line 101: char  m_cTotalWaypoint;			// 占쏙옙 占싱듸옙占쏙옙치 占쏙옙占쏙옙
+Line 103: int   m_iSpotMobIndex;			// spot-mob-generator占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙摸占? 占싸듸옙占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 107: bool  m_bIsPermAttackMode;		// 占쏙옙 占시뤄옙占쌓곤옙 활占쏙옙화 占실억옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쌥듸옙占쏙옙 占쏙옙표占쏙옙 占쌕뀐옙占쏙옙 占십는댐옙.
+Line 108: DWORD   m_iNoDieRemainExp;		// 占쏙옙占쏙옙 占십곤옙 占쏙옙占쌩시울옙 占쏙옙占쏙옙 占쏙옙 占쌍댐옙 占쏙옙占쏙옙치
+Line 109: int   m_iAttackStrategy; 		// 占쏙옙占쏙옙 占쏙옙占쏙옙 占싸곤옙占쏙옙占쏙옙 타占쏙옙
+Line 110: int   m_iAILevel;				// 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 112: int   m_iAttackRange;			// 占쏙옙占쏙옙 占쏙옙占쏙옙 1占싱삼옙占싱몌옙 占쏙옙占신몌옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹다댐옙 占쏙옙
+Line 115: 1: 占쏙옙占쏙옙 占썅동
+Line 116: 2: 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙표占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 117: 3: 占쏙옙占쏙옙 占쏙옙호占쏙옙占쏙옙 占쏙옙표占쏙옙 占쏙옙占쏙옙 占쏙옙占쌥댐옙璨【占? 占쏙옙占쏙옙
+Line 119: int   m_iAttackCount;			// 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙 횟占쏙옙 카占쏙옙트
+Line 123: int   m_iLastDamage;			// 占쏙옙占쏙옙占쏙옙 占쌓깍옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占?. 占쏙옙占쏙옙占쏙옙占? 占십뱄옙 크占쏙옙 占쏙옙占쌥쇽옙 占쏙옙嘯? 占쏙옙占쏙옙占쏙옙占쏙옙 占십는댐옙.
+Line 124: int   m_iSummonControlMode;		// 占쏙옙환占쏙옙 占쏙옙占쏙옙 占쏙옙占?: 0占싱몌옙 Free, 1 Hold 2 Tgt
+Line 125: char  m_cAttribute;				// 占쏙옙占쏙옙 占쌈쇽옙:  占쏙옙 1 占싹댐옙 2 占쏙옙 3 占쏙옙 4
+Line 126: int   m_iAbsDamage;				// 占쏙옙占쏙옙占? 占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙占쏙옙占쏙옙, 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙占쏙옙占쏙옙
+Line 128: int   m_iItemRatio;				// 특占쏙옙 占쏙옙占쏙옙占쏙옙 확占쏙옙
+Line 129: int   m_iAssignedItem;			// 占쌀댐옙占? 占쏙옙占쏙옙占쏙옙
+Line 131: char  m_cSpecialAbility;		// 특占쏙옙 占심뤄옙 0: 占쏙옙占쏙옙
+Line 144: 占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙 60占쏙옙占쏙옙 크占쏙옙 NPC占쏙옙 효占쏙옙占싶댐옙 占쏙옙占쏙옙占싹므뤄옙 占쏙옙占쏙옙占싼댐옙.
+Line 147: int	  m_iBuildCount;			// 占쏙옙占쏙옙 타占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占? 占싹쇽옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏘괭占쏙옙占쏙옙 횟占쏙옙占쏙옙 占실뱄옙. 占십기값占쏙옙 m_iMinBravery占싱댐옙.
+Line 148: // 占쏙옙 占쏙옙占쏙옙 0占싱억옙蔘占? 占쏙옙占쏙옙占쏙옙 占싼댐옙.
+Line 149: int   m_iManaStock;				// 占쌓뤄옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쌓뤄옙占쏙옙占쏙옙占쏙옙 占쏙옙占? 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙
+Line 150: bool  m_bIsMaster;				// 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 151: int   m_iGuildGUID;				// 占쏙옙占쏙옙占? 占쏙옙占쏙옙트占쏙옙 占쏙옙占? 占쏙옙환占쏙옙占쏙옙 占쏙옙占? 占쏙옙占싱듸옙 占쌉력된댐옙.

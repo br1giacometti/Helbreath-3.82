@@ -1,0 +1,65 @@
+Line 25: #define Item type not used	-1	// v1.4 占쏙옙占쏙옙占쏙옙 占쏙옙占실억옙占쏙옙占쏙옙 占쏙옙占쏙옙關占쏙옙占? 占쏙옙占쏙옙占쏙옙 占십댐옙 占쏙옙占쏙옙占쏙옙: 占쏙옙占쏙옙占쏙옙占쏙옙占? 占쏙옙체占싫댐옙.
+Line 42: #define DEF_ITEMEFFECTTYPE_ATTACK			1		// 占쏙옙占쏙옙치: value1 D value2 + value3
+Line 43: #define DEF_ITEMEFFECTTYPE_DEFENSE			2		// 占쏙옙占심뤄옙
+Line 44: #define DEF_ITEMEFFECTTYPE_ATTACK_ARROW		3		// 화占쏙옙占쏙옙 占쏙옙占쏙옙求占? 占쏙옙占쌥뱄옙占쏙옙. 占쏙옙占쏙옙 占쏙옙체占쏙옙 占쏙옙占쌥뤄옙占쏙옙 占쏙옙占쏙옙.
+Line 45: #define DEF_ITEMEFFECTTYPE_HP   		    4		// HP占쏙옙占쏙옙 효占쏙옙
+Line 46: #define DEF_ITEMEFFECTTYPE_MP   		    5		// MP占쏙옙占쏙옙 효占쏙옙
+Line 47: #define DEF_ITEMEFFECTTYPE_SP   		    6		// SP占쏙옙占쏙옙 효占쏙옙
+Line 48: #define DEF_ITEMEFFECTTYPE_HPSTOCK 		    7		// HP占쏙옙占쏙옙 효占쏙옙. 占쏙각占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙타占쏙옙占쏙옙占쏙옙 占십는댐옙.
+Line 49: #define DEF_ITEMEFFECTTYPE_GET			    8		// 占쏙옙쨈占?. 占쏙옙占쏙옙占썩나 占쏙옙占쏙옙占쏙옙
+Line 50: #define DEF_ITEMEFFECTTYPE_STUDYSKILL		9		// 占쏙옙占쏙옙占? 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占싱댐옙.
+Line 51: #define DEF_ITEMEFFECTTYPE_SHOWLOCATION		10		// 占쏙옙치占쏙옙 표占쏙옙占싹댐옙 占쏙옙占쏙옙占쏙옙.
+Line 52: #define DEF_ITEMEFFECTTYPE_MAGIC			11		// 占쏙옙占쏙옙玖占? 占쏙옙占쏙옙 효占쏙옙占쏙옙 占쏙옙占? 占쏙옙占쏙옙占쏙옙
+Line 53: #define DEF_ITEMEFFECTTYPE_CHANGEATTR		12		// 占시뤄옙占싱억옙占쏙옙 占쌈쇽옙占쏙옙 占쏙옙환占쏙옙킨占쏙옙. 占쏙옙占쏙옙, 占쌈몌옙占쏙옙占?, 占실부삼옙, 占쏙옙抵뵀몌옙占?
+Line 54: #define DEF_ITEMEFFECTTYPE_ATTACK_MANASAVE	13		// 占쏙옙占쏙옙효占쏙옙占쏙옙 占쏙옙占쌀억옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 효占쏙옙占쏙옙 占쌍댐옙.(占쏙옙占쏙옙占쏙옙占?)
+Line 55: #define DEF_ITEMEFFECTTYPE_ADDEFFECT	    14		// 占쌩곤옙 효占쏙옙
+Line 56: #define DEF_ITEMEFFECTTYPE_MAGICDAMAGESAVE	15		// 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占? 占쏙옙占쏙옙占싼댐옙. 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙肩占?
+Line 57: #define DEF_ITEMEFFECTTYPE_OCCUPYFLAG		16		// 占쏙옙占쏙옙 占쏙옙占?
+Line 58: #define DEF_ITEMEFFECTTYPE_DYE				17		// 占쏙옙占쏙옙占쏙옙.
+Line 59: #define DEF_ITEMEFFECTTYPE_STUDYMAGIC		18		// 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占싱댐옙.
+Line 60: #define DEF_ITEMEFFECTTYPE_ATTACK_MAXHPDOWN	19		// 占쏙옙占쏙옙 효占쏙옙占쏙옙 占쌉뀐옙 占쌍댐옙  HP 占쏙옙 HP 회占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+Line 61: #define DEF_ITEMEFFECTTYPE_ATTACK_DEFENSE	20		// 占쏙옙占쏙옙 효占쏙옙占쏙옙 占쌉뀐옙 占쏙옙占십곤옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙齋? 효占쏙옙占쏙옙 占쌍댐옙 占쏙옙占쏙옙占쏙옙
+Line 62: #define DEF_ITEMEFFECTTYPE_MATERIAL_ATTR	21		// 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占? 占쌈쇽옙
+Line 63: #define DEF_ITEMEFFECTTYPE_FIRMSTAMINAR		22		// 占쏙옙占승미놂옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+Line 64: #define DEF_ITEMEFFECTTYPE_LOTTERY			23		// 占쏙옙占쏙옙 占쏙옙占쏙옙占퐊占?
+Line 65: #define DEF_ITEMEFFECTTYPE_ATTACK_SPECABLTY		24	// 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 특占쏙옙 효占쏙옙
+Line 66: #define DEF_ITEMEFFECTTYPE_DEFENSE_SPECABLTY	25	// 占쏙옙齋? 占쏙옙占쏙옙占쏙옙 특占쏙옙 효占쏙옙
+Line 67: #define DEF_ITEMEFFECTTYPE_ALTERITEMDROP		26	// 占쌕몌옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙 占쏙옙占? 占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙.
+Line 68: #define DEF_ITEMEFFECTTYPE_CONSTRUCTIONKIT		27	// 占쏙옙占쏙옙 키트
+Line 76: #define DEF_ITET_UNIQUE_OWNER				1		// ItemTouchEffect: 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+Line 77: #define DEF_ITET_ID							2		// 占쌓놂옙 占쏙옙占쏙옙占쏙옙 占쏙옙占싱듸옙
+Line 78: #define DEF_ITET_DATE						3		// 占쏙옙諛∽옙占쏙옙占? 占쏙옙짜占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+Line 89: short m_sIDnum;					// 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙호
+Line 99: //v1.432 占쏙옙占쌩뤄옙 占쏙옙占쏙옙 占쏙옙占? 占쏙옙占싼댐옙. 占쏙옙占? 특占쏙옙 占심뤄옙 占쏙옙치占쏙옙 占쏙옙載ｏ옙占?.
+Line 121: char  m_cItemColor; // v1.4 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙퓸占쏙옙占?.
+Line 126: // a: Item 占쌈쇽옙 占쏙옙占쏙옙
+Line 127: // b: Item 占쌈쇽옙 占쏙옙占쏙옙
+Line 128: // c: 특占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 Flag
+Line 129: // d: 특占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 130: // e: 특占쏙옙 占쏙옙占쏙옙占쏙옙 占쌩곤옙 占쏙옙占쏙옙 Flag
+Line 131: // f: 특占쏙옙 占쏙옙占쏙옙占쏙옙 占쌩곤옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 137: 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占싹울옙 占십울옙占쏙옙 占쏙옙占쏙옙 - 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙
+Line 140: - 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙. 占쏙옙占쏙옙占실댐옙 占쏙옙占쏙옙占쏙옙 占쌀몌옙풔占? 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 143: - 占쏙옙占쏙옙占실댐옙 占쏙옙占쏙옙占쏙옙占싱띰옙占? 占쏙옙 占쏙옙치
+Line 146: - 占쏙옙占쏙옙占쏙옙占쏙옙 효占쏙옙 占쏙옙占쏙옙.
+Line 149: - 占쏙옙占쏙옙占쏙옙 효占쏙옙占쏙옙 占쏙옙치 1, 2, 3...
+Line 152: - 占쏙옙占쏙옙占쏙옙占쏙옙 占쌍댐옙 占쏙옙占쏙옙
+Line 155: - 占쌍댐옙 占쏙옙칠占쏙옙 占쌍댐옙 횟占쏙옙
+Line 159: - 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙트 占쏙옙호
+Line 162: - 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 164: - 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 166: - 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 168: - 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 171: - 占쏙옙표占쏙옙 占쏙옙占쌩뤄옙 占쏙옙占쏙옙치 (占쏙옙占쏙옙占쏙옙 占쏙옙占?)
+Line 174: - 占쏙옙占쏙옙占? Skill
+Line 176: 占시뤄옙占싱억옙 占쏙옙占쏙옙占쏙옙 占쏙옙占싹울옙 占쏙옙占쏙옙퓸占쏙옙 占쏙옙 占쏙옙占쏙옙 - 占싸깍옙 占쏙옙占쏙옙占쏙옙
+Line 179: - 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙. (占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 화占쏙옙占싱놂옙 占쏙옙占쏙옙, Gold占쏘만占쏙옙 占실미몌옙 占쏙옙占승댐옙)
+Line 182: - 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 185: - 占쏙옙占쏙옙占쏙옙占? 占쏙옙占쏙옙占쏙옙 횟占쏙옙
+Line 188: - 占쏙옙占쏙옙占쏙옙占쏙옙 처占쏙옙 占실듸옙占쏙옙占쏙옙占? 占쌜듸옙占실댐옙 효占쏙옙 占쏙옙占쏙옙
+Line 191: - 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 효占쏙옙占쏙옙 占쏙옙치
+Line 194: - 占쏙옙占쏙옙占쏙옙占쏙옙 특占쏙옙효占쏙옙 占쏙옙占쏙옙 (ex:占쏙옙占쏙옙占쏙옙 占심몌옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쌥뤄옙占싱놂옙 占쏙옙占승울옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙)
+Line 197: - 占쏙옙占쏙옙占쏙옙 특占쏙옙효占쏙옙占쏙옙 占쏙옙치 1, 2, 3...
+Line 200: 占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占?(Equip Position占쏙옙 Body, Leggings, Arms占쏙옙 占쏙옙占?)
+Line 201: sItemEffectValue4: 占쏙옙占쏙옙 특占쏙옙 특占쏙옙치 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙타占쏙옙占쏙옙.
+Line 210: sItemEffectValue5: 占쏙옙占쏙옙 특占쏙옙 특占쏙옙치 占쏙옙占쏙옙 占쏙옙占쏙옙

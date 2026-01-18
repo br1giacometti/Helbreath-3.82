@@ -1,0 +1,108 @@
+Line 27: #define DEF_MAXGUILDSMAN	128 // 占쌍댐옙 占쏙옙占쏙옙 占쏙옙
+Line 29: #define	DEF_MAXMAGICTYPE	100	// 占쏙옙占쏙옙占싹뤄옙占쏙옙 占싸그쇽옙占쏙옙占쏙옙占쎈도 占쌕꾸억옙占? 占싼댐옙.
+Line 76: char  m_cGuildName[21];		// 占쏙옙占쏙옙占? 占싱몌옙
+Line 77: char  m_cLocation[11];      //  <- 占쏙옙占싱몌옙占쏙옙 占쌓댐옙占? 占쏙옙占쏙옙홱占?. 占쌀쇽옙 占쏙옙占쏙옙
+Line 78: int   m_iGuildRank;			// -1占싱몌옙 占쏙옙占실뱄옙. 0占싱몌옙 占쏙옙占? 占쏙옙占쏙옙占쏙옙. 占쏙옙占쏙옙占? 占쏙옙約삼옙占쏙옙占쏙옙占? 占쏙옙占쏙옙
+Line 82: short m_sType;				// 占쏙옙占쏙옙 타占쏙옙 <- 占쏙옙占쏙옙占쏙옙占쏙옙 占시울옙 占쏙옙占싼댐옙.
+Line 83: short m_sOriginalType;		// 占쏙옙占쏙옙占쏙옙占쏙옙 타占쏙옙
+Line 88: int   m_iApprColor;			// v1.4 占쏙옙占쏙옙 占시뤄옙占쏙옙占싱븝옙
+Line 92: // Player 특占쏙옙치
+Line 107: // v1.432 占쏙옙占쏙옙占쏙옙占? 占십는댐옙.
+Line 108: //int  m_iHitRatio_ItemEffect_SM; // 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 HitRatio 占쏙옙占썸값
+Line 111: int  m_iDamageAbsorption_Armor[DEF_MAXITEMEQUIPPOS];		// 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 Damage 占쏙옙占쏙옙 효占쏙옙
+Line 112: int  m_iDamageAbsorption_Shield;	// Parrying 占쏙옙占? 占쏙옙占쏙옙占쏙옙占쏙옙 Damage 占쏙옙占쏙옙 효占쏙옙
+Line 116: //char m_cLU_Str, m_cLU_Int, m_cLU_Vit, m_cLU_Dex, m_cLU_Mag, m_cLU_Char;   // 占쏙옙占쏙옙占쏙옙占시울옙 占쌀댐옙퓸占? 占시라가댐옙 특占쏙옙치占쏙옙.
+Line 134: int  m_iCurWeightLoad;		// 占쏙옙占쏙옙 占쏙옙 占쏙옙占쏙옙품 占쏙옙占쏙옙
+Line 136: char m_cSide;				// 占시뤄옙占싱억옙占쏙옙 占쏙옙
+Line 148: char m_cAttackDiceThrow_SM;	// 占쏙옙占쏙옙치 占쌍삼옙占쏙옙 占쏙옙占쏙옙占쏙옙 회占쏙옙
+Line 149: char m_cAttackDiceRange_SM;	// 占쏙옙占쏙옙치 占쌍삼옙占쏙옙 占쏙옙占쏙옙
+Line 150: char m_cAttackDiceThrow_L;	// 占쏙옙占쏙옙치 占쌍삼옙占쏙옙 占쏙옙占쏙옙占쏙옙 회占쏙옙
+Line 151: char m_cAttackDiceRange_L;	// 占쏙옙占쏙옙치 占쌍삼옙占쏙옙 占쏙옙占쏙옙
+Line 152: char m_cAttackBonus_SM;		// 占쏙옙占쏙옙 占쏙옙占십쏙옙
+Line 153: char m_cAttackBonus_L;		// 占쏙옙占쏙옙 占쏙옙占십쏙옙
+Line 161: char  m_cArrowIndex;		// 占시뤄옙占싱어가 활占쏙옙 占쏙옙占쏙옙秊占? 화占쏙옙 占쏙옙占쏙옙占쏙옙 占싸듸옙占쏙옙. 占십기값占쏙옙 -1(占쌀댐옙 占싫듸옙)
+Line 175: int   m_iHungerStatus;		// 占쏙옙占쏙옙占? 占쏙옙占쏙옙트. 占싱곤옙 0占싱되몌옙 占쏙옙占승미너곤옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 체占승듸옙 占쏙옙占쏙옙占싱삼옙 占쏙옙占쏙옙 占십쏙옙占싹댐옙.
+Line 177: DWORD m_dwWarBeginTime;		// 占쏙옙占쏙옙占쏙옙 占쏙옙載∽옙占? 占쏙옙占쏙옙占쏙옙 占쏙옙溝풔占? 占시곤옙.
+Line 178: bool  m_bIsWarLocation;		// 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쌍댐옙占쏙옙占쏙옙 표占쏙옙
+Line 180: bool  m_bIsPoisoned;		// 占쌩듸옙占실억옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 181: int   m_iPoisonLevel;       // 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 182: DWORD m_dwPoisonTime;		// 占쌩듸옙 占시곤옙.
+Line 186: //v1.4311-3 占쌩곤옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙호占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占시곤옙
+Line 191: int   m_iAdminUserLevel;     // 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙. 0占싱몌옙 占쏙옙효. 占쏙옙호占쏙옙 占시띰옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 커占쏙옙占쏙옙.
+Line 194: int   m_iTimeLeft_ShutUp;	 // 占쏙옙 占쏙옙占쏙옙 0占쏙옙 占싣니몌옙 채占시메쏙옙占쏙옙占쏙옙 占쏙옙占쌨듸옙占쏙옙 占십는댐옙.
+Line 195: int   m_iTimeLeft_Rating;	 // 占쌕몌옙 占시뤄옙占싱억옙占쏙옙 占쏙옙占쏙옙占쏙옙 占신깍옙占? 占쏙옙占쏙옙 占쏙옙占쏙옙 占시곤옙. 0占싱몌옙 占쏙옙占? 占쏙옙占쏙옙
+Line 196: int   m_iTimeLeft_ForceRecall;  // 占쏙옙占쏙옙 占쏙옙占쌥되깍옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쌍댐옙 占시곤옙틱
+Line 197: int   m_iTimeLeft_FirmStaminar; // 占쏙옙占승미너곤옙 占쌨억옙 占쏙옙占쏙옙占쏙옙占쏙옙 占십댐옙 占시곤옙 占쏙옙
+Line 202: bool  m_bIsOnServerChange;     // 占쏙옙 占쏙옙占쏙옙 활占쏙옙화 占실억옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙 카占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占십는댐옙.
+Line 204: DWORD   m_iExpStock;			 // 占쌓울옙占쌍댐옙 占쏙옙占쏙옙치
+Line 205: DWORD m_dwExpStockTime;		 // ExpStock 占쏙옙占? 占시곤옙.
+Line 207: DWORD   m_iAutoExpAmount;		 // Auto-Exp 占시곤옙 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙치
+Line 208: DWORD m_dwAutoExpTime;		 // Auto-Exp 占쏙옙占? 占시곤옙.
+Line 210: DWORD m_dwRecentAttackTime;  // 占쏙옙占쏙옙 占쌍근울옙 占쏙옙占쏙옙占쌩댐옙 占시곤옙
+Line 212: int   m_iAllocatedFish;		 // 占쏙옙 占쏙옙占쏙옙 0占쏙옙 占싣니몌옙 占싱븝옙트 占쏙옙占시몌옙占쏙옙占? 占싱야깍옙占?.
+Line 213: int   m_iFishChance;		 // 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 215: char  m_cIPaddress[21];		 // 클占쏙옙占싱억옙트占쏙옙 IP address
+Line 218: bool  m_bIsOnWaitingProcess; // 占쌘뤄옙占쏙옙트占쏙옙 처占쏙옙占쏙옙 占쏙옙摸占쏙옙占? 占쏙옙占승띰옙占?
+Line 220: int   m_iSuperAttackLeft;	 // v1.2 占십삼옙占? 占쏙옙占? 占쏙옙占쏙옙 횟占쏙옙
+Line 221: int   m_iSuperAttackCount;   // v1.2 占십삼옙占? 占쏙옙占? 占쏙옙占쏙옙 카占쏙옙트. 占쏙옙 카占쏙옙트占쏙옙 占쏙옙 占쏙옙占쏙옙 占십삼옙占? 占쏙옙占? 횟占쏙옙占쏙옙 占시어난占쏙옙.
+Line 223: short m_sUsingWeaponSkill;	 // v1.2 占쏙옙占쏙옙 占쏙옙占쏙옙求占? 占쏙옙占쏙옙占쏙옙 占쏙옙킬 占싸듸옙占쏙옙
+Line 225: int   m_iManaSaveRatio;		 // v1.2 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙트
+Line 227: bool  m_bIsLuckyEffect;		 // v1.2 占쏙옙占? 효占쏙옙
+Line 228: int   m_iSideEffect_MaxHPdown; // v1.4 占쌍댐옙 HP 占쏙옙占쏙옙 효占쏙옙
+Line 230: int   m_iComboAttackCount;   // v1.3 占쏙옙타 占쏙옙占쏙옙 카占쏙옙트
+Line 231: int   m_iDownSkillIndex;	 // v1.3 占쌕몌옙 占쏙옙킬占쏙옙 占시라갈띰옙 占쏙옙占쏙옙 占쏙옙킬 占싸듸옙占쏙옙
+Line 233: int   m_iMagicDamageSaveItemIndex; // v1.3 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占싸듸옙占쏙옙 (占쏙옙占쏙옙占쏙옙 -1)
+Line 235: short m_sCharIDnum1, m_sCharIDnum2, m_sCharIDnum3; // v1.3 占쏙옙 캐占쏙옙占싶곤옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙!
+Line 237: int   m_iAbuseCount;		// 占쏙옙킹 占쏙옙占쏙옙占쏙옙 占식악울옙
+Line 239: bool  m_bIsBWMonitor;		// BadWord 占쏙옙占쏙옙占쏙옙寬占??
+Line 241: //bool  m_bIsExchangeMode;		// 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙환 占쏙옙占쏙옙寬占??
+Line 242: //int   m_iExchangeH;				// 占쏙옙환占쏙옙 占쏙옙占쏙옙占? 占싸듸옙占쏙옙
+Line 243: //char  m_cExchangeName[11];		// 占쏙옙환占쏙옙 占쏙옙占쏙옙占? 占싱몌옙
+Line 244: //char  m_cExchangeItemName[21];	// 占쏙옙환占싹곤옙占쏙옙 占싹댐옙 占쏙옙占쏙옙占쏙옙 占싱몌옙
+Line 245: //char  m_cExchangeItemIndex;  // 占쏙옙환占쏙옙 占쏙옙占쏙옙占쏙옙 占싸듸옙占쏙옙
+Line 246: //int   m_iExchangeItemAmount; // 占쏙옙환占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 247: //bool  m_bIsExchangeConfirm;  // 占쏙옙환 확占쏙옙
+Line 260: int   m_iQuest;				 // 占쏙옙占쏙옙 占쌀댐옙占? Quest
+Line 261: int   m_iQuestID;			 // 占쌀댐옙占쏙옙占? Quest占쏙옙 ID占쏙옙
+Line 262: int   m_iAskedQuest;		 // 占쏙옙占쏘본 占쏙옙占쏙옙트
+Line 263: int   m_iCurQuestCount;		 // 占쏙옙占쏙옙 占쏙옙占쏙옙트 占쏙옙占쏙옙
+Line 265: int   m_iQuestRewardType;	 // 占쏙옙占쏙옙트 占쌔곤옙占? 占쏙옙품 占쏙옙占쏙옙 -> 占쏙옙占쏙옙占쏙옙占쏙옙 ID占쏙옙占싱댐옙.
+Line 266: int   m_iQuestRewardAmount;	 // 占쏙옙품 占쏙옙占쏙옙
+Line 268: int   m_iContribution;		 // 占쏙옙占시울옙 占쏙옙占쏙옙 占쏙옙占썲도.
+Line 270: bool  m_bQuestMatchFlag_Loc; // 占쏙옙占쏙옙트 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占실댐옙占싹깍옙 占쏙옙占쏙옙.
+Line 271: bool  m_bIsQuestCompleted;   // 占쏙옙占쏙옙트占쏙옙 占싹뤄옙퓸占쏙옙째占??
+Line 276: int   m_iMinAP_SM;			// Custom-Item占쏙옙 효占쏙옙占쏙옙 占쏙옙占쏙옙 占쌍쇽옙 AP
+Line 279: int   m_iMaxAP_SM;			// Custom-Item占쏙옙 효占쏙옙占쏙옙 占쏙옙占쏙옙 占쌍댐옙 AP
+Line 282: bool  m_bIsNeutral;			// v1.5 占쌩몌옙占쏙옙占싸몌옙 占실븝옙占싹깍옙 占쏙옙占쏙옙 占시뤄옙占쏙옙. 처占쏙옙 占쌈듸옙占쏙옙 占쏙옙占싱깍옙 占쏙옙占쏙옙占싱댐옙.
+Line 283: bool  m_bIsObserverMode;	// v1.5 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占? 占실븝옙
+Line 285: int   m_iSpecialEventID;	// 특占쏙옙 占쏙옙占? 占쏙옙占쏙옙확占싸울옙 占시뤄옙占쏙옙
+Line 287: int   m_iSpecialWeaponEffectType;	// 占쏙옙占? 占쏙옙占쏙옙占쏙옙 효占쏙옙 占쏙옙占쏙옙
+Line 288: int   m_iSpecialWeaponEffectValue;	// 占쏙옙占? 占쏙옙占쏙옙占쏙옙 효占쏙옙 占쏙옙
+Line 289: // 占쏙옙占? 占쏙옙占쏙옙占쏙옙 효占쏙옙 占쏙옙占쏙옙:
+Line 290: // 0-None 1-占십삼옙占쏙옙占쏙옙占쏙옙煞占? 2-占쌩듸옙효占쏙옙 3-占쏙옙占쏙옙占쏙옙
+Line 291: // 5-占쏙옙첩占쏙옙 6-占쏙옙占쏙옙占쏙옙 7-占쏙옙占쏙옙占쏙옙 8-占쏙옙화占쏙옙 9-占쏙옙占쎈문占쏙옙占쏙옙
+Line 297: int   m_iAddCD, m_iAddExp, m_iAddGold;		// 占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙占쏙옙占쏙옙. 占쏙옙占쏙옙占쏙옙占싶댐옙 占쏙옙占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占싫댐옙.
+Line 299: int   m_iAddResistMagic;					// v1.2 占쌩곤옙 占쏙옙占쏙옙 占쏙옙占쏙옙
+Line 300: int   m_iAddPhysicalDamage;					// v1.2 占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쌩곤옙 占쏙옙占쏙옙트
+Line 303: int   m_iAddAbsAir;							// 占쌈쇽옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙占쏙옙
+Line 313: int   m_iSpecialAbilityTime;				// 특占쏙옙 占심뤄옙占쏙옙 占쏙옙占쏙옙歐占? 占쏙옙占쌔쇽옙占쏙옙 占쏙옙 占쏙옙占쏙옙 0占쏙옙 占실억옙占? 占싼댐옙.
+Line 314: bool  m_bIsSpecialAbilityEnabled;			// 특占쏙옙 占심뤄옙占쏙옙 활占쏙옙화 占쏙옙 占쏙옙占쏙옙占싸곤옙?
+Line 315: DWORD m_dwSpecialAbilityStartTime;			// 특占쏙옙 占심뤄옙占쏙옙 占쏙옙占쏙옙歐占? 占쏙옙占쏙옙占쏙옙 占시곤옙
+Line 316: int   m_iSpecialAbilityLastSec;				// 특占쏙옙 占심뤄옙 占쏙옙占쏙옙 占시곤옙.
+Line 318: int   m_iSpecialAbilityType;				// 占쌀댐옙占? 특占쏙옙 占심뤄옙 占쏙옙占쏙옙
+Line 319: // 占쏙옙占쏙옙占쏙옙
+Line 320: // 0:占심뤄옙 占쏙옙占쏙옙  1:占쏙옙占쌥쏙옙 占쏙옙 HP 50% 占쏙옙占쏙옙  2:占시듸옙 효占쏙옙  3: 占쏙옙占쏙옙 효占쏙옙  4: 占쏙옙占쏙옙 占쏙옙킬  5:占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙큼占쏙옙 HP占쏙옙 占쏙옙쨈占?.
+Line 321: // 占쏙옙占쏙옙占?
+Line 322: // 50: 占쏙옙占쏙옙 占쏙옙占쏙옙 0占쏙옙 占쏙옙占쏙옙. 51:占쌔댐옙 占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙효화  52: 占쏙옙5占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占? 占쏙옙효화
+Line 323: int   m_iSpecialAbilityEquipPos;			// 占쏙옙齋몌옙占? 占쏙옙占? 특占쏙옙효占쏙옙占쏙옙 占쏙옙占쏙옙풔占? 占쏙옙占쏙옙占쏙옙 占실뱄옙占쏙옙.
+Line 325: int   m_iAlterItemDropIndex;				// 占쏙옙占쏙옙占쏙옙 占쏙옙占? 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占싸듸옙占쏙옙
+Line 327: int   m_iWarContribution;					// 占쏙옙占쏙옙 占쏙옙占썲도
+Line 329: DWORD m_dwSpeedHackCheckTime;				// 占쌈듸옙占쏙옙占쏙옙 占싯삼옙 占쏙옙틴
+Line 336: char  m_cLockedMapName[11];					// 占쏙옙占쏙옙 占쏙옙 占싱몌옙
+Line 337: int   m_iLockedMapTime;						// 占쏙옙 占쏙옙占쏙옙 0 占싱삼옙占싱몌옙 占쏙옙占쏙옙 占쌘뤄옙占쏙옙트 占쌔듸옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙.
+Line 339: int   m_iCrusadeDuty;						// 크占썹세占싱드에占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙: 1-占쎈병. 2-占실쇽옙占쏙옙. 3-占쏙옙占쌍곤옙
+Line 340: DWORD m_dwCrusadeGUID;						// 크占썹세占싱듸옙 GUID
+Line 344: // 占쏙옙 占쏙옙트占쏙옙占식댐옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싹댐옙 占쏙옙占싱댐옙. 占싼뱄옙占쏙옙 占쏙옙占쏙옙 占쏙옙 占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙占싼댐옙.
+Line 355: // 占쏙옙占쌍곤옙占쏙옙 占실쇽옙占쏙옙 占쏙옙 占쌍댐옙 占쏙옙占쏙옙트. 占싹뱄옙 占시뤄옙占싱억옙占쏙옙 占쌘쏙옙占쏙옙 占썅동占쏙옙 占쏙옙占쏙옙 占쏙옙占쏙옙占쏙옙占싱댐옙.
+Line 372: int   m_iPartyRank;										// Party占쏙옙占쏙옙占쏙옙占쏙옙 占쏙옙치. -1占싱몌옙 占쏙옙占실뱄옙. 1占싱몌옙 占쏙옙티 占쏙옙占쏙옙占쏙옙. 12占쏙옙 占쏙옙占?
+Line 373: int   m_iPartyMemberCount;								// 占쏙옙티 占싸울옙 占쏙옙占싼울옙
